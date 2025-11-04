@@ -3,53 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to my personal website - showcasing my projects and experience.">
-    <title>Home | Your Name</title>
+    <meta name="description" content="Creating culturally safe schools that promote respect, inclusion, and belonging for every student and community.">
+    <title>Home | Cultural Safety in Schools</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Skip link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
+    <!-- Navigation -->
     <header>
         <nav class="navbar" aria-label="Main navigation">
             <div class="nav-container">
-                <a href="index.html" class="logo">Your Name</a>
+                <a href="index.html" class="logo">Cultural Safety in Schools</a>
                 <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span class="hamburger"></span>
                 </button>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
+    <!-- Main Content -->
     <main id="main-content">
+        <!-- Hero Section -->
         <section class="hero">
             <div class="container">
-                <h1>Welcome to My Portfolio</h1>
-                <p class="hero-text">I'm a developer passionate about creating elegant solutions to complex problems.</p>
-                <a href="projects.html" class="btn">View My Work</a>
+                <!-- Hero image placeholder -->
+                <div class="hero-image-placeholder">
+                    <!-- Replace with: diverse students learning together, hands joining in circle, or Indigenous art pattern -->
+                </div>
+                <h1>Creating Culturally Safe Schools</h1>
+                <p class="hero-subtitle">Promoting respect, inclusion, and belonging for every student and community.</p>
             </div>
         </section>
 
-        <section class="intro">
+        <!-- Introduction -->
+        <section class="intro-section">
             <div class="container">
-                <h2>Building Digital Experiences</h2>
-                <p>I specialize in web development, creating responsive and accessible websites that provide exceptional user experiences. Explore my projects to see what I've been working on, or get in touch to discuss your next project.</p>
+                <div class="intro-content">
+                    <p class="lead-text">Cultural safety in schools means more than celebrating diversity. It's about ensuring that every student, staff member, and family feels safe, respected, and valued — where identity and culture are not only acknowledged but protected.</p>
+                    <p>Our mission is to make it easier for educators and schools to build cultural competence through access to practical, evidence-based, and free resources.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Cards -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">Who We Support</h2>
+                
+                <div class="features-grid">
+                    <!-- Feature 1: Teachers -->
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <!-- Icon: Chalkboard or Book -->
+                            <span class="icon-placeholder">📚</span>
+                        </div>
+                        <h3>For Teachers</h3>
+                        <p>Lesson ideas, classroom activities, and reflective tools to promote inclusion and understanding.</p>
+                        <a href="resources.html#teachers" class="feature-link">Explore Resources →</a>
+                    </article>
+
+                    <!-- Feature 2: School Leaders -->
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <!-- Icon: People or Leadership -->
+                            <span class="icon-placeholder">👥</span>
+                        </div>
+                        <h3>For School Leaders</h3>
+                        <p>Guidelines, training, and frameworks to build culturally responsive policies and whole-school approaches.</p>
+                        <a href="resources.html#leaders" class="feature-link">View Frameworks →</a>
+                    </article>
+
+                    <!-- Feature 3: Communities -->
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <!-- Icon: Community or Hands -->
+                            <span class="icon-placeholder">🤝</span>
+                        </div>
+                        <h3>For Students & Communities</h3>
+                        <p>Stories, videos, and examples of partnerships between schools and diverse communities.</p>
+                        <a href="case-studies.html" class="feature-link">See Examples →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Banner -->
+        <section class="quote-banner">
+            <div class="container">
+                <blockquote>
+                    <p>"Cultural safety begins when we listen, reflect, and share power in our learning spaces."</p>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Start?</h2>
+                <p>Explore our resources or connect with us to learn more about building culturally safe schools.</p>
+                <div class="cta-buttons">
+                    <a href="resources.html" class="btn btn-primary">Browse Resources</a>
+                    <a href="contact.html" class="btn btn-secondary">Get Involved</a>
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; <span id="current-year"></span> Your Name. All rights reserved.</p>
+            <div class="footer-acknowledgement">
+                <h3>Acknowledgement of Country</h3>
+                <p>We acknowledge the Traditional Custodians of the lands on which we live, learn, and work, and we pay our respects to Elders past, present, and emerging.</p>
+            </div>
+            <div class="footer-links">
+                <p>&copy; <span id="current-year"></span> Cultural Safety in Schools</p>
+                <nav aria-label="Footer navigation">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#privacy">Privacy</a>
+                </nav>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript for mobile menu -->
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function() {
+                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', !isExpanded);
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Update current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
