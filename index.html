@@ -3,100 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creating culturally safe schools that promote respect, inclusion, and belonging for every student and community.">
-    <title>Home | Cultural Safety in Schools</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Cultural Safety in Schools - Resources for teachers, parents, social workers, and students promoting cultural safety and inclusion.">
+    <title>Cultural Safety in Schools - Home</title>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Skip link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Navigation -->
-    <header>
-        <nav class="navbar" aria-label="Main navigation">
-            <div class="nav-container">
-                <a href="index.html" class="logo">Cultural Safety in Schools</a>
-                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span class="hamburger"></span>
-                </button>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="resources.html" class="nav-link">Resources</a></li>
-                    <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Cultural Safety in Schools</h1>
             </div>
-        </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                    <li><a href="teachers.html">Teachers</a></li>
+                    <li><a href="parents.html">Parents</a></li>
+                    <li><a href="social-workers.html">Social Workers</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Hero Section -->
+    <main>
         <section class="hero">
             <div class="container">
                 <!-- Hero image placeholder -->
-                <div class="hero-image-placeholder">
-                    <!-- Replace with: diverse students learning together, hands joining in circle, or Indigenous art pattern -->
+                <div class="hero-content">
+                    <h2>Creating Culturally Safe Schools</h2>
+                    <p class="subtitle">Promoting respect, inclusion, and belonging for every student and community.</p>
                 </div>
-                <h1>Creating Culturally Safe Schools</h1>
-                <p class="hero-subtitle">Promoting respect, inclusion, and belonging for every student and community.</p>
             </div>
         </section>
 
-        <!-- Introduction -->
-        <section class="intro-section">
+        <section class="audience-tiles">
             <div class="container">
-                <div class="intro-content">
-                    <p class="lead-text">Cultural safety in schools means more than celebrating diversity. It's about ensuring that every student, staff member, and family feels safe, respected, and valued — where identity and culture are not only acknowledged but protected.</p>
-                    <p>Our mission is to make it easier for educators and schools to build cultural competence through access to practical, evidence-based, and free resources.</p>
+                <h2 class="section-title">Resources for Everyone</h2>
+                <div class="tiles-grid">
+                    <a href="teachers.html" class="tile">
+                        <div class="tile-icon" aria-hidden="true">📚</div>
+                        <h3>Teachers</h3>
+                        <p>Lesson ideas, classroom activities, and reflective tools for culturally safe teaching.</p>
+                    </a>
+                    <a href="parents.html" class="tile">
+                        <div class="tile-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
+                        <h3>Parents</h3>
+                        <p>Guides and examples for partnering with schools on inclusion and cultural understanding.</p>
+                    </a>
+                    <a href="social-workers.html" class="tile">
+                        <div class="tile-icon" aria-hidden="true">🤝</div>
+                        <h3>Social Workers</h3>
+                        <p>Assessment tools, case management guides, and frameworks for school social work practice.</p>
+                    </a>
+                    <a href="students.html" class="tile">
+                        <div class="tile-icon" aria-hidden="true">🎨</div>
+                        <h3>Students</h3>
+                        <p>Stories, projects, and creative tools to explore identity, respect, and belonging.</p>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Feature Cards -->
-        <section class="features-section">
-            <div class="container">
-                <h2 class="section-title">Who We Support</h2>
-                
-                <div class="features-grid">
-                    <!-- Feature 1: Teachers -->
-                    <article class="feature-card">
-                        <div class="feature-icon">
-                            <!-- Icon: Chalkboard or Book -->
-                            <span class="icon-placeholder">📚</span>
-                        </div>
-                        <h3>For Teachers</h3>
-                        <p>Lesson ideas, classroom activities, and reflective tools to promote inclusion and understanding.</p>
-                        <a href="resources.html#teachers" class="feature-link">Explore Resources →</a>
-                    </article>
-
-                    <!-- Feature 2: School Leaders -->
-                    <article class="feature-card">
-                        <div class="feature-icon">
-                            <!-- Icon: People or Leadership -->
-                            <span class="icon-placeholder">👥</span>
-                        </div>
-                        <h3>For School Leaders</h3>
-                        <p>Guidelines, training, and frameworks to build culturally responsive policies and whole-school approaches.</p>
-                        <a href="resources.html#leaders" class="feature-link">View Frameworks →</a>
-                    </article>
-
-                    <!-- Feature 3: Communities -->
-                    <article class="feature-card">
-                        <div class="feature-icon">
-                            <!-- Icon: Community or Hands -->
-                            <span class="icon-placeholder">🤝</span>
-                        </div>
-                        <h3>For Students & Communities</h3>
-                        <p>Stories, videos, and examples of partnerships between schools and diverse communities.</p>
-                        <a href="case-studies.html" class="feature-link">See Examples →</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quote Banner -->
         <section class="quote-banner">
             <div class="container">
                 <blockquote>
@@ -104,54 +81,20 @@
                 </blockquote>
             </div>
         </section>
-
-        <!-- Call to Action -->
-        <section class="cta-section">
-            <div class="container">
-                <h2>Ready to Start?</h2>
-                <p>Explore our resources or connect with us to learn more about building culturally safe schools.</p>
-                <div class="cta-buttons">
-                    <a href="resources.html" class="btn btn-primary">Browse Resources</a>
-                    <a href="contact.html" class="btn btn-secondary">Get Involved</a>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <div class="footer-acknowledgement">
-                <h3>Acknowledgement of Country</h3>
-                <p>We acknowledge the Traditional Custodians of the lands on which we live, learn, and work, and we pay our respects to Elders past, present, and emerging.</p>
+            <div class="acknowledgement">
+                <p><strong>Acknowledgement of Country</strong></p>
+                <p>We acknowledge the Traditional Custodians of the lands on which our schools stand, and pay our respects to Elders past, present, and emerging. We are committed to honouring Aboriginal and Torres Strait Islander peoples and their unique cultural and spiritual relationships to land, water, and community.</p>
             </div>
             <div class="footer-links">
-                <p>&copy; <span id="current-year"></span> Cultural Safety in Schools</p>
-                <nav aria-label="Footer navigation">
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="#privacy">Privacy</a>
-                </nav>
+                <p>&copy; 2025 Cultural Safety in Schools. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for mobile menu -->
-    <script>
-        // Mobile navigation toggle
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', function() {
-                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-                navToggle.setAttribute('aria-expanded', !isExpanded);
-                navMenu.classList.toggle('active');
-            });
-        }
-
-        // Update current year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>

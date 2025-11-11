@@ -1,0 +1,2341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resources for Social Workers - Building cultural safety in schools through practice tools, case scenarios, and professional development.">
+    <title>Resources for Social Workers - Cultural Safety in Schools</title>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Content Card Styles */
+        .content-card {
+            background: var(--color-white);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--color-sky-blue);
+            transition: var(--transition);
+        }
+        
+        .content-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        
+        .content-card h4 {
+            color: var(--color-eucalyptus);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .content-card h5 {
+            color: var(--color-eucalyptus);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .content-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .content-card-full {
+            grid-column: 1 / -1;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: var(--color-white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        
+        .stat-card strong {
+            display: block;
+            font-size: 2rem;
+            color: var(--color-ochre);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Framework Table */
+        .framework-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--color-white);
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .framework-table th,
+        .framework-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-light-grey);
+        }
+        
+        .framework-table th {
+            background-color: var(--color-eucalyptus);
+            color: var(--color-white);
+            font-weight: 700;
+        }
+        
+        .framework-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .framework-table tr:hover {
+            background-color: var(--color-off-white);
+        }
+        
+        /* Practice Domain Cards */
+        .practice-domain {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--color-sky-blue);
+        }
+        
+        .practice-domain h4 {
+            color: var(--color-eucalyptus);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .practice-domain ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .practice-domain .resources {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-light-grey);
+            font-size: 0.95rem;
+        }
+        
+        .practice-domain .resources a {
+            color: var(--color-eucalyptus);
+            margin-right: 1rem;
+        }
+        
+        /* Tip Box */
+        .tip-box {
+            background: #e8f6f3;
+            padding: 1.2rem 1.5rem;
+            border-left: 5px solid #198754;
+            margin: 1.5rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .tip-box strong {
+            color: var(--color-eucalyptus);
+        }
+        
+        /* WA Context Box */
+        .wa-context-box {
+            background: #e8f4f8;
+            border-left: 5px solid #0066cc;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .wa-context-box h4 {
+            color: #0066cc;
+            margin-top: 0;
+        }
+        
+        /* Contact Card */
+        .contact-card {
+            background: var(--color-white);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .contact-card h5 {
+            color: var(--color-eucalyptus);
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        
+        .contact-card .contact-details {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .contact-card .contact-details strong {
+            display: inline-block;
+            width: 100px;
+            color: var(--color-dark);
+        }
+        
+        /* Action Steps */
+        .action-steps {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            margin: 2rem 0;
+        }
+        
+        .action-steps h4 {
+            color: var(--color-eucalyptus);
+            margin-top: 0;
+        }
+        
+        .action-steps ol {
+            padding-left: 1.5rem;
+        }
+        
+        .action-steps li {
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+        
+        /* Resource Highlight */
+        .resource-highlight {
+            background: #fff9e6;
+            border-left: 5px solid #ffc107;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        /* Video Styles */
+        .video-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        
+        .video-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-light-grey);
+        }
+        
+        .video-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .video-list li::before {
+            content: "🎥 ";
+            margin-right: 0.5rem;
+        }
+        
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-radius: var(--border-radius);
+        }
+        
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .video-hub-item {
+            background: var(--color-white);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .video-hub-item h5 {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-eucalyptus);
+        }
+        
+        iframe[src*="YOUR_VIDEO_ID_HERE"] {
+            display: none;
+        }
+        
+        .video-embed:has(iframe[src*="YOUR_VIDEO_ID_HERE"])::after {
+            content: "📹 Video placeholder - Add YouTube video ID to embed";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--color-white);
+            padding: 1rem;
+            width: 80%;
+            background: rgba(0,0,0,0.7);
+            border-radius: 4px;
+        }
+        
+        /* Reflection List */
+        .reflection-list {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            margin: 2rem 0;
+        }
+        
+        .reflection-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .reflection-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .reflection-list li::before {
+            content: "💭 ";
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Sidebar Navigation Styles */
+        .page-wrapper {
+            display: flex;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .sidebar-nav {
+            width: 250px;
+            min-width: 250px;
+            background: var(--color-white);
+            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+            padding: 2rem 1rem;
+            position: sticky;
+            top: 80px;
+            align-self: flex-start;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+            z-index: 100;
+        }
+        
+        .sidebar-nav h4 {
+            color: var(--color-eucalyptus);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-eucalyptus);
+        }
+        
+        .sidebar-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar-nav a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--color-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            border-left: 3px solid transparent;
+        }
+        
+        .sidebar-nav a:hover {
+            background: var(--color-off-white);
+            color: var(--color-eucalyptus);
+            border-left-color: var(--color-eucalyptus);
+            padding-left: 1.25rem;
+        }
+        
+        .sidebar-nav a.active {
+            background: var(--color-off-white);
+            color: var(--color-eucalyptus);
+            border-left-color: var(--color-ochre);
+            font-weight: 600;
+        }
+        
+        .main-content {
+            flex: 1;
+            width: 100%;
+        }
+        
+        section[id] {
+            scroll-margin-top: 120px;
+        }
+        
+        .page-header {
+            width: 100%;
+        }
+        
+        .sidebar-toggle {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: var(--color-eucalyptus);
+            color: var(--color-white);
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        .sidebar-toggle:focus {
+            outline: 2px solid var(--color-ochre);
+            outline-offset: 2px;
+        }
+        
+        .sidebar-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        
+        .sidebar-backdrop.active {
+            display: block;
+        }
+        
+        @media (max-width: 992px) {
+            .page-wrapper {
+                flex-direction: column;
+            }
+            
+            .sidebar-nav {
+                display: none;
+                width: 280px;
+                max-width: 80%;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                bottom: 0;
+                z-index: 1000;
+                max-height: calc(100vh - 70px);
+                box-shadow: 2px 0 12px rgba(0,0,0,0.3);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar-nav.active {
+                display: block;
+                transform: translateX(0);
+            }
+            
+            .sidebar-toggle {
+                display: block;
+            }
+            
+            .main-content {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar-nav {
+                top: 60px;
+                max-height: calc(100vh - 60px);
+                width: 260px;
+            }
+            
+            .content-card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .sidebar-nav {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Cultural Safety in Schools</h1>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="teachers.html">Teachers</a></li>
+                    <li><a href="parents.html">Parents</a></li>
+                    <li><a href="social-workers.html" class="active" aria-current="page">Social Workers</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header sw-header">
+            <div class="container">
+                <h2>🌿 Social Workers: Building Cultural Safety in Schools</h2>
+                <p style="margin-top: 1rem; font-size: 1.1rem;">A comprehensive guide for school social workers working with Culturally and Linguistically Diverse (CALD) students and families.</p>
+            </div>
+        </section>
+
+        <div class="page-wrapper">
+            <!-- Sidebar Navigation -->
+            <nav class="sidebar-nav" id="sidebarNav">
+                <h4>Contents</h4>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#role">Roles of Social Workers</a></li>
+                    <li><a href="#practice-domains">Practice Domains</a></li>
+                    <li><a href="#case-scenarios">Case Scenarios</a></li>
+                    <li><a href="#tools-resources">Tools & Resources</a></li>
+					<li><a href="#professional-development">Professional Development</a></li>
+					<li><a href="#forum">Discussion Forum</a></li>
+                </ul>
+            </nav>
+
+            <!-- Sidebar Backdrop (mobile only) -->
+            <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+            <!-- Mobile Sidebar Toggle Button -->
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation menu">
+                ☰
+            </button>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                
+                <!-- INTRODUCTION SECTION -->
+                <section id="introduction" class="content-section">
+                    <div class="container">
+                        <h1>Introduction: Why Cultural Safety Matters</h1>
+                        
+                        <div class="content-card">
+                            <h2>What is Cultural Safety?</h2>
+                            <p>Cultural safety means that every student and family feels respected, understood, and empowered—no matter their language, culture, or migration story.</p>
+                            <p>For social workers in schools, this means recognising power imbalances, reflecting on personal biases, and creating partnerships with CALD (Culturally and Linguistically Diverse) families that promote equity and belonging.</p>
+                            <blockquote class="highlight-quote">
+                                <p>"Cultural safety is not defined by the practitioner, but by the experience of those receiving the service."</p>
+                                <cite>– AASW Code of Ethics (2020)</cite>
+                            </blockquote>
+                        </div>
+
+                        <div class="content-card">
+                            <h4>CALD Landscape in Australia</h4>
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <strong>31.5%</strong>
+                                    <p>of Australians were born overseas (June 2024)</p>
+                                </div>
+                                <div class="stat-card">
+                                    <strong>200+</strong>
+                                    <p>languages spoken in schools</p>
+                                </div>
+                                <div class="stat-card">
+                                    <strong>20,000</strong>
+                                    <p>refugee arrivals (2023–24) — highest in a decade</p>
+                                </div>
+                                <div class="stat-card">
+                                    <strong>Largest Communities</strong>
+                                    <p>India, China, Philippines, Nepal, Syria, Afghanistan</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-card">
+                            <h2>Western Australia Context</h2>
+                            <div class="wa-context-box">
+                                <p><strong>Western Australia is one of the most culturally diverse states in Australia.</strong> School social workers in WA play a critical role in supporting CALD students and families, particularly in Catholic and independent schools where most school social work positions exist.</p>
+                                <div class="stats-grid" style="margin-top: 1.5rem;">
+                                    <div class="stat-card">
+                                        <strong>32%</strong>
+                                        <p>of WA residents born overseas</p>
+                                    </div>
+                                    <div class="stat-card">
+                                        <strong>200+</strong>
+                                        <p>cultural & language groups</p>
+                                    </div>
+                                    <div class="stat-card">
+                                        <strong>18%</strong>
+                                        <p>speak language other than English at home</p>
+                                    </div>
+                                </div>
+                                <p style="margin-top: 1rem;"><strong>Key CALD communities in WA:</strong> Chinese, Indian, Vietnamese, Filipino, Malaysian, South African, Iraqi, Afghani, Sudanese, Somali, Ethiopian, and many more.</p>
+                                <p><strong>CALD population concentrations in Perth metro:</strong></p>
+                                <ul>
+                                    <li>Mirrabooka, Balga, northern suburbs (large African, Middle Eastern, Asian communities)</li>
+                                    <li>Armadale, southern suburbs (refugee communities from Burma, Bhutan, Africa)</li>
+                                    <li>Victoria Park, Cannington, Canning Vale (Asian and African communities)</li>
+                                    <li>Stirling area (diverse multicultural communities)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="content-card">
+                            <h2>Core Concept: Cultural Safety Framework</h2>
+                            <table class="framework-table">
+                                <thead>
+                                    <tr>
+                                        <th>Term</th>
+                                        <th>Definition</th>
+                                        <th>Example in Practice</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Cultural Awareness</strong></td>
+                                        <td>Recognising difference</td>
+                                        <td>Attending cultural events, acknowledging diversity</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cultural Competence</strong></td>
+                                        <td>Building cross-cultural knowledge and skills</td>
+                                        <td>Using interpreters correctly, ongoing CPD</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cultural Safety</strong></td>
+                                        <td>Ensuring clients define their own sense of safety</td>
+                                        <td>Seeking feedback from CALD families, revising school practices</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h5>Practical Actions</h5>
+                            <ul>
+                                <li>Engage in supervision that explores bias, privilege, and power</li>
+                                <li>Involve CALD families in co-designing programs and policies</li>
+                                <li>Reflect on how school structures may disadvantage students</li>
+                                <li>Frame behaviours within cultural and settlement contexts rather than deficits</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-card">
+                            <h2>Understanding Diverse CALD Student Populations</h2>
+                            <div class="content-card-grid">
+								<div class="accordion" style="margin: 0; width: 100%;">
+									<details>
+										<summary>🏠 Permanent Residents</summary>
+										<div class="accordion-content">
+											<p><strong>Characteristics:</strong> May have established education in first language, family stability, employment, and time to adapt gradually.</p>
+											<p><strong>Still face:</strong> Language barriers, cultural adjustment, identity negotiation, potential discrimination</p>
+										</div>
+									</details>
+									<details>
+										<summary>🌍 Refugees and Humanitarian Entrants</summary>
+										<div class="accordion-content">
+											<p><strong>Pre-migration trauma:</strong> War, violence, persecution, forced displacement, refugee camps</p>
+											<p><strong>Post-migration challenges:</strong> Settlement stress, financial hardship, family separation, discrimination</p>
+											<p><strong>Educational impact:</strong> Disrupted or no previous schooling, limited first language literacy, complex health needs including trauma</p>
+										</div>
+									</details>
+									<details>
+										<summary>🎓 Second/Third Generation Australians</summary>
+										<div class="accordion-content">
+											<p><strong>Experience:</strong> Identity negotiation between cultures, pressure from family cultural expectations, potential disconnection from heritage</p>
+											<p><strong>Still face:</strong> Racism despite being Australian-born, varying English proficiency, cultural expectations</p>
+										</div>
+									</details>
+								</div>
+                            </div>
+                        </div>
+
+                        <div class="practice-domain">
+                            <h2>Cultural Considerations by Regional Background</h2>
+                            <p class="lead">While individuals within cultures vary greatly, understanding common cultural contexts can inform (never dictate) your practice:</p>
+                            
+							<div class="accordion" style="margin-top: 1rem;">
+								<details>
+									<summary>African Communities (Sudanese, South Sudanese, Somali, Ethiopian, Eritrean, Congolese)</summary>
+									<div class="accordion-content">
+										<ul>
+											<li>Often experienced significant pre-migration trauma and disrupted education</li>
+											<li>Strong community and religious networks (church, mosque) as sources of support</li>
+											<li>Collectivist cultures valuing community over individual autonomy</li>
+											<li>May have different gender roles and family structures than Western norms</li>
+											<li>May experience visible racism due to skin color</li>
+											<li>Mistrust of authorities common due to experiences in home country</li>
+											<li>Oral traditions—written communication may not be most effective</li>
+										</ul>
+										<p><strong>Practice implications:</strong> Allow time for relationship building, use interpreters, involve community leaders when appropriate, understand trauma impacts, address racism promptly</p>
+									</div>
+								</details>
+								<details>
+									<summary>Middle Eastern Communities (Iraqi, Syrian, Lebanese, Afghani, Iranian)</summary>
+									<div class="accordion-content">
+										<ul>
+											<li>Diverse—some well-educated professionals, others refugees with significant trauma</li>
+											<li>Islam often central to identity (prayer times, halal food, modesty, Ramadan fasting)</li>
+											<li>Strong family honor and shame cultures—public criticism avoided</li>
+											<li>Gender role expectations may differ from Western norms</li>
+											<li>Mistrust of authorities, especially if from countries with oppressive regimes</li>
+											<li>May be experiencing Islamophobia and discrimination</li>
+											<li>Extended family involvement in decision-making</li>
+										</ul>
+										<p><strong>Practice implications:</strong> Respect religious practices, understand collectivist decision-making, address Islamophobia, build trust through consistency, use same-gender workers when culturally appropriate</p>
+									</div>
+								</details>
+								<details>
+									<summary>Asian Communities (Chinese, Vietnamese, Filipino, Indian, Malaysian, Burmese)</summary>
+									<div class="accordion-content">
+										<ul>
+											<li>Extremely diverse—cannot generalize across "Asian" cultures</li>
+											<li>Education highly valued in most Asian cultures</li>
+											<li>Respect for authority and elders emphasized</li>
+											<li>"Saving face" important—public criticism avoided, indirect communication common</li>
+											<li>Different parenting approaches (may appear strict by Western standards)</li>
+											<li>May prioritize academic achievement over social-emotional wellbeing</li>
+											<li>"Model minority myth" harmful—overlooks trauma, discrimination, mental health needs</li>
+										</ul>
+										<p><strong>Practice implications:</strong> Recognize diversity within Asian communities, address model minority stereotype, use indirect communication when appropriate, involve family in decisions, validate academic pressures</p>
+									</div>
+								</details>
+							</div>
+
+                            <div class="resource-highlight">
+                                <p><strong>⚠️ Important:</strong> These are general cultural contexts, not stereotypes. Always ask families about <em>their</em> individual preferences, values, and needs. Cultural humility means recognizing your limits and continuously learning from families themselves.</p>
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <strong>Remember:</strong> You cannot be an "expert" on any culture—individuals within cultures vary greatly. Practice cultural humility: continuous learning, genuine curiosity, and acknowledgment when you make mistakes.
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ROLES OF SOCIAL WORKERS SECTION -->
+                <section id="role" class="content-section alt-bg">
+                    <div class="container">
+                        <h1>Roles of School Social Workers: Agents of Cultural Safety and Systemic Change</h1>
+                        
+                        <div class="tip-box">
+                            <strong>Critical Context: The WA Difference:</strong> School social workers in WA predominantly work in Catholic and independent schools—not public schools (where school psychologists provide student services). This makes your role as the primary non-teaching welfare expert, particularly for **CALD and refugee students**, even more critical for driving cultural safety and equity.
+                        </div>
+                
+                        <div class="content-card">
+                            <h2>Your Unique Role: Bridging Systems, Upholding Equity</h2>
+                            <p>Your primary mission is to remove systemic, social, and emotional barriers to learning. For Culturally and Linguistically Diverse (CALD) students, this requires a specialized focus on mitigating the impact of racism, settlement stress, and cultural dislocation. You are positioned at the interface of the student, family, school, and external community systems.</p>
+                            
+                            <h4>Three Core Functions in Cultural Safety Practice:</h4>
+                            <ul>
+                                <li>Systemic Advocacy and Change: Working at the macro level to influence school policies and procedures, ensuring they promote equity and belonging and do not unintentionally disadvantage CALD families.</li>
+                                <li>Specialist Assessment and Intervention: Providing culturally responsive psychosocial assessment and trauma-informed care, particularly for students from refugee and humanitarian backgrounds.</li>
+                                <li>Consultation and Capacity Building: Building the capability of the entire school workforce (teachers, leaders, administration) to respond effectively and respectfully to diversity.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="content-card-full">
+                            <h2>Practice Domain Matrix: From Direct Support to Policy Influence</h2>
+                            <table class="framework-table">
+                                <thead>
+                                    <tr>
+                                        <th>Domain (Level)</th>
+                                        <th>Key Activities & Deliverables</th>
+                                        <th>Advanced CALD Practice Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Micro (Direct Care)</strong></td>
+                                        <td>Individual counselling, psychosocial assessment, crisis intervention, and referral to specialist services.</td>
+                                        <td>Using the HEEADSSS or Culturagram tool in a non-linear way with an interpreter to assess a newly arrived student's settlement stress, ensuring the family's definition of "success" and "wellbeing" guides the goal setting.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mezzo (Group/Liaison)</strong></td>
+                                        <td>Group work (e.g., resilience, social skills), home/school liaison, staff professional development, policy contribution, and service coordination.</td>
+                                        <td>Facilitating a Transition Group for students newly arrived from refugee camps, focusing on predictable routines, psychoeducation about trauma, and cultural identity preservation to foster peer support and reduce hypervigilance.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Macro (Systems Advocacy)</strong></td>
+                                        <td>Auditing school procedures, advocacy for inclusive culture, system change, policy design, and strategic initiative leadership.</td>
+                                        <td>Leading an internal audit of the school’s communication plan (including newsletters and permission slips) to ensure all essential communication is translated and delivered via culturally preferred channels (e.g., phone call vs. written note).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                
+                        
+                        
+                        <div class="content-card-full" style="border-left: 4px solid var(--color-eucalyptus);">
+                            <h2>Role in Action: Video Insights for Practice</h2>
+                            <p>These curated video resources highlight key aspects of the social worker's role, from clinical intervention to macro-level systems change.</p>
+                            
+                            <div class="video-hub-grid">
+                                
+                                <div class="video-hub-item">
+                                    <div class="video-embed">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/TpWbd63_bPs" title="Supporting Refugees and Immigrant Students Through Trauma Systems Therapy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <h5>Specialist Role: Trauma Systems Therapy (TST-R)</h5>
+                                    <p>Focuses on a core intervention framework (TST-R) to address the stressors experienced by immigrant and refugee youth, key to the specialist social work role.</p>
+                                </div>
+                
+                                <div class="video-hub-item">
+                                    <div class="video-embed">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/XJBE0BCbsS4" title="Promoting diversity and cultural sensitivity in social work" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <h5>Mezzo Role: Cultural Sensitivity and Staff PD</h5>
+                                    <p>Highlights inclusive practices and introduces a reflective model (DAP) for staff to develop cultural sensitivity in their daily practice (Mezzo-level capacity building).</p>
+                                </div>
+                
+                                <div class="video-hub-item">
+                                    <div class="video-embed">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/WPfvZ1hymRY" title="Navigating access to services through a culturally and linguistically diverse youth perspective" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <h5>Macro Role: Advocacy and Systemic Barriers</h5>
+                                    <p>Features CALD young people discussing their experiences with racial profiling and service access, providing a crucial client perspective for macro-level advocacy.</p>
+                                </div>
+                                
+                                <div class="video-hub-item">
+                                    <div class="video-embed">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/FdkoeeqspeE" title="Understanding Cultural Safety in Child Safe Organisations" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <h5>Policy Role: Cultural Safety in Child Safe Policies</h5>
+                                    <p>Explains the National Principles for Child Safe Organisations through a cultural lens. Essential for integrating cultural safety into school policy and governance.</p>
+                                </div>
+                
+                            </div>
+                        </div>
+                
+                        
+                    </div>
+                </section>
+
+                <!-- PRACTICE DOMAINS SECTION -->
+                <section id="practice-domains" class="content-section">
+                    <div class="container">
+                        <h3>Key Practice Domains and Challenges</h3>
+						<p class="intro-text">These domains capture the most common areas where school social workers can remove barriers and build cultural safety for CALD students and families. Expand each to see key challenges, strategies, tools and local contacts you can use immediately.</p>
+                        
+						<details class="practice-domain">
+							<summary><h4>1️⃣ Language & Communication</h4></summary>
+							<div class="accordion-content">
+								<p>Barriers arise when families receive untranslated materials or feel uncomfortable challenging authority.</p>
+								<ul>
+									<li>Always offer interpreter support via <strong>TIS National (131 450)</strong></li>
+									<li>Use translated visuals and multilingual signage</li>
+									<li>Avoid idioms and jargon; check understanding through teach-back</li>
+									<li>Keep bilingual materials accessible and visible</li>
+									<li>Never use children as interpreters for important discussions</li>
+									<li>Brief interpreter before meeting about purpose and sensitive topics</li>
+									<li>Speak directly to family, not interpreter</li>
+									<li>Allow extra time—interpreted meetings take longer</li>
+								</ul>
+								<div class="resources">
+									<strong>Resources:</strong>
+									<a href="https://culturalatlas.sbs.com.au" target="_blank">SBS Cultural Atlas</a>
+									<a href="https://education.nsw.gov.au/teaching-and-learning/multicultural-education/interpreting-and-translations" target="_blank">NSW Interpreting Guidelines</a>
+								</div>
+								<div class="contact-card" style="margin-top: 1rem;">
+									<h5>WA Department of Education Interpreter Services</h5>
+									<div class="contact-details"><strong>Contact:</strong> EAL/D Curriculum Officer Resources</div>
+									<div class="contact-details"><strong>Email:</strong> EALDRC@education.wa.edu.au</div>
+									<div class="contact-details"><strong>Phone:</strong> 9402 6154</div>
+									<div class="contact-details"><strong>Notice:</strong> At least 48 hours (more for rare languages)</div>
+									<div class="contact-details"><strong>TIS National:</strong> 131 450 (24/7 immediate interpreting)</div>
+								</div>
+							</div>
+						</details>
+
+						<details class="practice-domain">
+							<summary><h4>2️⃣ Refugee Trauma and Adjustment</h4></summary>
+							<div class="accordion-content">
+								<p>Trauma can manifest as avoidance, concentration issues, or sudden outbursts—often misread as behaviour problems.</p>
+								<h5>Understanding the Refugee Experience</h5>
+								<div class="stats-grid">
+									<div class="stat-card">
+										<strong>Pre-Migration</strong>
+										<p>War, violence, persecution, forced displacement, witnessing atrocities, refugee camps</p>
+									</div>
+									<div class="stat-card">
+										<strong>Migration Journey</strong>
+										<p>Dangerous journeys, exploitation, years in limbo, ongoing fear</p>
+									</div>
+									<div class="stat-card">
+										<strong>Post-Migration</strong>
+										<p>Language barriers, financial stress, discrimination, family separation, cultural dislocation</p>
+									</div>
+								</div>
+								<h5>Trauma Impacts on Learning and Behavior</h5>
+								<ul>
+									<li>Difficulty concentrating - trauma affects cognitive functioning and memory</li>
+									<li>Hypervigilance - difficulty feeling safe, always scanning for danger</li>
+									<li>Emotional regulation challenges - explosive reactions or shutdown</li>
+									<li>Sleep difficulties - nightmares, insomnia affecting attendance and performance</li>
+									<li>Physical symptoms - headaches, stomach aches from stress</li>
+									<li>Difficulty trusting adults - especially authority figures</li>
+									<li>Withdrawal or aggression - trauma responses, not "bad behavior"</li>
+								</ul>
+								<div class="tip-box">
+									<strong>Reframe behavior:</strong> What appears as "non-compliance" or "disrespect" is often a trauma response. Ask "What happened to this student?" rather than "What's wrong with this student?"
+								</div>
+								<h5>Creating Trauma-Sensitive Environments</h5>
+								<ul>
+									<li>Predictable routines - consistency provides safety</li>
+									<li>Clear, simple instructions - use visual supports</li>
+									<li>Quiet spaces for regulation - "calm down" areas without punishment</li>
+									<li>Connection before correction - build relationship first</li>
+									<li>Avoid punitive discipline - use restorative approaches</li>
+									<li>Recognize that healing takes time - don't expect quick "adjustment"</li>
+									<li>Support the whole family - connect to settlement services and trauma counseling</li>
+								</ul>
+								<div class="resources">
+									<strong>Resources:</strong>
+									<a href="https://www.startts.org.au/media/Working-with-people-from-refugee-backgrounds-A-guide-for-social-workers-2nd-Edition_2022.pdf" target="_blank">STARTTS Guide for Social Workers (2022)</a>
+									<a href="https://www.phoenixaustralia.org" target="_blank">Phoenix Australia – Trauma Training</a>
+								</div>
+								<div class="contact-card" style="margin-top: 1rem;">
+									<h5>ASeTTS (Association for Services to Torture and Trauma Survivors)</h5>
+									<div class="contact-details"><strong>Location:</strong> 286 Beaufort Street, Perth WA 6000</div>
+									<div class="contact-details"><strong>Phone:</strong> 08 9227 2700</div>
+									<div class="contact-details"><strong>Email:</strong> referrals@asetts.org.au</div>
+									<div class="contact-details"><strong>Website:</strong> asetts.org.au</div>
+									<p><strong>Services:</strong> Free counseling for individuals, couples, families (all ages); youth support 12-21; therapeutic groups for school-aged children; training for professionals; outreach to rural/regional WA</p>
+								</div>
+							</div>
+						</details>
+
+						<details class="practice-domain">
+							<summary><h4>3️⃣ Family Engagement</h4></summary>
+							<div class="accordion-content">
+								<p>Families may be unfamiliar with Australian schooling norms or hesitant to engage due to shame, language, or prior experiences with authority.</p>
+								<h5>Understanding Family Engagement Barriers</h5>
+								<div class="content-card-grid">
+									<div class="content-card" style="margin: 0;">
+										<h5>Practical Barriers</h5>
+										<ul>
+											<li>Language barriers making communication impossible</li>
+											<li>Work schedules (multiple jobs, shift work, long hours)</li>
+											<li>Lack of transport</li>
+											<li>Childcare responsibilities</li>
+											<li>Limited literacy in any language</li>
+											<li>Unfamiliarity with Australian school system</li>
+										</ul>
+									</div>
+									<div class="content-card" style="margin: 0;">
+										<h5>Cultural Barriers</h5>
+										<ul>
+											<li>Different cultural norms about school involvement</li>
+											<li>Concern about language skills causing embarrassment</li>
+											<li>Fear of discrimination or being judged</li>
+											<li>Previous negative experiences with authorities</li>
+											<li>Different concepts of education roles</li>
+											<li>Uncertainty about expectations</li>
+										</ul>
+									</div>
+								</div>
+								<h5>Strategies for Effective Engagement</h5>
+								<ul>
+									<li>Use interpreter for initial contact</li>
+									<li>Provide translated welcome materials</li>
+									<li>Offer flexibility in meeting times/locations</li>
+									<li>Share positive observations first</li>
+									<li>Ask about family hopes and concerns</li>
+									<li>Explain processes clearly without jargon</li>
+									<li>Create welcoming environment with multilingual signage</li>
+									<li>Invest time to know families' experiences</li>
+									<li>Learn key words/phrases in home languages</li>
+									<li>Attend community events when invited</li>
+									<li>Acknowledge family strengths and resilience</li>
+								</ul>
+								<div class="tip-box">
+									<strong>Avoid deficit thinking:</strong> Different engagement patterns don't indicate lack of care. Frame support as building on family strengths, not fixing deficits.
+								</div>
+								<div class="resources">
+									<strong>Resources:</strong>
+									<a href="https://www.edresearch.edu.au/guides-resources/practice-guides/engaging-families-cald-backgrounds-schools" target="_blank">AERO: Engaging Families from CALD Backgrounds</a>
+									<a href="https://www.cmy.net.au/wp-content/uploads/2019/11/Opening-the-School-Gate_Victorian-Schools_2016-1.pdf" target="_blank">CMY: Opening the School Gate</a>
+									<a href="http://www.foundationhouse.org.au/wp-content/uploads/2019/12/SCHOOLS_FAMILIES_PARTNERSHIP_DESKTOP-GUIDE_WEB_cr.pdf" target="_blank">Foundation House: Schools and Families in Partnership</a>
+								</div>
+							</div>
+						</details>
+
+						<details class="practice-domain">
+							<summary><h4>Building Staff Capacity & Challenging Bias</h4></summary>
+							<div class="accordion-content">
+								<ul>
+									<li>Facilitate PD using AASW, CMY, or Embrace Mental Health materials</li>
+									<li>Include lived-experience voices and case studies in training</li>
+									<li>Integrate anti-racism policies in school wellbeing plans</li>
+									<li>Address racism promptly and visibly</li>
+									<li>Train all staff in cultural responsiveness</li>
+									<li>Celebrate cultural diversity authentically</li>
+								</ul>
+								<div class="resources">
+									<strong>Resources:</strong>
+									<a href="https://www.cmy.net.au/programs/schools-standing-up-to-racism/" target="_blank">CMY: Schools Standing Up to Racism</a>
+									<a href="https://www.aasw.asn.au" target="_blank">AASW Practice Standards (2023)</a>
+								</div>
+							</div>
+						</details>
+
+                        
+                    </div>
+                </section>
+
+                <!-- CASE SCENARIOS SECTION -->
+                <section id="case-scenarios" class="content-section alt-bg">
+                    <div class="container">
+                        <h3>Case Scenarios: Practice in Action</h3>
+                        <p class="intro-text">Explore realistic scenarios that social workers encounter when working with CALD students and families. These case studies provide opportunities for reflection and skill development.</p>
+                        
+                        <div class="content-card">
+                            <h4>Case Study 1 – Imani’s Hidden Distress</h4>
+                            <p><strong>Setting:</strong> Western Australia | <strong>Focus:</strong> Cultural responsiveness in child and family wellbeing</p>
+                            
+                            <details>
+                              <summary>Explore this case study</summary>
+                              <div class="scenario-content">
+                                <h5>Case Narrative</h5>
+                                <p>When eight-year-old Imani began complaining of stomach aches, her mother Shankari took her to their local GP in Perth’s northern suburbs. The GP found no medical cause and gently suggested stress might be a factor, recommending counselling through the school’s wellbeing team.</p>
+                                <p>Shankari hesitated. In her Sri Lankan Tamil community, “counselling” often carried stigma; she worried others would think her daughter was “mentally ill” or that she had failed as a parent. She also worked part-time and shared a single car with her husband. Travelling to a clinic or navigating telehealth felt overwhelming.</p>
+                                <p>At school, Imani’s teacher noticed she had become withdrawn—staring blankly during reading time, doodling more than writing. The school social worker, Ms Ellis, was asked to check in.</p>
+                                <p>During their first meeting, Imani barely spoke. Ms Ellis invited her to draw her “happy and worried” places. Imani drew her classroom—small and grey—and a large blue shape labelled “Nanna’s garden.” When Ms Ellis asked about it, Imani whispered, “It’s where I feel safe.”</p>
+                                <p>Later, Ms Ellis phoned Shankari, offering to meet at the school instead of an external clinic. She arranged an interpreter—even though Shankari spoke some English—wanting to ensure comfort and accuracy. At the meeting, Shankari explained the family’s recent stress: moving houses, Imani missing her grandmother, and tension about keeping up with school expectations.</p>
+                                <p>Ms Ellis validated Shankari’s dedication as a mother and gently reframed counselling as “a way of helping Imani’s tummy feel better by understanding what’s happening inside.” Shankari agreed to short, school-based play therapy sessions and received a translated parent information sheet on childhood anxiety.</p>
+                                <p>Over the next month, Imani began using “worry drawings” to communicate. Ms Ellis involved Shankari in short parent check-ins and introduced her to another Tamil-speaking parent volunteer who attended the school’s “Wellbeing Morning Tea” group. Slowly, Shankari grew more comfortable discussing emotional health. Imani’s stomach aches subsided, and she re-joined class group activities with new confidence.</p>
+
+                          
+                                <h5>Professional Analysis</h5>
+                                <p><strong>Presenting Problem & Context Factors:</strong></p>
+                                <ul>
+                                  <li>Somatic symptoms of anxiety in a culturally diverse child.</li>
+                                  <li>Cultural stigma surrounding mental health and help-seeking.</li>
+                                  <li>Language and access barriers (limited English proficiency, single-car household).</li>
+                                  <li>Intergenerational separation stress due to migration and loss of family supports.</li>
+                                </ul>
+                          
+                                <p><strong>Social Work Assessment (AASW 2020 – Ecological & Culturally Responsive):</strong></p>
+                                <ul>
+                                  <li>Imani’s emotional expression style & development.</li>
+                                  <li>Parental mental health beliefs and access issues.</li>
+                                  <li>School interpreter and wellbeing structures.</li>
+                                  <li>Local Tamil community supports.</li>
+                                </ul>
+                          
+                                <p><strong>Intervention & Social Worker Roles:</strong></p>
+                                <table style="width: 100%; border-collapse: collapse;" border="1">
+                                    <thead>
+                                      <tr><th>Stage</th><th>Social Worker Role & Actions</th></tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr><td>Engagement</td><td>Built rapport with Imani through drawing; used non-verbal expression techniques suitable for children from CALD backgrounds.</td></tr>
+                                      <tr><td>Cultural responsiveness</td><td>Arranged accredited interpreter despite partial English; ensured informed consent and confidentiality were clear.</td></tr>
+                                      <tr><td>Psychoeducation</td><td>Provided translated materials explaining child anxiety and school wellbeing programs; normalised emotional support.</td></tr>
+                                      <tr><td>Advocacy & Systems liaison</td><td>Coordinated communication between teacher, GP, and school psychologist; advocated flexible appointment times.</td></tr>
+                                      <tr><td>Family support</td><td>Invited Shankari to culturally inclusive parent wellbeing group; linked her to a bilingual volunteer for peer connection.</td></tr>
+                                      <tr><td>Evaluation</td><td>Monitored Imani’s symptoms and engagement weekly; planned gradual transition to classroom coping strategies.</td></tr>
+                                    </tbody>
+                                </table>
+                          
+                                <p><strong>Outcomes:</strong></p>
+                                <ul>
+                                  <li>Reduced somatic symptoms.</li>
+                                  <li>Increased parent-school trust and empowerment.</li>
+                                  <li>Improved emotional communication.</li>
+                                  <li>School added interpreters for all wellbeing meetings.</li>
+                                </ul>
+                          
+                                <h5>Reflection Questions</h5>
+                                <ul>
+                                  <li>How did the social worker avoid assumptions about Shankari’s beliefs?</li>
+                                  <li>What promoted power sharing and mutual respect?</li>
+                                  <li>How can social workers maintain boundaries with peer-based supports?</li>
+                                  <li>What alternatives exist when counselling is declined?</li>
+                                </ul>
+                          
+                                <h5>Key References</h5>
+                                <ul>
+                                  <li><a href="https://www.aasw.asn.au/document/item/1201" target="_blank">AASW Code of Ethics (2020)</a></li>
+                                  <li><a href="https://emergingminds.com.au/resources/culturally-responsive-practice-cald-children/" target="_blank">Emerging Minds – Responsive Practice Worksheet</a></li>
+                                  <li><a href="https://foundationhouse.org.au/schools-in-for-refugees/" target="_blank">Foundation House – Schools In for Refugees</a></li>
+                                  <li><a href="https://www.education.wa.edu.au/safe-inclusive-schools" target="_blank">Department of Education WA – Inclusion Framework</a></li>
+                                  <li><a href="https://www.cmy.net.au/resource/opening-the-school-gate/" target="_blank">CMY – Opening the School Gate</a></li>
+                                </ul>
+                              </div>
+                            </details>
+                        </div>
+
+                        <div class="content-card">
+                            <h4>Case Study 2 – The Family Learning Club: Building Bridges Through Learning</h4>
+                            <p><strong>Setting:</strong> Victoria | <strong>Focus:</strong> School–Community Partnership with Refugee Families</p>
+                          
+                            <details>
+                              <summary>Explore this case study</summary>
+                              <div class="scenario-content">
+                                <h5>Case Narrative</h5>
+                                <p>When Hawa, a Somali mother of three, first stepped into <em>Preston North East Primary School</em> in Melbourne’s northern suburbs, she gripped her daughter’s hand tightly. She smiled politely at the receptionist but hesitated when handed an English-only notice about parent–teacher interviews.</p>
+                                <p>Her eight-year-old daughter Asha quietly translated a few words, but Hawa’s anxiety grew. “My English not good… maybe next time,” she murmured, retreating quickly.</p>
+                                <p>Teachers at the school had noticed similar patterns among several families who had recently arrived from Somalia, Afghanistan, and Myanmar. Students were eager but struggled with homework, and their parents rarely attended school events. Teachers wanted to help but didn’t know how to reach families who felt uncertain or unwelcome in formal school settings.</p>
+                                <p>That changed when the school joined the <strong>Refugee Education Support Program (RESP)</strong> in partnership with the <strong>Centre for Multicultural Youth (CMY)</strong> and the <strong>Spectrum Migrant Resource Centre</strong>. A <strong>Family Learning Club (FLC)</strong> was proposed — an after-school program where children and parents could learn together in a relaxed, bilingual environment.</p>
+                                <p>The school social worker, Ms Tran, coordinated the pilot. She liaised with teachers, community organisations, and volunteer tutors. The sessions were scheduled on Thursday afternoons, with interpreters and bilingual volunteers present.</p>
+                                <p>On the first day, only three families came. Hawa sat quietly at the back, watching Asha read English flashcards with a volunteer. After a few sessions, Ms Tran invited Hawa to join a simple literacy activity — tracing English letters alongside her daughter. The room filled with laughter when Hawa shyly attempted the word “elephant” and Asha clapped for her mother.</p>
+                                <p>As weeks passed, attendance doubled. Parents began asking questions about school expectations and homework routines. Ms Tran facilitated short discussions — translated into Somali, Dari, and Arabic — about helping children learn at home, healthy routines, and settlement supports.</p>
+                                <p>By the end of the term, Hawa was helping to welcome new families to the club. “Before, I was afraid to come to school,” she said during an evaluation session. “Now I feel like this is our place too.”</p>
+                          
+                                <h5>Professional Analysis</h5>
+                          
+                                <p><strong>Presenting Problem &amp; Context Factors:</strong></p>
+                                <ul>
+                                  <li>Low parental engagement among refugee families due to language barriers, limited literacy, and unfamiliarity with the Australian school system.</li>
+                                  <li>Teachers lacked cross-cultural communication strategies, while families felt intimidated by formal education structures.</li>
+                                  <li>Limited trust between newly arrived parents and the school, compounded by disrupted or traumatic prior schooling experiences.</li>
+                                </ul>
+                          
+                                <p><strong>Social Work Assessment:</strong> <em>Ecological Systems Model (Bronfenbrenner) and strengths-based, community development practice</em></p>
+                                <ul>
+                                  <li>Family settlement stress and social isolation.</li>
+                                  <li>Parents’ prior educational experiences and confidence.</li>
+                                  <li>Institutional accessibility (interpreters, signage, timing, transport).</li>
+                                  <li>Families’ protective strengths (commitment to children’s education, strong community networks, motivation to learn).</li>
+                                </ul>
+                          
+                                <p><strong>Intervention &amp; Social Worker Roles:</strong></p>
+                                <table style="width: 100%; border-collapse: collapse;" border="1">
+                                  <thead>
+                                    <tr>
+                                      <th>Stage</th>
+                                      <th>Social Worker Actions &amp; Roles</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>Community engagement</td>
+                                      <td>Consulted CMY and Spectrum MRC to co-design a culturally responsive after-school Family Learning Club; sought funding for interpreters, snacks, and childcare to reduce participation barriers.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Program coordination</td>
+                                      <td>Facilitated weekly FLC sessions; organised volunteer tutors; ensured interpreters and bilingual aides were present; liaised with teachers to align activities with classroom learning.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Capacity building</td>
+                                      <td>Delivered brief parent education sessions (translated into Somali, Dari, and Arabic) on homework routines, understanding school reports, and supporting learning at home.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Advocacy</td>
+                                      <td>Advocated within the school for translated notices, use of interpreters for phone calls, and more welcoming entry spaces for families; encouraged flexible scheduling of interviews.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Evaluation</td>
+                                      <td>Used participatory evaluation (story sharing, feedback circles, simple rating tools) to capture parent experiences; incorporated feedback into ongoing program design and school planning.</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                          
+                                <p><strong>Outcomes:</strong></p>
+                                <ul>
+                                  <li>Families reported increased confidence communicating with teachers and attending school events.</li>
+                                  <li>Students showed improved homework completion, engagement, and English language progress.</li>
+                                  <li>School staff reported stronger empathy and awareness of refugee settlement challenges.</li>
+                                  <li>The school embedded the Family Learning Club as a sustained school–community partnership model, rather than a one-off project.</li>
+                                </ul>
+                          
+                                <h5>Reflection Questions</h5>
+                                <ul>
+                                  <li>How does shared learning help build trust and reduce power imbalance between schools and CALD families?</li>
+                                  <li>What ethical and logistical issues might arise when using volunteers and bilingual aides in school-based programs?</li>
+                                  <li>In what ways can social workers sustain parental engagement beyond the life of a funded program?</li>
+                                  <li>How could evaluation tools be adapted to capture outcomes that are meaningful to culturally diverse families?</li>
+                                </ul>
+                          
+                                <h5>Key Australian Practice References</h5>
+                                <ul>
+                                  <li>Centre for Multicultural Youth (2016). <em>Opening the School Gate: Engaging Migrant and Refugee Families.</em></li>
+                                  <li>Foundation House (2019). <em>Schools In for Refugees – A Whole-School Approach.</em></li>
+                                  <li>Victorian DET (2020). <em>Refugee Education Support Program (RESP).</em></li>
+                                  <li>AASW (2020). <em>Code of Ethics: Culturally Responsive and Inclusive Practice.</em></li>
+                                  <li>Spectrum MRC (2018). <em>Family Learning Club Evaluation Report.</em></li>
+                                </ul>
+                              </div>
+                            </details>
+                        </div>
+
+                        <div class="content-card">
+                            <h4>Case Study 3 – Digital Gatekeepers: Bridging the Online Divide</h4>
+                            <p><strong>Setting:</strong> Queensland | <strong>Focus:</strong> Digital Inclusion and Family Engagement in Education</p>
+                          
+                            <details>
+                              <summary>Explore this case study</summary>
+                              <div class="scenario-content">
+                                <h5>Case Narrative</h5>
+                                <p>In 2021, when Queensland schools shifted to online learning during COVID-19 lockdowns, Sunnyview State School in Brisbane’s south noticed that some students from newly arrived families were missing every second Zoom session.</p>
+                                <p>Ms Patel, the school’s community liaison officer, phoned families but often reached voicemail or struggled to communicate. One father apologised in halting English:<br>“We have only one phone… children share. I cannot use computer.”</p>
+                                <p>Among the affected families were the Nawins, originally from Myanmar, and the Husseins, who had arrived from Syria two years earlier. Their children had never used laptops independently. The school’s notices—emailed through Compass—were unreadable for parents with limited English and digital literacy.</p>
+                                <p>The school’s social worker, Mr Collins, recognised that the problem was more than technical; it was systemic exclusion. Families lacked internet access, language support, and confidence to engage. He proposed the “Digital Gatekeepers” Project, modelled on <a href="https://www.cmy.net.au/resource/opening-the-digital-school-gate/" target="_blank">Opening the Digital School Gate</a>.</p>
+                                <p>Partnering with a local library and the Multicultural Australia settlement agency, Mr Collins coordinated bilingual workshops held at the school hall. Laptops were set up on folding tables; interpreters in Arabic, Burmese, and Swahili rotated among groups. Parents practised logging into Compass, setting language preferences, and using translation plug-ins.</p>
+                                <p>To make learning relevant, Mr Collins invited teachers to join and demonstrate how to check homework or message staff online. Child-friendly digital safety sessions were added so parents and children could learn together.</p>
+                                <p>One highlight came when Mrs Hussein successfully downloaded her son’s report and proudly said, “Now I can see what the teacher says myself!” By the end of the six-week series, attendance exceeded 30 families. The school introduced a multilingual tech-help desk managed by student volunteers and supported by the social worker.</p>
+                          
+                                <h5>Professional Analysis</h5>
+                                <p><strong>Presenting Problem & Context Factors:</strong></p>
+                                <ul>
+                                  <li>COVID-19 highlighted digital inequities for migrant and refugee families.</li>
+                                  <li>Parents faced language barriers, limited access to devices/internet, and lack of digital confidence.</li>
+                                  <li>These barriers contributed to educational disengagement, communication breakdown, and isolation.</li>
+                                </ul>
+                          
+                                <p><strong>Social Work Assessment:</strong> (Social Inclusion and Empowerment Approach; Digital Equity Framework – AERO, 2021)</p>
+                                <ul>
+                                  <li>Families’ socio-economic conditions and digital resources.</li>
+                                  <li>Cultural norms around parental involvement in schooling.</li>
+                                  <li>Psychological impacts of exclusion (shame, dependency on children for translation).</li>
+                                  <li>Institutional readiness (staff capacity, interpreter availability).</li>
+                                </ul>
+                          
+                                <p><strong>Intervention & Social Worker Roles:</strong></p>
+                                <table style="width: 100%; border-collapse: collapse;" border="1">
+                                  <thead>
+                                    <tr><th>Stage</th><th>Social Worker Actions & Roles</th></tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr><td>Needs identification</td><td>Conducted survey via phone interpreters to map technology access and literacy levels.</td></tr>
+                                    <tr><td>Program design</td><td>Developed Digital Gatekeepers workshops with bilingual facilitators and partner agencies.</td></tr>
+                                    <tr><td>Empowerment & education</td><td>Trained parents on navigating school platforms and communicating directly with teachers.</td></tr>
+                                    <tr><td>Systems advocacy</td><td>Worked with the school to translate digital notices and secure funding for internet dongles through local council grants.</td></tr>
+                                    <tr><td>Sustainability</td><td>Established peer “Parent Tech Champions” and student volunteer support desk.</td></tr>
+                                    <tr><td>Evaluation</td><td>Collected qualitative feedback on confidence and engagement using bilingual interviews.</td></tr>
+                                  </tbody>
+                                </table>
+                          
+                                <p><strong>Outcomes:</strong></p>
+                                <ul>
+                                  <li>80% of participating families reported confidence accessing online learning portals.</li>
+                                  <li>Teachers noted improved homework submission and parent–teacher communication.</li>
+                                  <li>School adopted a permanent multilingual communication policy.</li>
+                                  <li>Families reported feeling “part of the school community, not outside of it.”</li>
+                                </ul>
+                          
+                                <h5>Reflection Questions</h5>
+                                <ul>
+                                  <li>How can digital literacy be reframed as a social inclusion issue rather than a technical one?</li>
+                                  <li>What ethical issues arise when children act as interpreters for digital communication?</li>
+                                  <li>How can schools institutionalise culturally responsive digital engagement beyond temporary projects?</li>
+                                  <li>What role can social workers play in influencing education policy around digital equity?</li>
+                                </ul>
+                          
+                                <h5>Key Australian Practice References</h5>
+                                <ul>
+                                  <li><a href="https://www.cmy.net.au/resource/opening-the-digital-school-gate/" target="_blank">AERO – Opening the Digital School Gate (2021)</a></li>
+                                  <li><a href="https://www.multiculturalaustralia.org.au/digital-inclusion/" target="_blank">Multicultural Australia – Digital Inclusion Workshops (2022)</a></li>
+                                  <li><a href="https://education.qld.gov.au/about-us/reporting-data-research/about-the-department/diversity-and-inclusion-framework" target="_blank">Department of Education QLD – Diversity & Inclusion Framework (2021)</a></li>
+                                  <li><a href="https://www.cmy.net.au/resource/opening-the-school-gate/" target="_blank">CMY – Opening the School Gate (2016)</a></li>
+                                  <li><a href="https://www.aasw.asn.au/document/item/1345" target="_blank">AASW Practice Standards: Social Work in Schools (2020)</a></li>
+                                </ul>
+                              </div>
+                            </details>
+                        </div>
+
+                        <div class="content-card">
+                            <h4>Case Study 4 – The Camp Dilemma: Negotiating Cultural Safety and Consent</h4>
+                            <p><strong>Setting:</strong> New South Wales | <strong>Focus:</strong> Cross-cultural communication, consent, and family trust building</p>
+                            
+                            <details>
+                              <summary>Explore this case study</summary>
+                              <div class="scenario-content">
+                                <h5>Case Narrative</h5>
+                                <p>When Year 6 students at Riverside Primary School in western Sydney were invited to attend a three-day outdoor camp, most children buzzed with excitement. But for Amira, an 11-year-old Afghan-Australian girl, the letter home caused tension.</p>
+                                <p>Her mother, Farida, frowned at the permission slip. “Camping with boys? Three nights? We cannot,” she told Amira’s teacher by phone the next morning. “She is too young to sleep away. We don’t know who watches the girls.”</p>
+                                <p>The teacher felt frustrated—Amira was a bright, curious student who rarely participated in extracurricular activities. The school social worker, Ms Delaney, was asked to follow up.</p>
+                                <p>Ms Delaney phoned Farida with the help of a female Dari interpreter. She began not by persuading but by asking:<br>
+                                <em>“Can you tell me what feels worrying about the camp?”</em></p>
+                                <p>Farida explained that her husband worried about safety, dietary restrictions, and cultural propriety. In Afghanistan, girls rarely travelled overnight without family. She feared Amira would be exposed to “improper” influences and food that wasn’t halal.</p>
+                                <p>Ms Delaney acknowledged these fears as valid. She suggested meeting in person with both parents and invited the interpreter again. During the meeting, she showed photos of the camp facilities and staff supervision lists. She also outlined separate sleeping arrangements and proposed that halal meals could be prepared in advance.</p>
+                                <p>Still uncertain, Farida asked if a female relative could attend as a volunteer. The school agreed, and Ms Delaney coordinated clearance for Aunt Laila to join as a parent helper.</p>
+                                <p>The day before camp, Amira proudly packed her bag. On return, she excitedly shared photos of canoeing and team games. Farida later told Ms Delaney, “I was afraid, but you respected our way and gave us choice. Now I trust the school more.”</p>
+                          
+                                <h5>Professional Analysis</h5>
+                                <p><strong>Presenting Problem &amp; Context Factors:</strong></p>
+                                <ul>
+                                  <li>Parents refused consent for school camp due to cultural, religious, and safety concerns.</li>
+                                  <li>Underlying factors: differing norms about gender, independence, and community expectations; previous traumatic migration experiences.</li>
+                                  <li>Institutional pressure for inclusion vs. family fear of cultural violation.</li>
+                                </ul>
+                          
+                                <p><strong>Social Work Assessment:</strong> (Cultural humility and trauma-informed practice)</p>
+                                <ul>
+                                  <li>Family’s values around gender roles and safety.</li>
+                                  <li>Power dynamics between school authority and refugee parents.</li>
+                                  <li>Structural barriers (lack of translated information, interpreter access).</li>
+                                </ul>
+                          
+                                <p><strong>Intervention &amp; Social Worker Roles:</strong></p>
+                                <table style="width: 100%; border-collapse: collapse;" border="1">
+                                  <thead>
+                                    <tr><th>Stage</th><th>Social Worker Actions &amp; Roles</th></tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>Engagement</td>
+                                      <td>Initiated empathetic conversation using a professional female interpreter to ensure comfort and confidentiality.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Cultural exploration</td>
+                                      <td>Asked open-ended questions about values rather than labelling behaviour as “non-compliance.”</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Advocacy &amp; flexibility</td>
+                                      <td>Negotiated culturally appropriate adjustments (halal meals, female chaperone, segregated accommodation).</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Education &amp; reassurance</td>
+                                      <td>Provided visual materials of the camp site; clarified safety protocols and supervision arrangements.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Empowerment &amp; consent</td>
+                                      <td>Reinforced parental autonomy—emphasised that the final decision rested with the family.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Collaboration</td>
+                                      <td>Worked with the principal, teachers, and departmental guidelines to formalise an inclusive excursion policy.</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                          
+                                <p><strong>Outcomes:</strong></p>
+                                <ul>
+                                  <li>Amira attended camp safely; parents gained confidence in the school.</li>
+                                  <li>School adopted a new “Cultural Consent Checklist” for excursions.</li>
+                                  <li>Relationship of trust between the Afghan community and staff improved.</li>
+                                  <li>Teachers gained awareness of how early consultation prevents exclusion.</li>
+                                </ul>
+                          
+                                <h5>Reflection Questions</h5>
+                                <ul>
+                                  <li>How did the social worker use cultural humility instead of persuasion to achieve consent?</li>
+                                  <li>What might have happened if the school had treated this as “non-compliance”?</li>
+                                  <li>What are the ethical limits of adapting programs to cultural expectations?</li>
+                                  <li>How can schools build standing protocols for culturally sensitive excursions?</li>
+                                </ul>
+                          
+                                <h5>Key Australian Practice References</h5>
+                                <ul>
+                                  <li>Centre for Multicultural Youth (2016). <em>Opening the School Gate: Engaging Migrant and Refugee Families.</em></li>
+                                  <li>Foundation House (2019). <em>Schools In for Refugees: Whole-School Framework.</em></li>
+                                  <li>NSW Department of Education (2020). <em>Inclusive School Excursion Policy.</em></li>
+                                  <li>AASW (2020). <em>Code of Ethics – Respect for Cultural Diversity.</em></li>
+                                  <li>Embrace Multicultural Mental Health (2022). <em>Cultural Safety Toolkit.</em></li>
+                                </ul>
+                              </div>
+                            </details>
+                        </div>
+
+                        <!-- ================= CASE STUDY 5 ================= -->
+                        <div class="content-card">
+                            <h4>Case Study 5 – The Hesitant Father: Interpreter-Assisted Trust Building</h4>
+                            <p><strong>Setting:</strong> New South Wales | <strong>Focus:</strong> Communication, stigma, and working ethically with interpreters</p>
+                        
+                            <details>
+                            <summary>Explore this case study</summary>
+                            <div class="scenario-content">
+                                <h5>Case Narrative</h5>
+                                <p>At <em>Greenfield Secondary College</em> in western Sydney, the Year 8 coordinator referred Ahmed, a 14-year-old Sudanese boy, to the school social worker after repeated absences and minor aggression toward peers. Teachers said his father, Mr Ibrahim, ignored emails and avoided meetings.</p>
+                                <p>When the school eventually contacted him by phone, Mr Ibrahim sounded wary: “Why do you call me? My son behaves fine at home.”</p>
+                                <p>The school social worker, Ms Hughes, recognised familiar patterns—language barriers, distrust of authority, and fear of judgment. She arranged a face-to-face meeting with an accredited Arabic interpreter and greeted Mr Ibrahim warmly at the reception.</p>
+                                <p>From the start, Mr Ibrahim appeared tense, arms folded, glancing at the interpreter. Ms Hughes opened gently: “Thank you for coming. I know it can be hard to take time from work. We care about Ahmed and want to see how school can support him.”</p>
+                                <p>Through the interpreter, he explained that his family had moved from Egypt two years ago after long displacement. In their culture, being called to school usually meant punishment or shame. “I thought maybe Ahmed did something bad,” he said quietly.</p>
+                                <p>Ms Hughes clarified the purpose was support, not discipline. She shared examples of Ahmed’s creativity in art class and described classroom challenges. She paused often, allowing full interpretation.</p>
+                                <p>During the discussion, she noticed the interpreter summarising rather than translating fully. After the session, she privately reminded the interpreter about accuracy and confidentiality, following DET guidelines.</p>
+                                <p>Over several meetings, Ms Hughes built trust by checking in via phone (with interpreter) and inviting Mr Ibrahim to a fathers’ lunch session with other Arabic-speaking parents. Eventually, Mr Ibrahim agreed to participate in a <em>Positive Parenting in Australia</em> workshop hosted by the local community centre.</p>
+                                <p>By term’s end, Ahmed’s attendance stabilised, and the family began contacting the school proactively. “Now I understand you want to help,” Mr Ibrahim told Ms Hughes. “Next time, I come first.”</p>
+                        
+                                <h5>Professional Analysis</h5>
+                                <p><strong>Presenting Problem & Context Factors:</strong></p>
+                                <ul>
+                                <li>Student behavioural concerns and absenteeism.</li>
+                                <li>Parental avoidance due to stigma, mistrust of institutions, and language barriers.</li>
+                                <li>Cultural interpretations of authority and discipline influenced engagement.</li>
+                                </ul>
+                        
+                                <p><strong>Social Work Assessment:</strong> (Cross-Cultural Communication Model; AASW Working with Interpreters Guidelines, 2022)</p>
+                                <ul>
+                                <li>Parent’s migration history and trauma exposure.</li>
+                                <li>School’s previous communication style (emails, formal tone).</li>
+                                <li>Need for ongoing bilingual engagement rather than one-off meetings.</li>
+                                </ul>
+                        
+                                <p><strong>Intervention & Social Worker Roles:</strong></p>
+                                <table style="width:100%; border-collapse:collapse;" border="1">
+                                <thead>
+                                    <tr><th>Stage</th><th>Social Worker Actions & Roles</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Preparation</td><td>Booked NAATI-certified interpreter; briefed them on goals and ethics.</td></tr>
+                                    <tr><td>Engagement</td><td>Began with strength-based feedback; explained purpose transparently.</td></tr>
+                                    <tr><td>Active communication</td><td>Used short, plain sentences; paused for interpretation; maintained eye contact with parent.</td></tr>
+                                    <tr><td>Ethical practice</td><td>Addressed interpreter summarisation privately; upheld confidentiality and professionalism.</td></tr>
+                                    <tr><td>Relationship building</td><td>Invited parent to culturally appropriate group sessions; maintained bilingual contact.</td></tr>
+                                    <tr><td>Systems advocacy</td><td>Encouraged automatic translation of notices; added interpreter symbol to invitations.</td></tr>
+                                </tbody>
+                                </table>
+                        
+                                <p><strong>Outcomes:</strong></p>
+                                <ul>
+                                <li>Re-established relationship between family and school.</li>
+                                <li>Increased trust and attendance.</li>
+                                <li>Routine interpreter use and staff training established.</li>
+                                <li>Parent empowered to seek early help proactively.</li>
+                                </ul>
+                        
+                                <h5>Reflection Questions</h5>
+                                <ul>
+                                <li>What verbal and non-verbal techniques helped rebuild trust?</li>
+                                <li>How should a social worker respond when an interpreter summarises instead of translating?</li>
+                                <li>How does stigma influence parental involvement?</li>
+                                <li>What long-term strategies normalise bilingual communication?</li>
+                                </ul>
+                        
+                                <h5>Key Australian Practice References</h5>
+                                <ul>
+                                <li>Centre for Multicultural Youth (2016). <em>Opening the School Gate.</em></li>
+                                <li>Department of Education NSW (2021). <em>Using Interpreters in Schools – Guidelines.</em></li>
+                                <li>AASW (2022). <em>Practice Standards for Working with Interpreters.</em></li>
+                                <li>Foundation House (2019). <em>Schools In for Refugees – Communication and Trust Module.</em></li>
+                                <li>NSW Refugee Health Service (2020). <em>Cross-Cultural Family Engagement Resources.</em></li>
+                                </ul>
+                            </div>
+                            </details>
+                        </div>
+  
+                        <!-- ================= CASE STUDY 6 ================= -->
+                        <div class="content-card">
+                            <h4>Case Study 6 – The Community Connector: Re-engaging Isolated Parents Through School–Community Partnerships</h4>
+                            <p><strong>Setting:</strong> Victoria | <strong>Focus:</strong> Social inclusion, community collaboration, and cultural safety in engagement</p>
+                        
+                            <details>
+                            <summary>Explore this case study</summary>
+                            <div class="scenario-content">
+                                <h5>Case Narrative</h5>
+                                <p>When <em>Meadowvale Secondary College</em> in Melbourne’s western suburbs reopened post-COVID, staff noticed low attendance at parent–teacher evenings. Most strikingly absent were mothers from newly arrived Iraqi and South Sudanese families.</p>
+                                <p>The school’s social worker, Ms Rogers, suspected structural barriers. Informal conversations revealed lack of transport, childcare, and confidence in English. Some parents said they felt “out of place.”</p>
+                                <p>Ms Rogers developed a <em>Community Connector Program</em> — a weekly “Welcome Morning” co-hosted with the Neighbourhood Learning Centre and ECCV. The staffroom became a relaxed space for tea, storytelling, and mutual learning.</p>
+                                <p>At first, only three mothers attended. Ms Rogers, with an Arabic interpreter, asked: “What would make school a more comfortable place for you?” Gradually, more parents joined.</p>
+                                <p>Over weeks, sessions covered school tours, using Compass, and guest-led workshops (e.g., Centrelink navigation). The group later hosted a <em>Cultural Connections Lunch</em> bringing teachers and families together. The event transformed relationships and reduced anxiety.</p>
+                                <p>By term’s end, the Welcome Mornings became a community hub featuring bilingual volunteers, health educators, and shared childcare. “Now when I come to school,” said Rasha, “I don’t feel like a stranger — I feel part of it.”</p>
+                        
+                                <h5>Professional Analysis</h5>
+                                <p><strong>Presenting Problem & Context Factors:</strong></p>
+                                <ul>
+                                <li>Limited parental participation due to isolation, language barriers, and lack of trust.</li>
+                                <li>Post-pandemic disconnection heightened anxiety about formal school spaces.</li>
+                                <li>Few bilingual staff, no childcare, English-only communication.</li>
+                                </ul>
+                        
+                                <p><strong>Social Work Assessment:</strong> (Community Development and Social Inclusion Approach)</p>
+                                <ul>
+                                <li>Families’ settlement needs and social capital.</li>
+                                <li>Structural barriers and institutional accessibility.</li>
+                                <li>Partnership opportunities with community organisations.</li>
+                                </ul>
+                        
+                                <p><strong>Intervention & Social Worker Roles:</strong></p>
+                                <table style="width:100%; border-collapse:collapse;" border="1">
+                                <thead><tr><th>Stage</th><th>Social Worker Actions & Roles</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Community engagement</td><td>Consulted with cultural leaders and ECCV representatives.</td></tr>
+                                    <tr><td>Program design</td><td>Created “Welcome Morning” sessions with interpreters and childcare support.</td></tr>
+                                    <tr><td>Facilitation</td><td>Modelled inclusive communication; encouraged bilingual participation.</td></tr>
+                                    <tr><td>Partnership building</td><td>Collaborated with local agencies (NLC, ECCV, council multicultural officers).</td></tr>
+                                    <tr><td>Empowerment</td><td>Supported parents to co-chair events and represent parent voice on council.</td></tr>
+                                    <tr><td>Evaluation</td><td>Used stories and attendance data to evidence progress.</td></tr>
+                                </tbody>
+                                </table>
+                        
+                                <p><strong>Outcomes:</strong></p>
+                                <ul>
+                                <li>Parent event attendance rose from 15% to 55%.</li>
+                                <li>School created an ongoing Community Connector role.</li>
+                                <li>Parents reported reduced isolation and improved confidence.</li>
+                                <li>Teachers gained intercultural understanding and respect for parent strengths.</li>
+                                </ul>
+                        
+                                <h5>Reflection Questions</h5>
+                                <ul>
+                                <li>How does informal engagement shift power dynamics between parents and schools?</li>
+                                <li>What community development principles are demonstrated?</li>
+                                <li>How can participation be sustained after initial enthusiasm?</li>
+                                <li>What ethical concerns exist when schools partner with external agencies?</li>
+                                </ul>
+                        
+                                <h5>Key Australian Practice References</h5>
+                                <ul>
+                                <li>Centre for Multicultural Youth (2016). <em>Opening the School Gate.</em></li>
+                                <li>AASW (2020). <em>Practice Standards – Community Development and Social Inclusion.</em></li>
+                                <li>Ethnic Communities Council of Victoria (2021). <em>Engaging CALD Families Toolkit.</em></li>
+                                <li>Victorian DET (2022). <em>Community Engagement Framework for Schools.</em></li>
+                                <li>Foundation House (2019). <em>Schools In for Refugees – Building Community Connections.</em></li>
+                                </ul>
+                            </div>
+                            </details>
+                        </div>
+  
+                        <!-- ================= CASE STUDY 7 ================= -->
+                        <div class="content-card">
+                            <h4>Case Study 7 – Faith and Participation: Supporting Muslim Girls’ Inclusion in School Sport</h4>
+                            <p><strong>Setting:</strong> Western Australia | <strong>Focus:</strong> Faith, gender, and inclusive school practice</p>
+                        
+                            <details>
+                            <summary>Explore this case study</summary>
+                            <div class="scenario-content">
+                                <h5>Case Narrative</h5>
+                                <p>At <em>Harbourside College</em> in Perth, the Year 9 PE teacher noticed that two Muslim girls, Layla and Mariam, regularly sat out of swimming lessons. When asked, they replied, “Our parents said no — not proper.”</p>
+                                <p>The school’s social worker, Ms Yusuf, understood this as a matter of cultural safety, not disinterest. She contacted Layla’s mother, Fatimah, and arranged a meeting with an Arabic interpreter.</p>
+                                <p>Fatimah explained that mixed-gender classes conflicted with modesty beliefs. “We want our daughters to be active,” she said, “but not in front of boys.”</p>
+                                <p>Ms Yusuf invited both parents to discuss options and consulted the <em>Islamic Council of WA</em> on inclusive sport practices. She shared the <a href="https://www.education.wa.edu.au/safe-inclusive-schools" target="_blank">DET Religious and Cultural Inclusion Policy</a> with staff.</p>
+                                <p>The school introduced girls-only swim sessions and updated the PE uniform to include modest athletic wear. Layla and Mariam were delighted, and participation increased. The initiative evolved into a “Faith and Fitness Program,” promoting dialogue between staff and diverse families.</p>
+                                <p>“What started as a small accommodation changed how we think about inclusion entirely,” the principal said.</p>
+                        
+                                <h5>Professional Analysis</h5>
+                                <p><strong>Presenting Problem & Context Factors:</strong></p>
+                                <ul>
+                                <li>Non-participation due to modesty requirements and faith considerations.</li>
+                                <li>Lack of staff understanding of religious sensitivities.</li>
+                                <li>Risk of stereotyping students as resistant or non-compliant.</li>
+                                </ul>
+                        
+                                <p><strong>Social Work Assessment:</strong> (Cultural Safety and Human Rights Approach)</p>
+                                <ul>
+                                <li>Explored religious and gender identity needs.</li>
+                                <li>Reviewed policy flexibility under equal opportunity laws.</li>
+                                <li>Assessed trust levels and peer dynamics.</li>
+                                </ul>
+                        
+                                <p><strong>Intervention & Social Worker Roles:</strong></p>
+                                <table style="width:100%; border-collapse:collapse;" border="1">
+                                <thead><tr><th>Stage</th><th>Social Worker Actions & Roles</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Assessment & consultation</td><td>Engaged families with interpreter; explored beliefs and aspirations.</td></tr>
+                                    <tr><td>Policy advocacy</td><td>Advised staff on religious inclusion and uniform adjustments.</td></tr>
+                                    <tr><td>Collaboration</td><td>Partnered with council pool for female-only swim sessions.</td></tr>
+                                    <tr><td>Capacity building</td><td>Facilitated professional development on cultural humility.</td></tr>
+                                    <tr><td>Empowerment & sustainability</td><td>Encouraged student voice; Layla joined sports committee.</td></tr>
+                                <tr><td>Monitoring & evaluation</td><td>Gathered feedback and shared outcomes with DET diversity team.</td></tr>
+                            </tbody>
+                            </table>
+                    
+                            <p><strong>Outcomes:</strong></p>
+                            <ul>
+                            <li>Female sport participation rose by 40%.</li>
+                            <li>Improved trust between families and school.</li>
+                            <li>Staff gained competence in religious inclusion.</li>
+                            <li>DET featured program as a statewide good-practice model.</li>
+                            </ul>
+                    
+                            <h5>Reflection Questions</h5>
+                            <ul>
+                            <li>How did the social worker balance policy with cultural respect?</li>
+                            <li>What risks exist if accommodations are seen as special treatment?</li>
+                            <li>How can inclusive practices benefit all students?</li>
+                            <li>What skills are vital for mediating between cultural rights and educational equity?</li>
+                            </ul>
+                    
+                            <h5>Key Australian Practice References</h5>
+                            <ul>
+                            <li>Department of Education WA (2021). <em>Religious and Cultural Inclusion Guidelines.</em></li>
+                            <li>AASW (2020). <em>Code of Ethics – Cultural Safety and Human Rights.</em></li>
+                            <li>Islamic Council of WA (2022). <em>Guidance on Modesty and Participation in Sport.</em></li>
+                            <li>Foundation House (2019). <em>Schools In for Refugees – Gender and Inclusion Module.</em></li>
+                            <li>Centre for Multicultural Youth (2016). <em>Opening the School Gate.</em></li>
+                            </ul>
+                        </div>
+                        </details>
+                    </div>
+
+                        <div class="cta-center margin-top">
+                            <p><em>Note: Additional case scenarios will be added based on practitioner feedback and emerging practice issues.</em></p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tools and Resources Section -->
+        <section id="tools-resources" class="content-section alt-bg">
+            <div class="container">
+                <h3>Tools and Resources</h3>
+                <p>Find practical guides, templates, and frameworks to strengthen your practice.</p>
+                
+				<!-- Anchor for sidebar link -->
+				<div id="professional-development" style="position: relative; top: -80px;"></div>
+                <h4 class="margin-top">📚 Resource Directory</h4>
+                <div style="max-height:500px; overflow-y:auto; border:1px solid #ccc; border-radius: 6px;">
+
+                    <h2>Professional Development / Webinars</h2>
+                    <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse: collapse;">
+                        <thead>
+                        <tr style="background-color:#e0e0e0; border-bottom:2px solid #ccc;">
+                            <th style="padding:8px; text-align: left;">Title</th>
+                            <th style="padding:8px; text-align: left;">Provider</th>
+                            <th style="padding:8px; text-align: left;">Format</th>
+                            <th style="padding:8px; text-align: left;">Summary / Key Info</th>
+                            <th style="padding:8px; text-align: left;">Link</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="padding:8px;">Bullying Prevention &amp; Response When Supporting Refugee Students</td>
+                            <td style="padding:8px;">Switchboard Technical Assistance Center (USA)</td>
+                            <td style="padding:8px;">Webinar + Guide</td>
+                            <td style="padding:8px;">Webinar on preventing and responding to bullying among refugee and newcomer students, highlighting unique bullying dynamics in migrant communities and strengths-based approaches.</td>
+                            <td style="padding:8px;"><a href="https://www.switchboardta.org/resource/bullying-prevention-response-when-supporting-refugee-students/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">"I Have", "I Am," and "I Can": Serving Students with Interrupted Formal Education</td>
+                            <td style="padding:8px;">Switchboard Technical Assistance Center (USA)</td>
+                            <td style="padding:8px;">Webinar</td>
+                            <td style="padding:8px;">Webinar about students with limited or interrupted formal education, their challenges, and recommendations for classroom interventions and community supports to help close academic gaps and build resilience.</td>
+                            <td style="padding:8px;"><a href="https://www.switchboardta.org/resource/i-have-i-am-and-i-can-serving-students-with-interrupted-formal-education/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Increasing Family Engagement within Schools to Support Refugee Students</td>
+                            <td style="padding:8px;">Switchboard Technical Assistance Center (USA)</td>
+                            <td style="padding:8px;">Webinar</td>
+                            <td style="padding:8px;">Webinar highlighting a framework model and culturally responsive strategies for building effective partnerships between schools and newcomer students and their families.</td>
+                            <td style="padding:8px;"><a href="https://www.switchboardta.org/resource/increasing-family-engagement-within-schools-to-support-refugee-students/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Toxic Stress and Well-Being Among Students Affected by Forced Migration</td>
+                            <td style="padding:8px;">International Rescue Committee (IRC) &amp; NJ Dept of Education</td>
+                            <td style="padding:8px;">Online Course</td>
+                            <td style="padding:8px;">Self-paced course covering common experiences of forced migration, the effects of toxic stress on refugee children and youth, and ways to mitigate these effects in classrooms and schools.</td>
+                            <td style="padding:8px;"><a href="https://kayaconnect.org/course/info.php?id=3083">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Orientation to Cultural Responsiveness (Online Course)</td>
+                            <td style="padding:8px;">Victorian Transcultural Mental Health (Australia)</td>
+                            <td style="padding:8px;">Online Course</td>
+                            <td style="padding:8px;">Free six-module e-learning course covering cultural humility, working with interpreters, and reflective practice to enhance cultural responsiveness.</td>
+                            <td style="padding:8px;"><a href="https://learn.vtmh.org.au/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Diversity and Social Justice in Social Work (MOOC)</td>
+                            <td style="padding:8px;">University of Michigan / edX</td>
+                            <td style="padding:8px;">Online Course</td>
+                            <td style="padding:8px;">Free online university course exploring diversity, power, ethics, and social justice in social work practice.</td>
+                            <td style="padding:8px;"><a href="https://www.google.com/aclk?sa=L&ai=DChsSEwjepIi3h-mQAxVMqmYCHajsCxkYACICCAEQABoCc20&co=1&gclid=CjwKCAiAt8bIBhBpEiwAzH1w6Yl7YR3WcVUN5DW9Bmgde_femtRY1M2pSR0-SWlLht_zCTKzNCdTKBoCUOUQAvD_BwE&cid=CAASmAHkaFjpiyuPHnv0xikFd1kibQs0O20utdWiVMfkjm0GkfVCzq0VRinMAPDKJXa-yCteM3cIMJWsaEArn1_B9bMFVwaBAEagNIGHdrf-TdBD7Q0XuobjhQg7IJJQNcUUI0zKMj1_7I6EsP3HnBfV9FLs5YQVMOHt3oAbsxR2iQUtsInIlFl87iIYjcb7NcLgS8bYkrnHnLsWkw&cce=1&sig=AOD64_2fKjS3DQFR5zQYzt2h_bBFSzID_A&q&adurl&ved=2ahUKEwiz3oG3h-mQAxWTbmwGHVpNGbEQ0Qx6BAgYEAE">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Diverse WA Training</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Training Program</td>
+                            <td style="padding:8px;">Cultural competency e-learning program for WA public sector and NGO staff to improve service delivery to CALD communities.</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/events-and-training/diversewa-training">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px;">School Social Work Practice Webinar Series</td>
+                            <td style="padding:8px;">Australian Association of Social Workers (AASW)</td>
+                            <td style="padding:8px;">Webinar Series</td>
+                            <td style="padding:8px;">Series of professional development webinars on applying cultural safety principles in Australian social work practice (free for AASW members).</td>
+                            <td style="padding:8px;"><a href="https://www.aasw.asn.au/professional/cpd/aasw-online-learning/">Link</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <h2>Practice Guides &amp; Tip Sheets</h2>
+                    <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse: collapse;">
+                        <thead>
+                        <tr style="background-color:#e0e0e0; border-bottom:2px solid #ccc;">
+                            <th style="padding:8px; text-align: left;">Title</th>
+                            <th style="padding:8px; text-align: left;">Provider</th>
+                            <th style="padding:8px; text-align: left;">Format</th>
+                            <th style="padding:8px; text-align: left;">Summary / Key Info</th>
+                            <th style="padding:8px; text-align: left;">Link</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="padding:8px;">Fostering Resilience for Refugee Students</td>
+                            <td style="padding:8px;">Switchboard Technical Assistance Center (USA)</td>
+                            <td style="padding:8px;">Article / Blog</td>
+                            <td style="padding:8px;">Blog article outlining five protective factors schools can leverage to bolster refugee students’ resilience.</td>
+                            <td style="padding:8px;"><a href="https://www.switchboardta.org/fostering-resilience-for-refugee-students/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Understanding Refugee Trauma: Fact Sheet for School Personnel</td>
+                            <td style="padding:8px;">National Child Traumatic Stress Network (USA)</td>
+                            <td style="padding:8px;">Fact Sheet</td>
+                            <td style="padding:8px;">Brief fact sheet highlighting key considerations for working with refugee students and families in a school setting, using a trauma-informed lens.</td>
+                            <td style="padding:8px;"><a href="https://www.nctsn.org/resources/understanding-refugee-trauma-school-personnel">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Engaging with Families from CALD Backgrounds to Support Learning</td>
+                            <td style="padding:8px;">Australian Education Research Organisation (AERO)</td>
+                            <td style="padding:8px;">Guide</td>
+                            <td style="padding:8px;">Guide for schools on strategies to engage culturally and linguistically diverse families in their children’s education (includes case studies and reflection questions).</td>
+                            <td style="padding:8px;"><a href="https://www.edresearch.edu.au/guides-resources/practice-guides/engaging-families-cald-backgrounds-ecec">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Creating Culturally Responsive Practice to Support CALD Children</td>
+                            <td style="padding:8px;">Emerging Minds &amp; Australian Institute of Family Studies (AIFS)</td>
+                            <td style="padding:8px;">Guide</td>
+                            <td style="padding:8px;">Practitioner guide with case study and self-reflection worksheet to improve practice with children from CALD backgrounds.</td>
+                            <td style="padding:8px;"><a href="https://emergingminds.com.au/resources/creating-culturally-responsive-practice-and-services-to-support-the-mental-health-of-children-from-culturally-and-linguistically-diverse-cald-backgrounds/#introduction">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Promoting Supportive Mentoring for Refugee Youth</td>
+                            <td style="padding:8px;">Switchboard Technical Assistance Center (USA)</td>
+                            <td style="padding:8px;">Guide</td>
+                            <td style="padding:8px;">Guide on establishing mentoring programs for refugee youth, focusing on cross-cultural matching and sustained support.</td>
+                            <td style="padding:8px;"><a href="https://www.switchboardta.org/resource/promoting-supportive-mentoring-for-refugee-youth/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Opening the School Gate: Engaging Multicultural Families in Schools</td>
+                            <td style="padding:8px;">Centre for Multicultural Youth (CMY, Australia)</td>
+                            <td style="padding:8px;">Guide</td>
+                            <td style="padding:8px;">Good-practice guide with strategies for schools to involve parents from CALD backgrounds and overcome language barriers.</td>
+                            <td style="padding:8px;"><a href="https://www.cmy.net.au/resource/opening-the-school-gate-engaging-multicultural-families-in-schools/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Opening the Digital School Gate: Engaging Migrant and Refugee Families Online</td>
+                            <td style="padding:8px;">Centre for Multicultural Youth (CMY, Australia)</td>
+                            <td style="padding:8px;">Guide</td>
+                            <td style="padding:8px;">Supplementary guide helping schools reach CALD families through inclusive digital communication methods.</td>
+                            <td style="padding:8px;"><a href="https://www.cmy.net.au/resource/opening-the-digital-school-gate/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Colorín Colorado ELL Family Engagement Guides</td>
+                            <td style="padding:8px;">Colorín Colorado (PBS Affiliate, USA)</td>
+                            <td style="padding:8px;">Guide Collection</td>
+                            <td style="padding:8px;">Bilingual website with 20 strategies and resources for engaging English-learning families in schools.</td>
+                            <td style="padding:8px;"><a href="https://www.colorincolorado.org/family-engagement-guides">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Culture and Religion Information Sheets</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Information Sheets</td>
+                            <td style="padding:8px;">Series of sheets outlining beliefs, customs and guidance on major religions in WA to support culturally responsive service delivery.</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/communities-and-networks/culture-and-religion">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Guidelines for Working with Interpreters in Schools</td>
+                            <td style="padding:8px;">Foundation House – Schools In for Refugees (Vic)</td>
+                            <td style="padding:8px;">Tip Sheet</td>
+                            <td style="padding:8px;">Concise tip sheet offering strategies and best practices when using trained interpreters for refugee/CALD parent engagement in schools.</td>
+                            <td style="padding:8px;"><a href="https://sifr.foundationhouse.org.au/app/uploads/2021/06/Guideline-for-working-with-interpreters-1.pdf">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Helping Families from Refugee Backgrounds to Support Their Children’s Learning</td>
+                            <td style="padding:8px;">Foundation House (Victoria)</td>
+                            <td style="padding:8px;">Tip Sheet</td>
+                            <td style="padding:8px;">Tip sheet with quick wins and strategies to help refugee families with at-home learning and effective parent–school interactions.</td>
+                            <td style="padding:8px;"><a href="https://sifr.foundationhouse.org.au/resources/pl-resource/assisting-families-from-refugee-backgrounds-to-support-their-childrens-learning/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Refugee Week in Schools: A Trauma-Informed Approach</td>
+                            <td style="padding:8px;">STARTTS (NSW)</td>
+                            <td style="padding:8px;">Tip Sheet</td>
+                            <td style="padding:8px;">Tip sheet guiding schools on organizing Refugee Week activities in ways that restore safety, connection, meaning and dignity for refugee-background students.</td>
+                            <td style="padding:8px;"><a href="https://www.startts.org.au/wp-content/uploads/2023/05/Refugee-Week-Schools-Trauma-informed-Approach.pdf">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Translanguaging in the Classroom: Supporting Recovery from Refugee Trauma</td>
+                            <td style="padding:8px;">STARTTS (NSW)</td>
+                            <td style="padding:8px;">Tip Sheet</td>
+                            <td style="padding:8px;">Tip sheet for educators on how using students’ home languages (translanguaging) supports trauma recovery and learning.</td>
+                            <td style="padding:8px;"><a href="https://www.startts.org.au/resource/translanguaging-in-the-classroom/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Multilingual Crisis Support Tip Sheets for Parents</td>
+                            <td style="padding:8px;">STARTTS (NSW)</td>
+                            <td style="padding:8px;">Tip Sheets</td>
+                            <td style="padding:8px;">Translated tip sheets (Arabic, Farsi, etc.) guiding parents on supporting children’s wellbeing during crises.</td>
+                            <td style="padding:8px;"><a href="https://www.startts.org.au/resources/multilingual-parent-tips/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Teaching About Refugees – Educator Resource Library (UNHCR)</td>
+                            <td style="padding:8px;">United Nations High Commissioner for Refugees (UNHCR)</td>
+                            <td style="padding:8px;">Resource Library</td>
+                            <td style="padding:8px;">Digital library of lesson plans, fact sheets and videos to educate schools about refugees, asylum and migration – with guidance for classroom integration.</td>
+                            <td style="padding:8px;"><a href="https://www.unhcr.org/teaching-about-refugees.html">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">SBS Cultural Atlas – Culture Profiles</td>
+                            <td style="padding:8px;">Special Broadcasting Service (SBS, Australia)</td>
+                            <td style="padding:8px;">Online Resource</td>
+                            <td style="padding:8px;">Comprehensive profiles of 70+ cultural groups in Australia with norms, communication styles, and etiquette to foster cultural safety.</td>
+                            <td style="padding:8px;"><a href="https://culturalatlas.sbs.com.au/">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px;">Ways to Welcome and Support Students and Families Across the School</td>
+                            <td style="padding:8px;">Foundation House – Refugee Education Support Program</td>
+                            <td style="padding:8px;">Guide (Collection)</td>
+                            <td style="padding:8px;">Collection of practical ideas from schools for welcoming CALD and refugee students and families, including checklists and examples.</td>
+                            <td style="padding:8px;"><a href="https://sifr.foundationhouse.org.au/app/uploads/2020/06/Ways-to-welcome-and-support-students-and-families-across-the-school.pdf">Link</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <h2>Assessment &amp; Planning Tools</h2>
+                    <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse: collapse;">
+                        <thead>
+                        <tr style="background-color:#e0e0e0; border-bottom:2px solid #ccc;">
+                            <th style="padding:8px; text-align: left;">Title</th>
+                            <th style="padding:8px; text-align: left;">Provider</th>
+                            <th style="padding:8px; text-align: left;">Format</th>
+                            <th style="padding:8px; text-align: left;">Summary / Key Info</th>
+                            <th style="padding:8px; text-align: left;">Link</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="padding:8px;">WA Diversity and Statistics</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Data Resource</td>
+                            <td style="padding:8px;">Data and infographics highlighting WA’s demographic and cultural diversity, useful for background research and policy development.</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/resources-and-statistics/wa-diversity-and-statistics">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Embrace Multicultural Mental Health – Framework eLearning</td>
+                            <td style="padding:8px;">Embrace Multicultural Mental Health (Dept of Health, AUS)</td>
+                            <td style="padding:8px;">eLearning Module</td>
+                            <td style="padding:8px;">Interactive self-paced modules guiding organizations through evaluation and improvement of their cultural responsiveness (Framework for Mental Health in Multicultural Australia).</td>
+                            <td style="padding:8px;"><a href="https://embracementalhealth.org.au">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Youth Settlement Framework Tools (MYAN)</td>
+                            <td style="padding:8px;">Multicultural Youth Advocacy Network (Australia)</td>
+                            <td style="padding:8px;">Framework Tools</td>
+                            <td style="padding:8px;">Framework and assessment tools for organizations (including schools) to support young people from migrant and refugee backgrounds (National Youth Settlement Framework).</td>
+                            <td style="padding:8px;"><a href="https://myan.org.au/documents/national-youth-settlement-framework/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">WA Multicultural Policy Framework – Self-Assessment Tool</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Template / Checklist</td>
+                            <td style="padding:8px;">Checklist allowing organizations to self-assess progress in implementing multicultural policy principles (aligned to the WA Multicultural Policy Framework).</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/resources-and-statistics/publications/publication/wa-multicultural-policy-framework">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px;">School’s In for Refugees Audit Tool</td>
+                            <td style="padding:8px;">Foundation House – Schools In for Refugees Program</td>
+                            <td style="padding:8px;">Audit Tool</td>
+                            <td style="padding:8px;">Self-assessment audit for schools to evaluate how well they support refugee students and families, and to plan improvements.</td>
+                            <td style="padding:8px;"><a href="https://sifr.foundationhouse.org.au/resources/pl-resource/schools-in-for-refugees-audit-tool/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Project Planning Resources (WA)</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Templates</td>
+                            <td style="padding:8px;">Templates and guidance to help organizations plan multicultural events and prepare grant applications (Office of Multicultural Interests).</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/resources-and-statistics/project-planning-resources">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px;">WA Multicultural Policy Framework – Multicultural Plan Template</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Template</td>
+                            <td style="padding:8px;">Template for agencies to document their actions under the WA Multicultural Policy Framework (for planning and reporting).</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/resources-and-statistics/publications/publication/wa-multicultural-policy-framework">Link</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <h2>Case Studies &amp; School Examples</h2>
+                    <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse: collapse;">
+                        <thead>
+                        <tr style="background-color:#e0e0e0; border-bottom:2px solid #ccc;">
+                            <th style="padding:8px; text-align: left;">Title</th>
+                            <th style="padding:8px; text-align: left;">Provider</th>
+                            <th style="padding:8px; text-align: left;">Format</th>
+                            <th style="padding:8px; text-align: left;">Summary / Key Info</th>
+                            <th style="padding:8px; text-align: left;">Link</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="padding:8px;">Supporting Linguistically Diverse Families through English Classes (Darling Heights Case Study)</td>
+                            <td style="padding:8px;">Darling Heights State School (QLD) &amp; Schools Plus</td>
+                            <td style="padding:8px;">Case Study</td>
+                            <td style="padding:8px;">Literacy support program that helped migrant parents improve their English, engage with teachers, and gain confidence—ultimately supporting their children’s learning.</td>
+                            <td style="padding:8px;"><a href="https://www.edresearch.edu.au/guides-resources/practice-guides/supporting-cald-families-through-english-classes">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Braybrook College “Power Collective” (Case Study)</td>
+                            <td style="padding:8px;">Foundation House – Refugee Education Support Program (VIC)</td>
+                            <td style="padding:8px;">Case Study</td>
+                            <td style="padding:8px;">Student-led group at Braybrook College empowering refugee and migrant youth through advocacy and leadership activities.</td>
+                            <td style="padding:8px;"><a href="https://foundationhouse.org.au/resource/braybrook-college-power-collective/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Tarneit P-9 College: Supporting Enrolment Transitions</td>
+                            <td style="padding:8px;">Foundation House – Refugee Education Support Program (VIC)</td>
+                            <td style="padding:8px;">Case Study</td>
+                            <td style="padding:8px;">Improved enrolment and welcome processes for refugee families at Tarneit P-9 College using visual materials and guided school tours.</td>
+                            <td style="padding:8px;"><a href="https://foundationhouse.org.au/resource/tarneit-p9-college-enrolment/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Thomas Carr College: Elevating the Family Liaison Worker Role</td>
+                            <td style="padding:8px;">Foundation House – Refugee Education Support Program (VIC)</td>
+                            <td style="padding:8px;">Case Study</td>
+                            <td style="padding:8px;">Strengthened bilingual liaison roles at Thomas Carr College to connect CALD families and staff and promote cultural understanding.</td>
+                            <td style="padding:8px;"><a href="https://foundationhouse.org.au/resource/thomas-carr-college-flw/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">All One Under the Sun – Youth Anti-Racism Campaign</td>
+                            <td style="padding:8px;">Coffs Harbour Multicultural Council &amp; STARTTS (NSW)</td>
+                            <td style="padding:8px;">Program</td>
+                            <td style="padding:8px;">Arts-based community program engaging high school students in theatre and music to challenge racism and celebrate diversity.</td>
+                            <td style="padding:8px;"><a href="https://www.alloneunderthesun.com.au">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px;">Refugee Education Support Program (RESP)</td>
+                            <td style="padding:8px;">Foundation House &amp; Victorian Dept of Education</td>
+                            <td style="padding:8px;">Program</td>
+                            <td style="padding:8px;">Program assisting schools to implement strategies that improve engagement and wellbeing outcomes for refugee-background students and families (operating in VIC &amp; WA).</td>
+                            <td style="padding:8px;"><a href="https://foundationhouse.org.au/schools-in-for-refugees/resp-program/">Link</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <h2>Directories &amp; Support Networks</h2>
+                    <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse: collapse;">
+                        <thead>
+                        <tr style="background-color:#e0e0e0; border-bottom:2px solid #ccc;">
+                            <th style="padding:8px; text-align: left;">Title</th>
+                            <th style="padding:8px; text-align: left;">Provider</th>
+                            <th style="padding:8px; text-align: left;">Format</th>
+                            <th style="padding:8px; text-align: left;">Summary / Key Info</th>
+                            <th style="padding:8px; text-align: left;">Link</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="padding:8px;">List of Community Associations (WA)</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Directory</td>
+                            <td style="padding:8px;">Directory of multicultural community associations in WA, to help connect families and organizations with community support networks.</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/communities-and-networks/community-associations">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Metropolitan Multicultural Networks (WA)</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Directory</td>
+                            <td style="padding:8px;">List of metropolitan multicultural networks facilitating collaboration between community groups and services.</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/communities-and-networks/metropolitan-multicultural-networks">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Family Support Services Directory (WA)</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Directory</td>
+                            <td style="padding:8px;">Searchable directory of family and social support services for CALD and mainstream communities across WA.</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/communities-and-networks/services-directory/family-support-services">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Educator &amp; Social Worker Network – Online Community of Practice</td>
+                            <td style="padding:8px;">School Social Work Association of America (SSWAA)</td>
+                            <td style="padding:8px;">Forum / Network</td>
+                            <td style="padding:8px;">Online peer forum and professional network for school social workers, including discussions on CALD and diversity topics.</td>
+                            <td style="padding:8px;"><a href="https://www.sswaa.org/membership/network-school-social-work/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Refugee Education Special Interest Group (SIG)</td>
+                            <td style="padding:8px;">Centre for Multicultural Youth &amp; Vic Dept of Education</td>
+                            <td style="padding:8px;">Network</td>
+                            <td style="padding:8px;">National network connecting educators and social workers to share good practices for supporting refugee students.</td>
+                            <td style="padding:8px;"><a href="https://www.cmy.net.au/network/refugee-education-sig/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">International Network for School Social Work</td>
+                            <td style="padding:8px;">International Network (Global)</td>
+                            <td style="padding:8px;">Network</td>
+                            <td style="padding:8px;">Global network sharing newsletters and case studies on culturally diverse school social work practice.</td>
+                            <td style="padding:8px;"><a href="http://internationalnetwork-schoolsocialwork.htmlplanet.com">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px;">School Information for Parents</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Information Page</td>
+                            <td style="padding:8px;">Information hub for parents on schooling and education options in Western Australia’s education system.</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/events-and-training/education-and-training-in-wa">Link</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <h2>Podcasts &amp; Videos</h2>
+                    <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse: collapse;">
+                        <thead>
+                        <tr style="background-color:#e0e0e0; border-bottom:2px solid #ccc;">
+                            <th style="padding:8px; text-align: left;">Title</th>
+                            <th style="padding:8px; text-align: left;">Provider</th>
+                            <th style="padding:8px; text-align: left;">Format</th>
+                            <th style="padding:8px; text-align: left;">Summary / Key Info</th>
+                            <th style="padding:8px; text-align: left;">Link</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="padding:8px;">Culturally Inclusive Practice – Embrace Podcast Series</td>
+                            <td style="padding:8px;">Embrace Multicultural Mental Health (AUS)</td>
+                            <td style="padding:8px;">Podcast</td>
+                            <td style="padding:8px;">Podcast series featuring practitioners discussing culturally responsive mental health and community practice.</td>
+                            <td style="padding:8px;"><a href="https://embracementalhealth.org.au/podcast">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Supporting Newcomer Youth in Schools (Podcast)</td>
+                            <td style="padding:8px;">Switchboard Technical Assistance Center (USA)</td>
+                            <td style="padding:8px;">Podcast</td>
+                            <td style="padding:8px;">Podcast episode discussing strategies for helping refugee and immigrant youth succeed academically and socially.</td>
+                            <td style="padding:8px;"><a href="https://www.switchboardta.org/podcast/supporting-newcomer-youth/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Windows and Mirrors – Sharing Refugee Stories in Class</td>
+                            <td style="padding:8px;">STARTTS (NSW)</td>
+                            <td style="padding:8px;">Podcast</td>
+                            <td style="padding:8px;">Podcast episode (Hints for Healing series) with educators exploring safe storytelling approaches that empower refugee students.</td>
+                            <td style="padding:8px;"><a href="https://www.startts.org.au/podcast/hints-for-healing-episode-8/">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px;">Virtual Reality School Orientation Videos (360°)</td>
+                            <td style="padding:8px;">Switchboard Technical Assistance Center (USA)</td>
+                            <td style="padding:8px;">Video Series</td>
+                            <td style="padding:8px;">Set of immersive 360° videos introducing refugee students and parents to typical school routines (e.g. taking the bus, school pickup).</td>
+                            <td style="padding:8px;"><a href="https://www.switchboardta.org/resources/vr-school-orientation/">Link</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <h2>Policies &amp; Government Frameworks</h2>
+                    <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse: collapse;">
+                        <thead>
+                        <tr style="background-color:#e0e0e0; border-bottom:2px solid #ccc;">
+                            <th style="padding:8px; text-align: left;">Title</th>
+                            <th style="padding:8px; text-align: left;">Provider</th>
+                            <th style="padding:8px; text-align: left;">Format</th>
+                            <th style="padding:8px; text-align: left;">Summary / Key Info</th>
+                            <th style="padding:8px; text-align: left;">Link</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="padding:8px;">WA Language Services Policy 2020</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Policy</td>
+                            <td style="padding:8px;">Policy ensuring all Western Australians have equitable access to government information and services regardless of language background.</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/resources-and-statistics/publications/publication/language-services-policy-2020">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Western Australian Multicultural Policy Framework</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Policy Framework</td>
+                            <td style="padding:8px;">State policy promoting inclusion, equity and participation in WA’s civic, social and cultural life; implements the WA Charter of Multiculturalism.</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/resources-and-statistics/publications/publication/wa-multicultural-policy-framework">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Safe and Inclusive Schools Framework (Dept Education WA)</td>
+                            <td style="padding:8px;">Department of Education (Western Australia)</td>
+                            <td style="padding:8px;">Policy Framework</td>
+                            <td style="padding:8px;">Policy framework outlining whole-school strategies for safe, inclusive and respectful learning environments in WA schools.</td>
+                            <td style="padding:8px;"><a href="https://www.education.wa.edu.au/safe-inclusive-schools">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Community Grants Program (WA)</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Grant Program</td>
+                            <td style="padding:8px;">Annual $1M grants program funding community-led projects that strengthen multiculturalism and inclusion in WA.</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/funding/community-grants-program">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px;">Community Support Fund (WA)</td>
+                            <td style="padding:8px;">Office of Multicultural Interests (Western Australia)</td>
+                            <td style="padding:8px;">Grant Program</td>
+                            <td style="padding:8px;">Triennial funding program for multicultural peak bodies to coordinate advocacy and support for CALD communities in WA.</td>
+                            <td style="padding:8px;"><a href="https://www.omi.wa.gov.au/funding/community-support-fund">Link</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <h2>Toolkits &amp; Templates</h2>
+                    <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse: collapse;">
+                        <thead>
+                        <tr style="background-color:#e0e0e0; border-bottom:2px solid #ccc;">
+                            <th style="padding:8px; text-align: left;">Title</th>
+                            <th style="padding:8px; text-align: left;">Provider</th>
+                            <th style="padding:8px; text-align: left;">Format</th>
+                            <th style="padding:8px; text-align: left;">Summary / Key Info</th>
+                            <th style="padding:8px; text-align: left;">Link</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="padding:8px;">Refugee Children in U.S. Schools: A Toolkit for Teachers and School Personnel</td>
+                            <td style="padding:8px;">Bridging Refugee Youth &amp; Children’s Services (BRYCS, USA)</td>
+                            <td style="padding:8px;">Toolkit</td>
+                            <td style="padding:8px;">Online toolkit of brief guides addressing enrollment, classroom transitions, and support for refugee students in U.S. schools.</td>
+                            <td style="padding:8px;"><a href="https://www.brycs.org/refugee-children-in-us-schools-toolkit/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Helping Newcomer Parents Navigate the School System (US)</td>
+                            <td style="padding:8px;">Bridging Refugee Youth &amp; Children’s Services (BRYCS, USA)</td>
+                            <td style="padding:8px;">Toolkit</td>
+                            <td style="padding:8px;">Toolkit for working with immigrant and refugee parents in the school context, including multilingual handouts and program planning guidance.</td>
+                            <td style="padding:8px;"><a href="https://www.brycs.org/parents-toolkit/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Community Integration Resource Map for Schools and Agencies</td>
+                            <td style="padding:8px;">Switchboard Technical Assistance Center (USA)</td>
+                            <td style="padding:8px;">Toolkit</td>
+                            <td style="padding:8px;">Toolkit to help schools and community organizations map local services and coordinate referrals for refugee and immigrant youth.</td>
+                            <td style="padding:8px;"><a href="https://www.switchboardta.org/toolkit/community-integration-schools/">Link</a></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">Youth Settlement Framework Tools (MYAN)</td>
+                            <td style="padding:8px;">Multicultural Youth Advocacy Network (Australia)</td>
+                            <td style="padding:8px;">Toolkit</td>
+                            <td style="padding:8px;">Resource toolkit (framework and tools) to guide organizations in supporting settlement and development of CALD youth.</td>
+                            <td style="padding:8px;"><a href="https://myan.org.au/wp-content/uploads/2020/10/NYSF-Resource-Toolkit.pdf">Link</a></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+
+
+   
+
+                <div class="cta-center margin-top">
+                    <a href="search.html?audience=Social+Workers" class="btn-primary">👉 Explore the Full Resource Library</a>
+                    <p class="small margin-top">Use the search filters by topic or format (e.g., "trauma", "family engagement", "video").</p>
+                </div>
+            </div>
+        </section>
+
+   
+
+    
+
+        <!-- Professional Forum Section -->
+        <section id="forum" class="content-section forum-section">
+            <div class="container">
+                <h3>🗣️ Professional Forum: Share and Reflect</h3>
+                <p>Welcome to our Cultural Safety Forum – a space for social workers to exchange ideas and experiences.</p>
+                <p class="small emphasis">Please respect confidentiality and cultural sensitivity when posting.</p>
+
+                <h4>💬 Current Discussion Topics</h4>
+                <div class="forum-topics">
+                    <div class="forum-topic">
+                        <h5>What barriers have you faced when engaging CALD families?</h5>
+                        <p class="small">Share your experiences and strategies that have worked in your context.</p>
+                    </div>
+                    <div class="forum-topic">
+                        <h5>How do you use supervision to reflect on cultural safety?</h5>
+                        <p class="small">Discuss approaches to critical reflection and professional development.</p>
+                    </div>
+                    <div class="forum-topic">
+                        <h5>Share one resource or success story from your practice</h5>
+                        <p class="small">Help others by sharing tools, approaches, or wins that supported cultural safety.</p>
+                    </div>
+                </div>
+
+				<div class="forum-embed">
+					<script src="https://giscus.app/client.js"
+						data-repo="Eva-Wang-S0S/HarmonySchools.com.au"
+						data-repo-id="R_kgDOQOuFMg"
+						data-category="General"
+						data-category-id="DIC_kwDOQOuFMs4Cxo_z"
+						data-mapping="pathname"
+						data-strict="0"
+						data-reactions-enabled="1"
+						data-emit-metadata="0"
+						data-input-position="bottom"
+						data-theme="preferred_color_scheme"
+						data-lang="en"
+						crossorigin="anonymous"
+						async>
+					</script>
+				</div>
+            </div>
+        </section>
+
+        <!-- Final Word -->
+        <section id="final-word" class="content-section">
+            <div class="container">
+                <h3>🌿 Final Word</h3>
+                <p>Cultural safety is not a checklist—it is a continuous process of <strong>reflection, accountability, and humility</strong>. As a school social worker, you help determine whether students experience school as alienating or empowering.</p>
+                <blockquote class="highlight-quote">
+                    <p>"Inclusion happens when we change the system to welcome the student, not when we ask the student to adapt."</p>
+                </blockquote>
+                <p><strong>Stay curious. Stay reflective. Stay connected.</strong></p>
+            </div>
+        </section>
+            </div><!-- End main-content -->
+        </div><!-- End page-wrapper -->
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="acknowledgement">
+                <p><strong>Acknowledgement of Country</strong></p>
+                <p>We acknowledge the Traditional Custodians of the lands on which our schools stand, and pay our respects to Elders past, present, and emerging. We are committed to honouring Aboriginal and Torres Strait Islander peoples and their unique cultural and spiritual relationships to land, water, and community.</p>
+            </div>
+            <div class="footer-links">
+                <p>&copy; 2025 Cultural Safety in Schools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/site.js"></script>
+    <script>
+        // Sidebar Navigation Functionality
+        (function() {
+            const sidebarNav = document.getElementById('sidebarNav');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+            const sidebarLinks = sidebarNav.querySelectorAll('a');
+            const sections = document.querySelectorAll('section[id]');
+            
+            // Function to toggle sidebar
+            function toggleSidebar() {
+                sidebarNav.classList.toggle('active');
+                if (sidebarBackdrop) {
+                    sidebarBackdrop.classList.toggle('active');
+                }
+            }
+            
+            // Function to close sidebar
+            function closeSidebar() {
+                sidebarNav.classList.remove('active');
+                if (sidebarBackdrop) {
+                    sidebarBackdrop.classList.remove('active');
+                }
+            }
+            
+            // Toggle sidebar on mobile
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleSidebar();
+                });
+            }
+            
+            // Close sidebar when clicking backdrop
+            if (sidebarBackdrop) {
+                sidebarBackdrop.addEventListener('click', closeSidebar);
+            }
+            
+            // Close sidebar when clicking a link on mobile
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // Check if we're on mobile (sidebar is hidden by default)
+                    if (window.innerWidth <= 992) {
+                        closeSidebar();
+                    }
+                    
+                    // Smooth scroll to section
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        const targetId = href.substring(1);
+                        const targetSection = document.getElementById(targetId);
+                        if (targetSection) {
+                            const headerHeight = document.querySelector('.site-header').offsetHeight;
+                            const targetPosition = targetSection.offsetTop - headerHeight - 20;
+                            
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Update active link based on scroll position
+            function updateActiveLink() {
+                const scrollPosition = window.scrollY + 150; // Offset for header
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        // Remove active class from all links
+                        sidebarLinks.forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        
+                        // Add active class to current link
+                        const activeLink = sidebarNav.querySelector(`a[href="#${sectionId}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            }
+            
+            // Update on scroll
+            window.addEventListener('scroll', updateActiveLink);
+            
+            // Update on page load
+            updateActiveLink();
+            
+            // Close sidebar when clicking outside on mobile (handled by backdrop)
+            // Also close on window resize if switching to desktop
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 992) {
+                    closeSidebar();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

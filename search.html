@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search all cultural safety resources by topic, audience, and format.">
+    <title>Search Resources - Cultural Safety in Schools</title>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Cultural Safety in Schools</h1>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="teachers.html">Teachers</a></li>
+                    <li><a href="parents.html">Parents</a></li>
+                    <li><a href="social-workers.html">Social Workers</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="search.html" class="active" aria-current="page">Search</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Search Resources</h2>
+                <p class="intro">Find resources tailored to your needs using our comprehensive search and filter tools.</p>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="search-layout">
+                    <!-- Filters Sidebar -->
+                    <aside class="filters-sidebar">
+                        <div class="filter-header">
+                            <h3>Filters</h3>
+                            <button id="clear-filters" class="btn-link">Clear All</button>
+                        </div>
+
+                        <!-- Keyword Search -->
+                        <div class="filter-group">
+                            <label for="keyword-search">Keyword Search</label>
+                            <input 
+                                type="text" 
+                                id="keyword-search" 
+                                placeholder="Search by title or topic..." 
+                                aria-label="Keyword search"
+                            >
+                        </div>
+
+                        <!-- Audience Filter -->
+                        <div class="filter-group">
+                            <h4>Audience</h4>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="audience" value="Teachers">
+                                    <span>Teachers</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="audience" value="Parents">
+                                    <span>Parents</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="audience" value="Social Workers">
+                                    <span>Social Workers</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="audience" value="Students">
+                                    <span>Students</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Topics Filter -->
+                        <div class="filter-group">
+                            <h4>Topics</h4>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="topics" value="Policy">
+                                    <span>Policy</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="topics" value="Leadership">
+                                    <span>Leadership</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="topics" value="Community">
+                                    <span>Community</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="topics" value="Identity">
+                                    <span>Identity</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="topics" value="Reflection">
+                                    <span>Reflection</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="topics" value="Pedagogy">
+                                    <span>Pedagogy</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="topics" value="Family Engagement">
+                                    <span>Family Engagement</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="topics" value="Trauma">
+                                    <span>Trauma</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="topics" value="Language">
+                                    <span>Language</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="topics" value="Wellbeing">
+                                    <span>Wellbeing</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Format Filter -->
+                        <div class="filter-group">
+                            <h4>Format</h4>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="format" value="Video">
+                                    <span>Video</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="format" value="Guide">
+                                    <span>Guide</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="format" value="Template">
+                                    <span>Template</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="format" value="Toolkit">
+                                    <span>Toolkit</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="format" value="Policy">
+                                    <span>Policy</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="format" value="Lesson Plan">
+                                    <span>Lesson Plan</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="format" value="Podcast">
+                                    <span>Podcast</span>
+                                </label>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Results Area -->
+                    <div class="results-area">
+                        <div class="results-header">
+                            <div class="results-info">
+                                <span id="results-count">Loading resources...</span>
+                            </div>
+                            <div class="sort-controls">
+                                <label for="sort-select">Sort by:</label>
+                                <select id="sort-select" aria-label="Sort results">
+                                    <option value="relevance">Relevance</option>
+                                    <option value="newest">Newest</option>
+                                    <option value="az">A-Z</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="results-container" class="results-grid">
+                            <!-- Results will be loaded here dynamically -->
+                        </div>
+
+                        <div id="pagination" class="pagination">
+                            <!-- Pagination will be added here -->
+                        </div>
+
+                        <div id="no-results" class="no-results" style="display: none;">
+                            <p>No resources found matching your criteria.</p>
+                            <p>Try adjusting your filters or search terms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="acknowledgement">
+                <p><strong>Acknowledgement of Country</strong></p>
+                <p>We acknowledge the Traditional Custodians of the lands on which our schools stand, and pay our respects to Elders past, present, and emerging. We are committed to honouring Aboriginal and Torres Strait Islander peoples and their unique cultural and spiritual relationships to land, water, and community.</p>
+            </div>
+            <div class="footer-links">
+                <p>&copy; 2025 Cultural Safety in Schools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/site.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>
