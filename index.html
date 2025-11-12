@@ -9,10 +9,294 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .stat-highlight {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .purpose-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .purpose-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .purpose-content h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .purpose-content p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .stakeholders-section {
+            padding: 4rem 0;
+        }
+        
+        .stakeholders-section h2 {
+            text-align: center;
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stakeholder-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        @media (max-width: 1200px) {
+            .stakeholder-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .stakeholder-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .stakeholder-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .stakeholder-card h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .stakeholder-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .stakeholder-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .stakeholder-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .frameworks-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .frameworks-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .framework-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .framework-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .map-section {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .map-section h2 {
+            text-align: center;
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .resources-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .resources-section h2 {
+            text-align: center;
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        
+        @media (max-width: 1200px) {
+            .resource-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .resource-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .resource-card h4 {
+            color: #764ba2;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resource-card a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .resource-card a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="site-header">
+    <header>
         <div class="container">
+
             <div class="logo">
                 <h1>Cultural Safety in Schools</h1>
             </div>
@@ -32,69 +316,163 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <div class="hero">
+                <div class="stat-highlight">
+                    28% of Australians were born overseas - 3 in 10 people
+                </div>
+                <h1>Creating Culturally Safe Schools for All</h1>
+                <p>Promoting inclusion, respect, and wellbeing for students and families from culturally and linguistically diverse backgrounds</p>
+                <a href="#stakeholders" class="cta-button">Explore Resources</a>
+            </div>
         </div>
     </header>
-
-    <main>
-        <section class="hero">
-            <div class="container">
-                <!-- Hero image placeholder -->
-                <div class="hero-content">
-                    <h2>Creating Culturally Safe Schools</h2>
-                    <p class="subtitle">Promoting respect, inclusion, and belonging for every student and community.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="audience-tiles">
-            <div class="container">
-                <h2 class="section-title">Resources for Everyone</h2>
-                <div class="tiles-grid">
-                    <a href="teachers.html" class="tile">
-                        <div class="tile-icon" aria-hidden="true">📚</div>
-                        <h3>Teachers</h3>
-                        <p>Lesson ideas, classroom activities, and reflective tools for culturally safe teaching.</p>
-                    </a>
-                    <a href="parents-hui.html" class="tile">
-                        <div class="tile-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
-                        <h3>Parents</h3>
-                        <p>Guides and examples for partnering with schools on inclusion and cultural understanding.</p>
-                    </a>
-                    <a href="social-workers.html" class="tile">
-                        <div class="tile-icon" aria-hidden="true">🤝</div>
-                        <h3>Social Workers</h3>
-                        <p>Assessment tools, case management guides, and frameworks for school social work practice.</p>
-                    </a>
-                    <a href="students.html" class="tile">
-                        <div class="tile-icon" aria-hidden="true">🎨</div>
-                        <h3>Students</h3>
-                        <p>Stories, projects, and creative tools to explore identity, respect, and belonging.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="quote-banner">
-            <div class="container">
-                <blockquote>
-                    <p>"Cultural safety begins when we listen, reflect, and share power in our learning spaces."</p>
-                </blockquote>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
+    
+    <section class="purpose-section" id="about">
         <div class="container">
-            <div class="acknowledgement">
-                <p><strong>Acknowledgement of Country</strong></p>
-                <p>We acknowledge the Traditional Custodians of the lands on which our schools stand, and pay our respects to Elders past, present, and emerging. We are committed to honouring Aboriginal and Torres Strait Islander peoples and their unique cultural and spiritual relationships to land, water, and community.</p>
-            </div>
-            <div class="footer-links">
-                <p>&copy; 2025 Cultural Safety in Schools. All rights reserved.</p>
+            <div class="purpose-content">
+                <h2>Our Purpose</h2>
+                <p>We work to make schools free from discrimination by promoting culturally safe environments where CALD communities can be themselves, express their language and beliefs, share their stories, and feel respected. We provide assets and resources to help all stakeholders - students, teachers, social workers, and parents - build belonging, engagement, and wellbeing for everyone.</p>
             </div>
         </div>
+    </section>
+    
+    <section class="stakeholders-section" id="stakeholders">
+        <div class="container">
+            <h2>Why Cultural Safety Matters</h2>
+            <div class="stakeholder-grid">
+                <div class="stakeholder-card">
+                    <h3>👨‍🎓 For Students</h3>
+                    <p>CALD young people often face migration stress, language barriers, racism, and social exclusion.</p>
+                    <ul>
+                        <li>Builds belonging and reduces bullying</li>
+                        <li>Improves peer relationships</li>
+                        <li>Develops global citizenship skills</li>
+                    </ul>
+                </div>
+                
+                <div class="stakeholder-card">
+                    <h3>👩‍🏫 For Teachers</h3>
+                    <p>Culturally responsive teaching creates better outcomes for all students.</p>
+                    <ul>
+                        <li>Inclusive pedagogy lifts engagement</li>
+                        <li>Clear communication supports attendance</li>
+                        <li>Differentiation respects diverse backgrounds</li>
+                    </ul>
+                </div>
+                
+                <div class="stakeholder-card">
+                    <h3>🤝 For Social Workers</h3>
+                    <p>Cross-cultural competency is essential for effective support.</p>
+                    <ul>
+                        <li>Cultural humility and trauma-informed practice</li>
+                        <li>Better family engagement through interpreters</li>
+                        <li>Advocacy for equitable policies</li>
+                    </ul>
+                </div>
+                
+                <div class="stakeholder-card">
+                    <h3>👨‍👩‍👧 For Parents</h3>
+                    <p>Understanding and partnership strengthen family involvement.</p>
+                    <ul>
+                        <li>Navigate the school system confidently</li>
+                        <li>Prevent misunderstandings early</li>
+                        <li>Become partners in learning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="frameworks-section" id="frameworks">
+        <div class="container">
+            <h2>Frameworks We Apply</h2>
+            <div class="framework-grid">
+                <div class="framework-card">
+                    <h3>AASW Code of Ethics</h3>
+                    <p>The Australian Association of Social Workers Code emphasizes respect for cultural identity, heritage, beliefs, and language in all practice.</p>
+                </div>
+                
+                <div class="framework-card">
+                    <h3>Multicultural Australia Policy</h3>
+                    <p>Based on principles of access, equity, participation, and social cohesion - ensuring inclusive and responsive services for all backgrounds.</p>
+                </div>
+                
+                <div class="framework-card">
+                    <h3>UNESCO Intercultural Education</h3>
+                    <p>International principles promoting mutual understanding, respect for cultural identity, quality education for all, and global citizenship skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="map-section" id="asset-map">
+        <div class="container">
+            <h2>Community Asset Map</h2>
+            <p style="text-align: center; color: #555; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Explore organizations across Western Australia supporting CALD communities. Click on markers to learn more about each service.
+            </p>
+            <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <iframe 
+                    src="https://www.google.com/maps/d/embed?mid=1-Bh-NSpJsildserzNbSF4oJkwbCUNDE&ehbc=2E312F" 
+                    width="100%" 
+                    height="600" 
+                    style="border:none; border-radius: 8px;">
+                </iframe>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="asset-map.html" class="cta-button" style="background: #667eea; color: white;">View Detailed Organization List →</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="resources-section" id="resources">
+        <div class="container">
+            <h2>Key Resources & Research</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h4>Cultural Safety Importance</h4>
+                    <p>Evidence on why cultural safety matters to all stakeholders</p>
+                    <a href="https://www.tandfonline.com/doi/full/10.1080/10376178.2022.2027254" target="_blank">Read Research →</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h4>Working with CALD Youth</h4>
+                    <p>Understanding risk factors and service delivery in Australia</p>
+                    <a href="https://journals.sagepub.com/doi/epub/10.1177/0887403420929416" target="_blank">Read Article →</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h4>Culturally Sensitive Practice</h4>
+                    <p>Cross-cultural awareness and systemic change frameworks</p>
+                    <a href="https://search.informit.org/doi/epdf/10.3316/ielapa.938499216890387" target="_blank">Read Paper →</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h4>CALD Australians Overview</h4>
+                    <p>Australian Institute of Health and Welfare data and insights</p>
+                    <a href="https://www.aihw.gov.au/reports-data/population-groups/cald-australians/overview" target="_blank">View Data →</a>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <h3 style="color: #667eea; margin-bottom: 1rem;">Western Australia Community Partners</h3>
+                <p style="color: #555; margin-bottom: 1.5rem;">Connect with organizations supporting CALD communities:</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                    <a href="https://www.mccwa.org.au" target="_blank" style="padding: 0.5rem 1rem; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">MCCWA</a>
+                    <a href="https://www.mercycare.com.au/community-services/multicultural-services" target="_blank" style="padding: 0.5rem 1rem; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">Mercy Care</a>
+                    <a href="https://asetts.org.au" target="_blank" style="padding: 0.5rem 1rem; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">ASeTTS</a>
+                    <a href="https://www.eccwa.org.au" target="_blank" style="padding: 0.5rem 1rem; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">ECCWA</a>
+                    <a href="https://culturecarewa.org.au" target="_blank" style="padding: 0.5rem 1rem; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">Culture Care WA</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2025 CALD School Wellbeing Hub. Building culturally safe schools for all.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Cultural safety is an ongoing process, not a checklist. It involves self-reflection, listening, and valuing students' worldviews.</p>
+        </div>
     </footer>
-
-    <script src="assets/js/site.js"></script>
 </body>
 </html>
