@@ -10,79 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 3rem 0;
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInDown 0.8s ease-out;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        .stat-highlight {
-            background: rgba(255,255,255,0.2);
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        
-        .cta-button {
-            background: white;
-            color: #667eea;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
-        
-        .purpose-section {
-            background: #f8f9fa;
+        /* Homepage Specific Styles */
+        .purpose-section, .resources-section {
             padding: 4rem 0;
+            background: var(--color-off-white);
         }
         
         .purpose-content {
@@ -91,8 +22,9 @@
             margin: 0 auto;
         }
         
-        .purpose-content h2 {
-            color: #667eea;
+        .purpose-content h2, .stakeholders-section h2, .frameworks-section h2, .resources-section h2, .map-section h2 {
+            text-align: center;
+            color: var(--color-primary);
             font-size: 2rem;
             margin-bottom: 1.5rem;
         }
@@ -107,13 +39,6 @@
             padding: 4rem 0;
         }
         
-        .stakeholders-section h2 {
-            text-align: center;
-            color: #667eea;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-        }
-        
         .stakeholder-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -126,21 +51,27 @@
             }
         }
         
+        @media (max-width: 768px) {
+            .stakeholder-grid, .resource-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         .stakeholder-card {
             background: white;
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
         }
         
         .stakeholder-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-md);
         }
         
         .stakeholder-card h3 {
-            color: #764ba2;
+            color: var(--color-accent);
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
@@ -160,20 +91,18 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: #667eea;
+            color: var(--color-primary);
             font-weight: bold;
         }
         
         .frameworks-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-eucalyptus) 100%);
+            color: rgb(5, 5, 5);
             padding: 4rem 0;
         }
         
         .frameworks-section h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
+            color: rgb(21, 20, 20);
         }
         
         .framework-grid {
@@ -183,39 +112,22 @@
         }
         
         .framework-card {
-            background: rgba(255,255,255,0.1);
+            background: rgba(2, 2, 2, 0.15);
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: var(--border-radius);
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
         }
         
         .framework-card h3 {
             margin-bottom: 1rem;
             font-size: 1.3rem;
+            color: rgb(18, 18, 18);
         }
         
         .map-section {
             padding: 4rem 0;
             background: white;
-        }
-        
-        .map-section h2 {
-            text-align: center;
-            color: #667eea;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .resources-section {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-        
-        .resources-section h2 {
-            text-align: center;
-            color: #667eea;
-            font-size: 2rem;
-            margin-bottom: 3rem;
         }
         
         .resource-grid {
@@ -231,72 +143,56 @@
         }
         
         .resource-card {
-            background: white;
+            background: rgb(241, 241, 237);
             padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-radius: var(--border-radius-sm);
+            border-left: 4px solid var(--color-primary);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .resource-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
         }
         
         .resource-card h4 {
-            color: #764ba2;
+            color: var(--color-accent);
             margin-bottom: 0.5rem;
         }
         
         .resource-card a {
-            color: #667eea;
+            color: var(--color-primary);
             text-decoration: none;
             font-size: 0.9rem;
+            font-weight: 500;
         }
         
         .resource-card a:hover {
             text-decoration: underline;
+            color: var(--color-accent);
         }
         
-        footer {
-            background: #2d3748;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
+        .resource-link-btn {
+            padding: 0.5rem 1rem;
+            background: var(--color-primary);
+            color: rgb(28, 27, 27) !important;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: var(--transition);
+            margin: 0.25rem;
         }
         
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
+        .resource-link-btn:hover {
+            background: var(--color-accent);
+            color: white !important;
         }
     </style>
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <div class="container">
-
             <div class="logo">
                 <h1>Cultural Safety in Schools</h1>
             </div>
@@ -309,23 +205,26 @@
                 <ul>
                     <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                     <li><a href="teachers.html">Teachers</a></li>
-                    <li><a href="parents-hui.html">Parents</a></li>
+                    <li><a href="parents.html">Parents</a></li>
                     <li><a href="social-workers.html">Social Workers</a></li>
                     <li><a href="students.html">Students</a></li>
                     <li><a href="search.html">Search</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <div class="hero">
-                <div class="stat-highlight">
-                    28% of Australians were born overseas - 3 in 10 people
-                </div>
-                <h1>Creating Culturally Safe Schools for All</h1>
-                <p>Promoting inclusion, respect, and wellbeing for students and families from culturally and linguistically diverse backgrounds</p>
-                <a href="#stakeholders" class="cta-button">Explore Resources</a>
-            </div>
         </div>
     </header>
+    
+    <div class="hero">
+        <div class="container">
+            <div class="stat-highlight">
+                28% of Australians were born overseas - 3 in 10 people
+            </div>
+            <h1>Creating Culturally Safe Schools for All</h1>
+            <p>Promoting inclusion, respect, and wellbeing for students and families from culturally and linguistically diverse backgrounds</p>
+            <a href="#stakeholders" class="cta-button">Explore Resources</a>
+        </div>
+    </div>
     
     <section class="purpose-section" id="about">
         <div class="container">
@@ -420,7 +319,7 @@
                 </iframe>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <a href="asset-map.html" class="cta-button" style="background: #667eea; color: white;">View Detailed Organization List →</a>
+                <a href="asset-map.html" class="cta-button">View Detailed Organization List →</a>
             </div>
         </div>
     </section>
@@ -455,24 +354,32 @@
             </div>
             
             <div style="margin-top: 3rem; text-align: center;">
-                <h3 style="color: #667eea; margin-bottom: 1rem;">Western Australia Community Partners</h3>
+                <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Western Australia Community Partners</h3>
                 <p style="color: #555; margin-bottom: 1.5rem;">Connect with organizations supporting CALD communities:</p>
                 <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-                    <a href="https://www.mccwa.org.au" target="_blank" style="padding: 0.5rem 1rem; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">MCCWA</a>
-                    <a href="https://www.mercycare.com.au/community-services/multicultural-services" target="_blank" style="padding: 0.5rem 1rem; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">Mercy Care</a>
-                    <a href="https://asetts.org.au" target="_blank" style="padding: 0.5rem 1rem; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">ASeTTS</a>
-                    <a href="https://www.eccwa.org.au" target="_blank" style="padding: 0.5rem 1rem; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">ECCWA</a>
-                    <a href="https://culturecarewa.org.au" target="_blank" style="padding: 0.5rem 1rem; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">Culture Care WA</a>
+                    <a href="https://www.mccwa.org.au" target="_blank" class="resource-link-btn">MCCWA</a>
+                    <a href="https://www.mercycare.com.au/community-services/multicultural-services" target="_blank" class="resource-link-btn">Mercy Care</a>
+                    <a href="https://asetts.org.au" target="_blank" class="resource-link-btn">ASeTTS</a>
+                    <a href="https://www.eccwa.org.au" target="_blank" class="resource-link-btn">ECCWA</a>
+                    <a href="https://culturecarewa.org.au" target="_blank" class="resource-link-btn">Culture Care WA</a>
                 </div>
             </div>
         </div>
     </section>
     
-    <footer id="contact">
+    <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 CALD School Wellbeing Hub. Building culturally safe schools for all.</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Cultural safety is an ongoing process, not a checklist. It involves self-reflection, listening, and valuing students' worldviews.</p>
+            <div class="acknowledgement">
+                <p><strong>Acknowledgement of Country</strong></p>
+                <p>We acknowledge the Traditional Custodians of the lands on which our schools stand, and pay our respects to Elders past, present, and emerging. We are committed to honouring Aboriginal and Torres Strait Islander peoples and their unique cultural and spiritual relationships to land, water, and community.</p>
+            </div>
+            <div class="footer-links">
+                <p>&copy; 2025 Cultural Safety in Schools. Building culturally safe schools for all.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Cultural safety is an ongoing process, not a checklist. It involves self-reflection, listening, and valuing students' worldviews.</p>
+            </div>
         </div>
     </footer>
+
+    <script src="assets/js/site.js"></script>
 </body>
 </html>

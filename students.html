@@ -3,13 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Resources for Students - Explore identity, respect, and belonging through stories and creative projects.">
     <title>Student's Corner - CALD Support</title>
-    <link rel="stylesheet" href="assets/css/site.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        /* Site Header Navigation Styles */
+        .site-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .site-header .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .site-header .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            color: white;
+        }
+        
+        .site-header .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .site-header .main-nav li {
+            margin: 0;
+        }
+        
+        .site-header .main-nav a {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        .site-header .main-nav a:hover,
+        .site-header .main-nav a.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .site-header .main-nav {
+                width: 100%;
+                margin-top: 1rem;
+                display: none;
+            }
+            
+            .site-header .main-nav.active {
+                display: block;
+            }
+            
+            .site-header .main-nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .site-header .main-nav li {
+                width: 100%;
+            }
+            
+            .site-header .main-nav a {
+                display: block;
+                padding: 1rem;
+                border-radius: 0;
+            }
+        }
+        
+        /* Student Page Specific Styles */
         * {
             margin: 0;
             padding: 0;
@@ -28,21 +126,46 @@
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
+            animation: fadeIn 0.6s ease-in;
         }
-        header {
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .page-header {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
             padding: 40px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        header h1 {
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .page-header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
         }
-        header p {
+        .page-header p {
             font-size: 1.2em;
             opacity: 0.95;
+            position: relative;
+            z-index: 1;
         }
         .nav-tabs {
             display: flex;
@@ -65,6 +188,7 @@
         }
         .nav-tab:hover {
             background: #dee2e6;
+            transform: translateY(-2px);
         }
         .nav-tab.active {
             background: white;
@@ -80,11 +204,11 @@
         }
         .tab-content.active {
             display: block;
-            animation: fadeIn 0.5s;
+            animation: slideIn 0.5s ease-out;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
         }
         .section {
             margin-bottom: 40px;
@@ -92,6 +216,11 @@
             background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
         .section h2 {
             color: #d63447;
@@ -134,6 +263,11 @@
             margin: 15px 0;
             border-left: 5px solid #764ba2;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .tip-box:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
         .sos-tip {
             border-left: 5px solid #e74c3c;
@@ -170,10 +304,12 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            cursor: pointer;
         }
         .org-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
         .story-section {
             background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
@@ -199,6 +335,7 @@
             padding: 25px;
             border-radius: 15px;
             margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .quiz-question {
             font-size: 1.2em;
@@ -218,14 +355,26 @@
         .quiz-option:hover {
             background: #e9ecef;
             border-color: #667eea;
+            transform: translateX(5px);
         }
         .quiz-option.correct {
             background: #d4edda;
             border-color: #28a745;
+            animation: correctPulse 0.5s;
         }
         .quiz-option.incorrect {
             background: #f8d7da;
             border-color: #dc3545;
+            animation: shake 0.5s;
+        }
+        @keyframes correctPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
         }
         .quiz-feedback {
             margin-top: 15px;
@@ -236,6 +385,7 @@
         }
         .quiz-feedback.show {
             display: block;
+            animation: slideIn 0.5s;
         }
         .quiz-feedback.correct {
             background: #d4edda;
@@ -259,7 +409,7 @@
         .flip-card {
             background: transparent;
             width: 100%;
-            height: 250px;
+            height: 280px;
             perspective: 1000px;
             margin: 15px 0;
         }
@@ -298,8 +448,9 @@
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
             transform: rotateY(180deg);
-            font-size: 1.1em;
-            line-height: 1.6;
+            font-size: 1em;
+            line-height: 1.5;
+            overflow-y: auto;
         }
         .flashcard-grid {
             display: grid;
@@ -356,6 +507,7 @@
         .form-group textarea:focus {
             outline: none;
             border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
         }
         .form-group textarea {
             min-height: 150px;
@@ -407,9 +559,10 @@
             margin: 20px 0;
             border-left: 5px solid #28a745;
             display: none;
+            animation: slideIn 0.5s;
         }
         @media (max-width: 768px) {
-            header h1 {
+            .page-header h1 {
                 font-size: 1.8em;
             }
             .content {
@@ -429,8 +582,9 @@
     </style>
 </head>
 <body>
+    <!-- Site-wide Navigation Header -->
     <header class="site-header">
-        <div class="container">
+        <div class="header-container">
             <div class="logo">
                 <h1>Cultural Safety in Schools</h1>
             </div>
@@ -445,19 +599,20 @@
                     <li><a href="teachers.html">Teachers</a></li>
                     <li><a href="parents.html">Parents</a></li>
                     <li><a href="social-workers.html">Social Workers</a></li>
-                    <li><a href="students.html" class="active" aria-current="page">Students</a></li>
+                    <li><a href="students.html" class="active">Students</a></li>
                     <li><a href="search.html">Search</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
+
+    <!-- Student Page Content -->
     <div class="container">
-        <header>
+        <div class="page-header">
             <h1>🌟 Student's Corner 🌟</h1>
-            <p>Discover cool ways to understand cultural diversity, get self-help tips, and be a supportive friend to Culturally and Linguistically Diverse peers</p>
-        </header>
+            <p>Discover cool ways to understand cultural diversity, get self-help tips, and be a supportive friend to CALD (Culturally and Linguistically Diverse) peers</p>
+        </div>
         <div class="nav-tabs">
             <button class="nav-tab active" onclick="switchTab('overview')">Overview</button>
             <button class="nav-tab" onclick="switchTab('primary')">Primary Students</button>
@@ -623,74 +778,81 @@
                     <h3>How to Share Your Feelings and Get Support</h3>
                     
                     <div class="tip-box">
-                        <h4>Notice your feelings</h4>
+                        <h4>Notice your feelings 😔😡</h4>
                         <ul>
                             <li>What happened that upset you?</li>
                             <li>How does it make you feel?</li>
                         </ul>
                     </div>
                     <div class="tip-box">
-                        <h4>Talk or write it down</h4>
+                        <h4>Talk or write it down ✏️🖍️</h4>
                         <ul>
                             <li>Draw a picture, write a story, or make a list</li>
                             <li>A parent, teacher, or friend who listens and cares</li>
                         </ul>
                     </div>
                     <div class="tip-box">
-                        <h4>Say what you need</h4>
+                        <h4>Say what you need 💖</h4>
                         <ul>
                             <li>Do you want advice, a hug, or just someone to listen?</li>
                         </ul>
                     </div>
                     <div class="tip-box">
-                        <h4>Use "I" statements</h4>
+                        <h4>Use "I" statements 🗣️</h4>
                         <ul>
                             <li>"I feel sad when someone says that to me."</li>
                         </ul>
                     </div>
                     <h3>Organisations & Support Network</h3>
-                    <h4>Tell a trusted adult</h4>
-                    <div class="organizations">
-                        <div class="org-card">Parents</div>
-                        <div class="org-card">Teacher</div>
-                        <div class="org-card">Police Officer</div>
-                        <div class="org-card">Grandparents</div>
-                        <div class="org-card">Siblings</div>
-                        <div class="org-card">Social Worker</div>
-                        <div class="org-card">Doctors and Nurses</div>
+                    <div class="tip-box sos-tip">
+                        <h4>Tell a Trusted Adult 👫👬 </h4>
+                        <p>If something happens that makes you feel upset, scared, or uncomfortable, it's important to talk to an adult you trust. Here are some people who can help:</p>
+                        <div class="organizations" style="margin-top: 15px;">
+                            <div class="org-card">Parents</div>
+                            <div class="org-card">Teacher</div>
+                            <div class="org-card">Police Officer</div>
+                            <div class="org-card">Grandparents</div>
+                            <div class="org-card">Siblings</div>
+                            <div class="org-card">Social Worker</div>
+                            <div class="org-card">Doctors and Nurses</div>
+                        </div>
                     </div>
                     <div class="tip-box sos-tip">
-                        <h4>Need to Talk or Get Help?</h4>
+                        <h4>Need to Talk or Get Help? 🤝</h4>
                         <p>If you're ever feeling unsafe, worried, or just need to talk, here are some people who can help:</p>
                         <ul>
-                            <li><strong>Kids Helpline:</strong> 1800 55 1800</li>
-                            <li><strong>Lifeline:</strong> 13 11 14</li>
+                            <li><strong><a href="https://kidshelpline.com.au/" target="_blank" style="color: #c0392b; text-decoration: underline; font-weight: bold;">Kids Helpline</a>:</strong> 1800 55 1800</li>
+                            <li><strong><a href="https://www.lifeline.org.au/" target="_blank" style="color: #c0392b; text-decoration: underline; font-weight: bold;">Lifeline</a>:</strong> 13 11 14 | <a href="https://toolkit.lifeline.org.au/articles/techniques/talk-to-someone-you-trust" target="_blank" style="color: #c0392b; text-decoration: underline; font-weight: bold;">Lifeline Toolkit</a></li>
+                            <li><a href="https://www.ccyp.wa.gov.au/info-for-children-and-young-people/rights-of-wa-children-and-young-people/" target="_blank" style="color: #c0392b; text-decoration: underline; font-weight: bold;">Commissioner for Children and Young People</a></li>
+                            <li><a href="https://mscwa.com.au/" target="_blank" style="color: #c0392b; text-decoration: underline; font-weight: bold;">Multicultural Service Centre of Western Australia:</a> Support for CALD families and young people</li>
+                            <li><a href="https://www.esafety.gov.au/kids" target="_blank" style="color: #c0392b; text-decoration: underline; font-weight: bold;">eSafety Commissioner:</a> If something bad happens online</li>
+                            <li><a href="https://www.accce.gov.au/report" target="_blank" style="color: #c0392b; text-decoration: underline; font-weight: bold;">Australian Federal Police to report:</a> If anything bad happens online | Call <strong>000</strong> if there is any emergency</li>
                         </ul>
                         <p><em>💬 You don't have to go through things alone – these services are safe, private, and free.</em></p>
                     </div>
                     <h3>Self-Care</h3>
                     <div class="tip-box">
-                        <h4>Celebrate your culture</h4>
+                        <h4>Celebrate your culture 🎶🍲📚</h4>
                         <p>Listen to music, cook yummy food, read books, or join fun cultural activities.</p>
                     </div>
                     <div class="tip-box">
-                        <h4>Move your body</h4>
+                        <h4>Move your body 🏃‍♀️🤸‍♂️ </h4>
                         <p>Run, stretch, do yoga, or play games with friends.</p>
                     </div>
                     <div class="tip-box">
-                        <h4>Take deep breaths</h4>
+                        <h4>Take deep breaths 🌬️</h4>
                         <p>Breathe slowly and quietly for a few minutes to feel calm.</p>
                     </div>
                     <div class="tip-box">
-                        <h4>Write or draw</h4>
+                        <h4>Write or draw ✏️🖍️</h4>
                         <p>Draw or write about your day or things that make you happy.</p>
                     </div>
                     <div class="tip-box">
-                        <h4>Take a screen break</h4>
+                        <h4>Take a screen break 📱⏸️ </h4>
                         <p>Step away from social media or screens if it feels too much.</p>
                     </div>
                     <div class="tip-box">
-                        <h4>Learn and listen</h4>
+                        <h4>Learn and listen 🎧📖</h4>
                         <p>Watch or listen to stories about different cultures to understand more and feel connected.</p>
                     </div>
                 </div>
@@ -698,23 +860,26 @@
                     <h2>Supporting CALD Peers</h2>
                     <h3>Tips on supporting CALD Peers</h3>
                     <div class="tip-box">
-                        <h4>Standing up for Racism</h4>
+                        <h4>Standing up for Racism 💪 </h4>
                         <p>If you hear or see racist comments or behaviour, speak up or get help from a trusted adult or teacher. Everyone deserves to feel safe and respected.</p>
                         <a href="https://www.pbslearningmedia.org/resource/speaking-out-against-unfairness-video/meet-the-helpers/" class="resource-link" target="_blank">📺 Speaking Out Against Unfairness (Video)</a>
                     </div>
                     <div class="tip-box">
-                        <h4>Be nice</h4>
+                        <h4>Be nice 🤗 </h4>
                         <p>Don't be mean to anyone or treat them differently because of the colour of their skin, the country they were born, the language they speak or their cultural background.</p>
                     </div>
-                    <h3>Books / Information about CALD and racism</h3>
-                    <a href="https://www.pbslearningmedia.org/resource/we-are-all-different-video/meet-the-helpers/" class="resource-link" target="_blank">📺 We Are All Different (Video)</a>
-                    <a href="https://youtu.be/NyXVdit9cDc" class="resource-link" target="_blank">📺 Let's Talk About Racism (Video)</a>
-                    <a href="https://humanrights.gov.au/classroom-resources-racism" class="resource-link" target="_blank">📚 Information about Racism</a>
-                    <a href="https://www.ncacl.org.au/cd-database/" class="resource-link" target="_blank">📚 Books on Cultural Diversity (Primary)</a>
-                    <h3>Asking CALD peers about their culture kindly and respectfully</h3>
                     <div class="tip-box">
+                        <h4>Asking CALD peers about their culture kindly and respectfully 🫡</h4>
                         <p>Be curious in a kind and respectful way. You can say something like: <strong>"Can I ask about your culture/ethnicity? I would like to know more."</strong></p>
                         <p>Don't guess or assume where someone is from, just ask nicely.</p>
+                    </div>
+                    <h3>Books / Information about CALD and racism ℹ️ </h3>
+                    <a href="https://www.pbslearningmedia.org/resource/we-are-all-different-video/meet-the-helpers/" class="resource-link" target="_blank">📺 We Are All Different (Video)</a>
+                    <a href="https://youtu.be/NyXVdit9cDc" class="resource-link" target="_blank">📺 Let's Talk About Racism (Video)</a>
+                    <a href="https://humanrights.gov.au/sites/default/files/2022-12/lets_talk_about_racism_student_activities.pdf" class="resource-link" target="_blank">📚 Information about Racism</a>
+                    <div style="display: inline-block; margin: 10px 10px 10px 0;">
+                        <a href="https://www.ncacl.org.au/cd-database/" class="resource-link" target="_blank">📚 Books on Cultural Diversity (Primary)</a>
+                        <p style="margin: 5px 0 0 0; padding-left: 10px; font-size: 0.9em; font-style: italic; color: #555;">💡 Tip: Click "advance filter options" → select audience → primary → search</p>
                     </div>
                 </div>
                 <div class="section">
@@ -750,6 +915,46 @@
                             <li>What makes you feel proud and happy</li>
                             <li>A story from someone in your family</li>
                         </ul>
+                        
+                        <div style="margin-top: 25px; background: white; padding: 20px; border-radius: 10px;">
+                            <h4 style="color: #d63031; margin-bottom: 15px;">🎨 Create Your Drawing Here!</h4>
+                            <p style="margin-bottom: 15px;">Choose one option:</p>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <button onclick="showCanvas()" class="resource-link" style="margin: 5px;">✏️ Draw on Canvas</button>
+                                <button onclick="showUpload()" class="resource-link" style="margin: 5px; background: #28a745;">📤 Upload Drawing</button>
+                            </div>
+                            
+                            <!-- Canvas Drawing Area -->
+                            <div id="canvas-area" style="display: none;">
+                                <canvas id="drawing-canvas" width="600" height="400" style="border: 3px solid #d63031; border-radius: 10px; cursor: crosshair; display: block; margin: 0 auto; max-width: 100%; touch-action: none;"></canvas>
+                                <div style="text-align: center; margin-top: 15px;">
+                                    <button onclick="clearCanvas()" class="btn-reset">🗑️ Clear Canvas</button>
+                                    <button onclick="changeColor('black')" style="background: black; color: white; border: none; padding: 10px 15px; margin: 5px; border-radius: 5px; cursor: pointer;">⚫ Black</button>
+                                    <button onclick="changeColor('red')" style="background: red; color: white; border: none; padding: 10px 15px; margin: 5px; border-radius: 5px; cursor: pointer;">🔴 Red</button>
+                                    <button onclick="changeColor('blue')" style="background: blue; color: white; border: none; padding: 10px 15px; margin: 5px; border-radius: 5px; cursor: pointer;">🔵 Blue</button>
+                                    <button onclick="changeColor('green')" style="background: green; color: white; border: none; padding: 10px 15px; margin: 5px; border-radius: 5px; cursor: pointer;">🟢 Green</button>
+                                    <button onclick="changeColor('orange')" style="background: orange; color: white; border: none; padding: 10px 15px; margin: 5px; border-radius: 5px; cursor: pointer;">🟠 Orange</button>
+                                    <button onclick="changeColor('purple')" style="background: purple; color: white; border: none; padding: 10px 15px; margin: 5px; border-radius: 5px; cursor: pointer;">🟣 Purple</button>
+                                </div>
+                                <p style="text-align: center; margin-top: 10px; color: #666; font-style: italic;">✨ Your drawing will be saved automatically!</p>
+                            </div>
+                            
+                            <!-- Upload Area -->
+                            <div id="upload-area" style="display: none; text-align: center;">
+                                <input type="file" id="drawing-upload" accept="image/*" style="display: none;" onchange="handleFileUpload(event)">
+                                <div onclick="document.getElementById('drawing-upload').click()" style="border: 3px dashed #d63031; padding: 40px; border-radius: 10px; cursor: pointer; background: #fff5f5; transition: all 0.3s;" onmouseover="this.style.background='#ffe6e6'" onmouseout="this.style.background='#fff5f5'">
+                                    <div style="font-size: 3em; margin-bottom: 10px;">📤</div>
+                                    <p style="font-size: 1.2em; color: #d63031; font-weight: bold;">Click here to upload your drawing</p>
+                                    <p style="color: #666; margin-top: 10px;">Supports: JPG, PNG, GIF</p>
+                                </div>
+                                <div id="upload-preview" style="margin-top: 20px; display: none;">
+                                    <img id="preview-image" style="max-width: 100%; max-height: 400px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                                    <p style="margin-top: 10px; color: #28a745; font-weight: bold;">✅ Drawing uploaded successfully!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <p style="margin-top: 15px;"><strong>Remember:</strong> Everyone has their own special story to share. We can all learn from each other!</p>
                     </div>
                 </div>
@@ -761,54 +966,67 @@
                     
                     <h3>Self-Care</h3>
                     <div class="tip-box">
-                        <h4>Stay connected to your culture!</h4>
-                        <p>Cook your favourite foods, listen to music, read books, or join cultural activities. It's a positive way to celebrate who you are and cope with racism!</p>
+                        <h4>Stay connected to your culture! 🌍 </h4>
+                        <p>Cook your favourite cultural foods, listen to music, read books, join cultural activities or join movement change. It's a positive way to celebrate who you are and cope with racism!</p>
                     </div>
                     <div class="tip-box">
-                        <h4>Exercise!</h4>
-                        <p>Go for a run, stretching, yoga and group workout. Mindfulness: take 10-20 minutes to practice deep breathing exercise or meditation.</p>
+                        <h4>Exercise! 🏃‍♀️ </h4>
+                        <p>Go for a run, stretching, yoga and group workout.</p>
                     </div>
                     <div class="tip-box">
-                        <h4>Jot it down!</h4>
+                        <h4>Mindfulness! 🧘</h4>
+                        <p>Take 10-20 minutes to practice deep breathing exercise or meditation.</p>
+                    </div>
+                    <div class="tip-box">
+                        <h4>Jot it down!✏️ </h4>
                         <p>Journal (morning, before bed or both). Write down positive affirmations/things that happened that day.</p>
                     </div>
                     <div class="tip-box">
-                        <h4>Taking a break from media!</h4>
-                        <p>Sometimes social media can get overwhelming, unplug if needed.</p>
+                        <h4>Taking a break from media! 📱 </h4>
+                        <ul>
+                            <li>Be mindful of the media you take in and how long you spend taking it in. The media can be a source of race-related stress, through constant coverage of racial injustices and discrimination.</li>
+                            <li>Try disconnecting from social media and news for 15 minutes to one hour today and reflect on how you feel afterwards.</li>
+                        </ul>
                     </div>
                     <div class="tip-box">
-                        <h4>Finding strength in your beliefs!</h4>
+                        <h4>Finding strength in your beliefs!✨</h4>
                         <p>Lean on your faith or belief system for comfort and perspective.</p>
                     </div>
                     <div class="tip-box">
-                        <h4>Learning & Reflecting!</h4>
+                        <h4>Learning & Reflecting! 📕 </h4>
                         <p>Listen to podcasts about racism and diversity to understand more and feel connected.</p>
+                    </div>
+                    <div class="tip-box">
+                        <h4>Focus on hobbies or being creative! 🎭</h4>
+                        <p>Engage in activities you enjoy such as art, music, sports, or other creative pursuits to express yourself and relieve stress.</p>
                     </div>
                     
                     <h3>Organisations & Support Network</h3>
                     
                     <div class="tip-box">
-                        <h4>Seeking counselling/therapy!</h4>
+                        <h4>Seeking counselling/therapy! 💬</h4>
                         <p>Speaking with a counsellor or therapist can help you understand your feelings and find ways to cope.</p>
                     </div>
                     <div class="tip-box">
-                        <h4>Connect with organisations/Support Network</h4>
-                        <p>Reach out to trusted organisations, school support staff, or community groups that listen, support, and stand with you.</p>
+                        <h4>Connect with organisations/Support Network 🤝 </h4>
+                        <p>Speaking to family members, facilitator or service provider, supportive groups & community, GP or other CALD youth/ peers.</p>
                         <p><strong>Some examples are:</strong></p>
                         <ul>
-                            <li>Commissioner for Children and Young People</li>
-                            <li>Multicultural Service Centre of Western Australia</li>
-                            <li>Multicultural Youth Advocacy Network of Western Australia (MYAN WA)</li>
-                            <li>headspace & eheadspace</li>
-                            <li>Lifeline</li>
-                            <li>Kids Helpline</li>
+                            <li><strong><a href="https://kidshelpline.com.au/" target="_blank" style="color: #667eea; text-decoration: underline;">Kids Helpline</a>:</strong> 1800 55 1800</li>
+                            <li><strong><a href="https://www.lifeline.org.au/" target="_blank" style="color: #667eea; text-decoration: underline;">Lifeline</a>:</strong> 13 11 14 | <a href="https://toolkit.lifeline.org.au/articles/techniques/talk-to-someone-you-trust" target="_blank" style="color: #667eea; text-decoration: underline;">Lifeline Toolkit</a></li>
+                            <li><strong><a href="https://www.beyondblue.org.au/mental-health/youth" target="_blank" style="color: #667eea; text-decoration: underline;">Beyond Blue</a>:</strong> 1300 22 4636</li>
+                            <li><a href="https://www.ccyp.wa.gov.au/info-for-children-and-young-people/rights-of-wa-children-and-young-people/" target="_blank" style="color: #667eea; text-decoration: underline;">Commissioner for Children and Young People</a></li>
+                            <li><a href="https://mscwa.com.au/" target="_blank" style="color: #667eea; text-decoration: underline;">Multicultural Service Centre of Western Australia</a></li>
+                            <li><a href="https://myan.org.au/" target="_blank" style="color: #667eea; text-decoration: underline;">Multicultural Youth Advocacy Network of Western Australia (MYAN WA)</a></li>
+                            <li><a href="https://headspace.org.au/" target="_blank" style="color: #667eea; text-decoration: underline;">headspace & eheadspace</a></li>
+                            <li><a href="https://www.esafety.gov.au/kids" target="_blank" style="color: #667eea; text-decoration: underline;">eSafety Commissioner</a>: If something bad happens online</li>
+                            <li><a href="https://www.accce.gov.au/report" target="_blank" style="color: #667eea; text-decoration: underline;">Australian Federal Police to report:</a> If anything happens bad online | Call <strong>000</strong> if there is any emergency</li>
                         </ul>
-                        <a href="https://www.ccyp.wa.gov.au/our-work/resources/culturally-and-linguistically-diverse-children-and-young-people/" class="resource-link" target="_blank">🔗 CCYP Resources</a>
                     </div>
                     
                     <h3>Tips on How to Seek Help?</h3>
                     <div class="tip-box">
-                        <p>Think about what you would like to share. Speaking them out loud or writing thoughts on a piece of paper could help.</p>
+                        <p>Think about what you would like to share. Speaking them out loud or writing thoughts on a piece of paper could help. 🧠 </p>
                         <p><strong>Some questions that could help:</strong></p>
                         <ul>
                             <li>What's on your mind?</li>
@@ -820,11 +1038,20 @@
                         </ul>
                     </div>
                     <div class="tip-box">
-                        <h4>Use 'I' statements when you are ready to speak to them!</h4>
+                        <h4>Use 'I' statements when you are ready to speak to them! 🗣️ </h4>
                         <p>So that they would know how you are feeling about the experience.</p>
+                        <p style="margin-top: 15px;"><strong>Some great conversation starting points could be:</strong></p>
+                        <ul>
+                            <li>'I have been feeling…'</li>
+                            <li>'I've got some things on my mind, would you mind if we had a chat?'</li>
+                            <li>'I just wanted to let you know that…'</li>
+                            <li>'I am…'</li>
+                            <li>'I have been experiencing…'</li>
+                        </ul>
+                        <p style="margin-top: 15px; padding-left: 0;">If their reaction isn't what you were looking for, don't give up and swallow your feelings. Instead, you might like to reconsider who you'd like to talk to, or connect with a service that can help instead.</p>
                     </div>
                     <div class="tip-box">
-                        <h4>Be specific to what you would need from your trusted person!</h4>
+                        <h4>Be specific to what you would need from your trusted person! 🎯 </h4>
                         <ul>
                             <li>Do you want someone to just listen?</li>
                             <li>Do you want advice, help, or support?</li>
@@ -836,22 +1063,34 @@
                     <h2>Supporting CALD Peers</h2>
                     <h3>Tips on supporting CALD Peers</h3>
                     <div class="tip-box">
-                        <h4>Standing up for Racism</h4>
+                        <h4>Asking CALD peers about their culture with curiosity and respect 🤔🫡</h4>
+                        <p>Be curious in a kind and respectful way. You can say something like: <strong>"Would you be comfortable if I asked about your culture/ethnicity?"</strong></p>
+                        <p>This shows respect and interest without making assumptions about someone's culture or ethnicity.</p>
+                    </div>
+                    <div class="tip-box">
+                        <h4>Build inclusive & kind society that embrace diversity ☺️</h4>
+                        <ul>
+                            <li>Supporting peers from CALD background & Recognise and challenge micro aggression</li>
+                        </ul>
+                    </div>
+                    <div class="tip-box">
+                        <h4>Standing up for Racism 💪 </h4>
                         <p>If you hear or see racist comments or behaviour, speak up or get help from a trusted adult or teacher. Everyone deserves to feel safe and respected.</p>
                         <a href="https://www.pbslearningmedia.org/resource/speaking-out-against-unfairness-video/meet-the-helpers/" class="resource-link" target="_blank">📺 Watch the video!</a>
                     </div>
-                    <h3>Books / Information about CALD and racism</h3>
+                    <h3>Books / Information about CALD and racism ℹ️ </h3>
                     <div class="tip-box">
-                        <h4>Anti-racism toolkit</h4>
+                        <h4>Anti-racism toolkit 🪛</h4>
                         <p>Made by Australian high-school students, for Australian high-school students, that racism can be taken down brick by brick.</p>
+                        <a href="https://itstopswithme.humanrights.gov.au/resourcehub/australian-high-school-anti-racism-kit" class="resource-link" target="_blank" style="display: inline-block; margin-top: 10px;">📦 Access Anti-racism Toolkit</a>
                     </div>
                     
-                    <a href="https://humanrights.gov.au/classroom-resources-racism" class="resource-link" target="_blank">📚 Information about Racism</a>
-                    <a href="https://www.ncacl.org.au/cd-database/" class="resource-link" target="_blank">📚 Books on Cultural Diversity (Secondary)</a>
-                    <h3>Asking CALD peers about their culture with curiosity and respect</h3>
-                    <div class="tip-box">
-                        <p>Be curious in a kind and respectful way. You can say something like: <strong>"Would you be comfortable if I asked about your culture/ethnicity?"</strong></p>
-                        <p>This shows respect and interest without making assumptions about someone's culture or ethnicity.</p>
+                    <a href="https://www.ccyp.wa.gov.au/our-work/resources/culturally-and-linguistically-diverse-children-and-young-people/" class="resource-link" target="_blank">🔗 CCYP Resources</a>
+                    <a href="https://humanrights.gov.au/sites/default/files/2022-12/lets_talk_about_racism_student_activities.pdf" class="resource-link" target="_blank">📚 Information about Racism</a>
+                    <a href="https://headspace.org.au/explore-topics/for-young-people/cultural-identity-mental-health/" class="resource-link" target="_blank">📚 Information on Cultural Identity</a>
+                    <div style="display: inline-block; margin: 10px 10px 10px 0;">
+                        <a href="https://www.ncacl.org.au/cd-database/" class="resource-link" target="_blank">📚 Books on Cultural Diversity (Secondary)</a>
+                        <p style="margin: 5px 0 0 0; padding-left: 10px; font-size: 0.9em; font-style: italic; color: #555;">💡 Tip: Click "advance filter options" → select audience → secondary → search</p>
                     </div>
                 </div>
                 <div class="section">
@@ -878,6 +1117,43 @@
                             <li>How can you be a better ally to CALD peers?</li>
                             <li>What's one action you can take this week to promote inclusion?</li>
                         </ul>
+                        
+                        <div style="margin-top: 25px; background: white; padding: 20px; border-radius: 10px;">
+                            <h4 style="color: #d63031; margin-bottom: 15px;">📝 Write Your Reflections Here!</h4>
+                            <p style="margin-bottom: 15px;">Choose one option:</p>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <button onclick="showReflectionText()" class="resource-link" style="margin: 5px;">✏️ Type Here</button>
+                                <button onclick="showReflectionUpload()" class="resource-link" style="margin: 5px; background: #28a745;">📤 Upload Document</button>
+                            </div>
+                            
+                            <!-- Text Area -->
+                            <div id="reflection-text-area" style="display: none;">
+                                <textarea id="reflection-textarea" placeholder="Write your thoughts and reflections here... Think about what your culture means to you, how you can be a better ally, and actions you can take to promote inclusion." style="width: 100%; min-height: 250px; padding: 15px; border: 2px solid #d63031; border-radius: 10px; font-size: 1em; font-family: inherit; resize: vertical;"></textarea>
+                                <div style="text-align: center; margin-top: 15px;">
+                                    <button onclick="saveReflection()" class="btn-submit" style="padding: 12px 30px;">💾 Save Reflection</button>
+                                    <button onclick="clearReflection()" class="btn-reset">🗑️ Clear</button>
+                                </div>
+                                <p id="reflection-saved-message" style="text-align: center; margin-top: 10px; color: #28a745; font-weight: bold; display: none;">✅ Your reflection has been saved!</p>
+                            </div>
+                            
+                            <!-- Upload Area -->
+                            <div id="reflection-upload-area" style="display: none; text-align: center;">
+                                <input type="file" id="reflection-upload" accept=".doc,.docx,.pdf,.txt" style="display: none;" onchange="handleReflectionUpload(event)">
+                                <div onclick="document.getElementById('reflection-upload').click()" style="border: 3px dashed #d63031; padding: 40px; border-radius: 10px; cursor: pointer; background: #fff5f5; transition: all 0.3s;" onmouseover="this.style.background='#ffe6e6'" onmouseout="this.style.background='#fff5f5'">
+                                    <div style="font-size: 3em; margin-bottom: 10px;">📤</div>
+                                    <p style="font-size: 1.2em; color: #d63031; font-weight: bold;">Click here to upload your reflection document</p>
+                                    <p style="color: #666; margin-top: 10px;">Supports: DOC, DOCX, PDF, TXT</p>
+                                </div>
+                                <div id="reflection-upload-preview" style="margin-top: 20px; display: none;">
+                                    <div style="background: #e7f3ff; padding: 20px; border-radius: 10px; border-left: 5px solid #667eea;">
+                                        <p style="font-size: 1.2em; margin-bottom: 10px;">📄 <strong id="uploaded-filename"></strong></p>
+                                        <p style="color: #28a745; font-weight: bold;">✅ Document uploaded successfully!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <p style="margin-top: 15px;"><em>Write your thoughts in a journal or discuss with friends!</em></p>
                     </div>
                     <div class="interactive-card">
@@ -898,13 +1174,18 @@
                     <h2>📝 Share Your Story</h2>
                     <p style="margin-bottom: 20px;">Your story matters! Whether you want to share your experience, offer tips to help others, or celebrate your culture, we'd love to hear from you.</p>
                     
+                    <div class="tip-box" style="background: linear-gradient(135deg, #fff5e6 0%, #ffe6cc 100%); border: none; text-align: center; padding: 30px;">
+                        <h4 style="color: #d63447; font-size: 1.4em; margin-bottom: 15px;">💫 We're Here For You</h4>
+                        <p style="font-size: 1.3em; font-style: italic; color: #5f27cd; line-height: 1.6; margin-bottom: 10px;">"Your story matters and your voice deserves to be heard. We're here to listen, support, and help you every step of the way. You are not alone."</p>
+                    </div>
+                    
                     <div class="tip-box" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border: none;">
                         <h4>Why Share Your Story?</h4>
                         <ul>
-                            <li>Help others feel less alone</li>
-                            <li>Inspire and encourage your peers</li>
+                            <li>To empower/ inspire/ encourage each other</li>
+                            <li>Help others feel less lonely</li>
                             <li>Celebrate diversity and culture</li>
-                            <li>Share valuable tips and advice</li>
+                            <li>Share tips and advice</li>
                             <li>Make a positive difference</li>
                         </ul>
                     </div>
@@ -922,11 +1203,29 @@
                                 <label>Your Story <span style="color: #d63447;">*</span></label>
                                 <textarea id="storyText" placeholder="Share your experience, tips, or story here... Tell us about a time you experienced or witnessed racism, how you coped, what helped you, or how you supported someone else." required></textarea>
                             </div>
+                            
+                            <div class="tip-box" style="background: #fff9f0; border-left: 5px solid #ff9800; margin: 30px 0;">
+                                <h4 style="color: #ff9800;">🔒 Private Support Section (Optional)</h4>
+                                <p style="margin-bottom: 15px;">Need help? This section is completely <strong>private and confidential</strong>. A social worker can review your request and reach out to support you.</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Do you need help or support? <span class="optional">(Optional - Private)</span></label>
+                                <p style="font-size: 0.9em; color: #6c757d; margin-bottom: 10px;">If you're experiencing difficulties and would like a social worker (SW) to look at your enquiry and reach out to help, please let us know below. This information is completely private and confidential.</p>
+                                <textarea id="privateComments" placeholder="Share any concerns or request for support here. A social worker will review this privately and may contact you if you provide your contact details." rows="5"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact Information <span class="optional">(Optional - for SW follow-up only)</span></label>
+                                <p style="font-size: 0.9em; color: #6c757d; margin-bottom: 10px;">If you'd like a social worker to contact you, please provide your email or phone number. This information will be kept confidential.</p>
+                                <input type="text" id="contactInfo" placeholder="Email or phone number (optional)">
+                            </div>
+                            
                             <div class="form-group">
                                 <label style="display: flex; align-items: center; cursor: pointer;">
                                     <input type="checkbox" id="storyConsent" required style="width: auto; margin-right: 10px;">
                                     <span>I understand that my story may be shared to help others learn and feel supported. <span style="color: #d63447;">*</span></span>
                                 </label>
+                                <p style="font-size: 0.85em; color: #6c757d; margin-top: 8px; margin-left: 30px;"><strong>Note:</strong> Private comments and contact information will never be shared publicly.</p>
                             </div>
                             <div style="text-align: center; margin-top: 30px;">
                                 <button type="submit" class="btn-submit">✉️ Submit Your Story</button>
@@ -936,6 +1235,7 @@
                         <div id="successMessage" class="success-message">
                             <h3>🎉 Thank you for sharing your story!</h3>
                             <p>Your story has been received and will help others feel supported and less alone. We appreciate your courage and willingness to share.</p>
+                            <p style="margin-top: 15px; font-weight: bold;">If you requested support, a social worker will review your enquiry and may reach out to you if you provided contact information.</p>
                         </div>
                     </div>
                     <div style="margin-top: 40px;">
@@ -969,6 +1269,8 @@
             const name = document.getElementById('storyName').value || 'Anonymous';
             const age = document.getElementById('storyAge').value;
             const story = document.getElementById('storyText').value;
+            const privateComments = document.getElementById('privateComments').value;
+            const contactInfo = document.getElementById('contactInfo').value;
             const consent = document.getElementById('storyConsent').checked;
             
             if (!story.trim()) {
@@ -981,7 +1283,14 @@
                 return;
             }
             
-            console.log('Story submitted:', { name, age, story });
+            console.log('Story submitted:', { 
+                name, 
+                age, 
+                story,
+                privateComments: privateComments || 'None',
+                contactInfo: contactInfo || 'Not provided',
+                needsSupport: privateComments.trim() !== ''
+            });
             
             document.getElementById('storyForm').style.display = 'none';
             document.getElementById('successMessage').style.display = 'block';
@@ -994,28 +1303,23 @@
                 document.getElementById('storyForm').reset();
             }
         }
-
+        
         function goToStoryForm() {
             const tabs = document.querySelectorAll('.tab-content');
             tabs.forEach(tab => tab.classList.remove('active'));
-
             const navTabs = document.querySelectorAll('.nav-tab');
             navTabs.forEach(tab => tab.classList.remove('active'));
-
             document.getElementById('submit-story').classList.add('active');
-
             const storyTabButton = Array.from(navTabs).find(tab => 
                 tab.textContent.includes('Share Your Story')
             );
             if (storyTabButton) {
                 storyTabButton.classList.add('active');
             }
-
             document.getElementById('story-section-footer').style.display = 'none';
-
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
+        
         function checkAnswer(element, isCorrect, questionId) {
             const parent = element.parentElement;
             const options = parent.querySelectorAll('.quiz-option');
@@ -1035,7 +1339,7 @@
                 feedback.className = 'quiz-feedback incorrect show';
             }
         }
-
+        
         function showFeeling(feeling) {
             const responses = {
                 'sad': "It's okay to feel sad. Remember to talk to someone you trust about your feelings. 💙",
@@ -1050,30 +1354,26 @@
             response.style.display = 'block';
             response.style.background = '#e7f3ff';
         }
-
+        
         function showIStatement(example) {
             const statements = {
                 1: "I feel hurt when someone makes fun of my accent because it's a part of who I am and my culture.",
-                2: "I feel uncomfortable when people assume things about me based on my appearance because they don't know my story.",
-                3: "I feel left out when I'm not included because of my background, and it makes me feel like I don't belong."
+                2: "I feel uncomfortable and upset when people assume things about me based on my appearance.",
+                3: "I feel left out when I'm not included because of my background, appearance and differences and it makes me feel like I don't belong."
             };
             
             const result = document.getElementById('i-statement-result');
             result.innerHTML = '<strong>Example "I" Statement:</strong><br><br>' + statements[example];
             result.style.display = 'block';
         }
-
+        
         function switchTab(tabName) {
             const tabs = document.querySelectorAll('.tab-content');
             tabs.forEach(tab => tab.classList.remove('active'));
-
             const navTabs = document.querySelectorAll('.nav-tab');
             navTabs.forEach(tab => tab.classList.remove('active'));
-
             document.getElementById(tabName).classList.add('active');
-
             event.target.classList.add('active');
-
             const storyFooter = document.getElementById('story-section-footer');
             if (tabName === 'submit-story') {
                 storyFooter.style.display = 'none';
@@ -1081,7 +1381,164 @@
                 storyFooter.style.display = 'block';
             }
         }
+        
+        // Drawing Canvas Functions
+        let canvas, ctx, isDrawing = false, currentColor = 'black';
+        
+        function showCanvas() {
+            document.getElementById('canvas-area').style.display = 'block';
+            document.getElementById('upload-area').style.display = 'none';
+            initCanvas();
+        }
+        
+        function showUpload() {
+            document.getElementById('upload-area').style.display = 'block';
+            document.getElementById('canvas-area').style.display = 'none';
+        }
+        
+        function initCanvas() {
+            if (!canvas) {
+                canvas = document.getElementById('drawing-canvas');
+                ctx = canvas.getContext('2d');
+                ctx.lineWidth = 3;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = currentColor;
+                
+                // Mouse events
+                canvas.addEventListener('mousedown', startDrawing);
+                canvas.addEventListener('mousemove', draw);
+                canvas.addEventListener('mouseup', stopDrawing);
+                canvas.addEventListener('mouseout', stopDrawing);
+                
+                // Touch events for mobile
+                canvas.addEventListener('touchstart', handleTouchStart);
+                canvas.addEventListener('touchmove', handleTouchMove);
+                canvas.addEventListener('touchend', stopDrawing);
+            }
+        }
+        
+        function startDrawing(e) {
+            isDrawing = true;
+            const rect = canvas.getBoundingClientRect();
+            ctx.beginPath();
+            ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+        }
+        
+        function draw(e) {
+            if (!isDrawing) return;
+            const rect = canvas.getBoundingClientRect();
+            ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+            ctx.stroke();
+        }
+        
+        function handleTouchStart(e) {
+            e.preventDefault();
+            isDrawing = true;
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            ctx.beginPath();
+            ctx.moveTo(touch.clientX - rect.left, touch.clientY - rect.top);
+        }
+        
+        function handleTouchMove(e) {
+            e.preventDefault();
+            if (!isDrawing) return;
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            ctx.lineTo(touch.clientX - rect.left, touch.clientY - rect.top);
+            ctx.stroke();
+        }
+        
+        function stopDrawing() {
+            isDrawing = false;
+        }
+        
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        
+        function changeColor(color) {
+            currentColor = color;
+            ctx.strokeStyle = color;
+        }
+        
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('preview-image').src = e.target.result;
+                    document.getElementById('upload-preview').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+        
+        // Reflection Activity Functions
+        function showReflectionText() {
+            document.getElementById('reflection-text-area').style.display = 'block';
+            document.getElementById('reflection-upload-area').style.display = 'none';
+        }
+        
+        function showReflectionUpload() {
+            document.getElementById('reflection-upload-area').style.display = 'block';
+            document.getElementById('reflection-text-area').style.display = 'none';
+        }
+        
+        function saveReflection() {
+            const text = document.getElementById('reflection-textarea').value;
+            if (text.trim()) {
+                document.getElementById('reflection-saved-message').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('reflection-saved-message').style.display = 'none';
+                }, 3000);
+                console.log('Reflection saved:', text);
+            } else {
+                alert('Please write something before saving!');
+            }
+        }
+        
+        function clearReflection() {
+            if (confirm('Are you sure you want to clear your reflection?')) {
+                document.getElementById('reflection-textarea').value = '';
+                document.getElementById('reflection-saved-message').style.display = 'none';
+            }
+        }
+        
+        function handleReflectionUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                document.getElementById('uploaded-filename').textContent = file.name;
+                document.getElementById('reflection-upload-preview').style.display = 'block';
+                console.log('Reflection document uploaded:', file.name);
+            }
+        }
+        
+        // Mobile Menu Toggle for Site Header
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mainNav = document.querySelector('.site-header .main-nav');
+            
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    
+                    // Animate hamburger menu
+                    const spans = this.querySelectorAll('span');
+                    this.classList.toggle('active');
+                    
+                    if (this.classList.contains('active')) {
+                        spans[0].style.transform = 'rotate(45deg) translateY(10px)';
+                        spans[1].style.opacity = '0';
+                        spans[2].style.transform = 'rotate(-45deg) translateY(-10px)';
+                    } else {
+                        spans[0].style.transform = '';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = '';
+                    }
+                });
+            }
+        });
     </script>
 </body>
 </html>
-                
