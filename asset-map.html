@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Assets - CALD School Wellbeing Hub</title>
+    <style>
+        /* Site Header - Matching Social Workers Design */
+        .site-header {
+            background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
+            color: white;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            margin: 0;
+        }
+        
+        .site-header .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 65px;
+        }
+        
+        .site-header .logo h1 {
+            font-size: 1.3rem;
+            color: white;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .site-header .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .site-header .main-nav a {
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+            text-decoration: none;
+        }
+        
+        .site-header .main-nav a:hover {
+            opacity: 1;
+            border-bottom-color: white;
+        }
+        
+        .site-header .main-nav a.active {
+            opacity: 1;
+            border-bottom-color: #c25b3f;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .site-header .main-nav {
+                position: absolute;
+                top: 65px;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
+                display: none;
+                padding: 1rem 0;
+            }
+            
+            .site-header .main-nav.active {
+                display: block;
+            }
+            
+            .site-header .main-nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .site-header .main-nav a {
+                display: block;
+                padding: 1rem 20px;
+            }
+        }
+        
+        body {
+            padding-top: 65px;
+        }
+        
+        /* Page Header (below site header) */
+        .page-header-section {
+            background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .page-title {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .page-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-title p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        .content-wrapper {
+            padding: 3rem 0;
+        }
+        
+        .intro-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .intro-section h2 {
+            color: #2c5f4f;
+            margin-bottom: 1rem;
+        }
+        
+        .map-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .map-container h2 {
+            color: #2c5f4f;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .map-embed {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 8px;
+        }
+        
+        .category-section {
+            margin-bottom: 4rem;
+        }
+        
+        .category-header {
+            background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 0;
+        }
+        
+        .category-header h2 {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-description {
+            background: rgba(44, 95, 79, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 0 0 12px 12px;
+            margin-bottom: 2rem;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .org-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .org-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #2c5f4f;
+        }
+        
+        .org-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .org-header {
+            display: flex;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+        
+        .org-icon {
+            background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .org-title {
+            flex: 1;
+        }
+        
+        .org-title h3 {
+            color: #2c5f4f;
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+        
+        .org-location {
+            color: #888;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .org-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .org-services {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .org-services h4 {
+            color: #2c5f4f;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .org-services ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 0.9rem;
+        }
+        
+        .org-services li {
+            padding: 0.3rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            color: #666;
+        }
+        
+        .org-services li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2c5f4f;
+            font-weight: bold;
+        }
+        
+        .org-link {
+            display: inline-block;
+            color: #2c5f4f;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .org-link:hover {
+            color: #2c5f4f;
+            text-decoration: underline;
+        }
+        
+        .site-footer {
+            background-color: #2c5f4f;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .site-footer .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .site-footer .acknowledgement {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        
+        .site-footer .acknowledgement p:first-child {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .site-footer .acknowledgement p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .site-footer .footer-links {
+            text-align: center;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        
+        .site-footer .footer-links p {
+            margin: 0.5rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-title h1 {
+                font-size: 2rem;
+            }
+            
+            .org-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-embed {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>Cultural Safety in Schools</h1>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="teachers.html">Teachers</a></li>
+                    <li><a href="parents.html">Parents</a></li>
+                    <li><a href="social-workers.html">Social Workers</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="page-header-section">
+        <div class="container">
+            <div class="page-title">
+                <h1>Community Assets & Partners</h1>
+                <p>Connecting schools with WA organizations supporting CALD communities</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container content-wrapper">
+        <div class="intro-section">
+            <h2>Building Partnerships for Cultural Safety</h2>
+            <p>Western Australia is home to numerous organizations dedicated to supporting culturally and linguistically diverse communities. These community assets provide essential services ranging from mental health support and settlement assistance to cultural celebration and youth programs. Schools can partner with these organizations to strengthen cultural safety, enhance student wellbeing, and build meaningful connections with CALD families.</p>
+        </div>
+        
+        <div class="map-container" id="map">
+            <h2>📍 Interactive Asset Map</h2>
+            <iframe class="map-embed" 
+                    src="https://www.google.com/maps/d/embed?mid=1-Bh-NSpJsildserzNbSF4oJkwbCUNDE&ehbc=2E312F" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        
+        <!-- MENTAL HEALTH & YOUTH SERVICES -->
+        <div class="category-section" id="mental-health">
+            <div class="category-header">
+                <h2>🧠 Mental Health & Youth Services</h2>
+            </div>
+            <div class="category-description">
+                Free and confidential mental health support for young people aged 12-25, including counseling, crisis support, and wellbeing services.
+            </div>
+            
+            <div class="org-grid">
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🏥</div>
+                        <div class="org-title">
+                            <h3>headspace Armadale</h3>
+                            <div class="org-location">📍 Armadale, WA</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Free counseling and wellbeing services for young people aged 12-25. Walk-in appointments available, no mental health care plan required.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Mental health counseling</li>
+                            <li>Sexual health services</li>
+                            <li>Family support programs</li>
+                            <li>Walk-in appointments</li>
+                        </ul>
+                    </div>
+                    <a href="https://headspace.org.au/headspace-centres/armadale/" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+                
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🏥</div>
+                        <div class="org-title">
+                            <h3>headspace Cannington</h3>
+                            <div class="org-location">📍 Cannington (Albany Hwy), WA</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Centrally located near Westfield Carousel offering free services for young people with mild to moderate mental health challenges.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Mental health counseling</li>
+                            <li>Family & friends support</li>
+                            <li>Drug & alcohol support (Palmerston)</li>
+                            <li>StandBy suicide bereavement support</li>
+                        </ul>
+                    </div>
+                    <a href="https://headspace.org.au/headspace-centres/cannington/" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+                
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🏥</div>
+                        <div class="org-title">
+                            <h3>headspace Fremantle</h3>
+                            <div class="org-location">📍 Fremantle, WA</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Youth-friendly space near Fremantle Station providing free, confidential mental health and wellbeing support.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Mental health counseling</li>
+                            <li>Physical & sexual health</li>
+                            <li>Work and study support</li>
+                            <li>eheadspace online support</li>
+                        </ul>
+                    </div>
+                    <a href="https://headspace.org.au/headspace-centres/fremantle/" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+                
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🏥</div>
+                        <div class="org-title">
+                            <h3>headspace Joondalup</h3>
+                            <div class="org-location">📍 Joondalup, WA</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Provides comprehensive youth mental health services including specialized early psychosis intervention programs.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Mental health counseling</li>
+                            <li>Early psychosis support (EPPIC)</li>
+                            <li>Youth Reference Group</li>
+                            <li>Free groups and workshops</li>
+                        </ul>
+                    </div>
+                    <a href="https://headspace.org.au/headspace-centres/joondalup/" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+                
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🏥</div>
+                        <div class="org-title">
+                            <h3>headspace Midland</h3>
+                            <div class="org-location">📍 Midland, WA</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Operated by Youth Focus, offering comprehensive mental health support with sensory rooms and family waiting areas.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Clinical psychology services</li>
+                            <li>Mental health social workers</li>
+                            <li>Work and study support</li>
+                            <li>Youth Reference Group</li>
+                        </ul>
+                    </div>
+                    <a href="https://headspace.org.au/headspace-centres/midland/" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+                
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🏥</div>
+                        <div class="org-title">
+                            <h3>headspace Osborne Park</h3>
+                            <div class="org-location">📍 Osborne Park, WA</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Free, voluntary mental health services with shorter wait times (2-6 weeks). Services available to all young people 12-25, regardless of background.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Mental health counseling</li>
+                            <li>Early psychosis program</li>
+                            <li>Alcohol & drug support</li>
+                            <li>eheadspace online support</li>
+                        </ul>
+                    </div>
+                    <a href="https://headspace.org.au/headspace-centres/osborne-park/" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+                
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">👥</div>
+                        <div class="org-title">
+                            <h3>ASeTTS</h3>
+                            <div class="org-location">📍 Perth, WA</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Association for Services to Torture and Trauma Survivors. Specialized support for children and youth from refugee or trauma backgrounds.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Trauma-informed counseling (ages 6-25)</li>
+                            <li>School-linked support programs</li>
+                            <li>Peer mentoring</li>
+                            <li>Family support services</li>
+                        </ul>
+                    </div>
+                    <a href="https://asetts.org.au/our-services/youth-support-services/" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SETTLEMENT & REFUGEE SERVICES -->
+        <div class="category-section" id="settlement">
+            <div class="category-header">
+                <h2>🏠 Settlement & Refugee Services</h2>
+            </div>
+            <div class="category-description">
+                Supporting new migrants, refugees, and asylum seekers with settlement, employment, and community connection.
+            </div>
+            
+            <div class="org-grid">
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🤝</div>
+                        <div class="org-title">
+                            <h3>Mercy Care - Multicultural Services</h3>
+                            <div class="org-location">📍 WA Wide / Perth Region</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Comprehensive support for asylum seekers, new migrants, and refugees through employment, women's services, and settlement programs.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Employment support programs</li>
+                            <li>Women's services</li>
+                            <li>Settlement assistance</li>
+                            <li>Community development</li>
+                        </ul>
+                    </div>
+                    <a href="https://www.mercycare.com.au/community-services/multicultural-services" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+                
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🌐</div>
+                        <div class="org-title">
+                            <h3>Culture Care WA</h3>
+                            <div class="org-location">📍 Perth & Surrounding Suburbs, WA</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Culturally and linguistically appropriate support for migrants with English as a second language, facilitating community connections.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Language support services</li>
+                            <li>Community connection programs</li>
+                            <li>Cultural adaptation assistance</li>
+                            <li>Settlement support</li>
+                        </ul>
+                    </div>
+                    <a href="https://culturecarewa.org.au" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+                
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🏛️</div>
+                        <div class="org-title">
+                            <h3>Multicultural Communities Council of WA (MCCWA)</h3>
+                            <div class="org-location">📍 Perth, WA</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Delivers essential services for disadvantaged CALD individuals and families with strong focus on mental health and community development.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Mental health services</li>
+                            <li>Youth support programs</li>
+                            <li>Community development initiatives</li>
+                            <li>CALD family support</li>
+                        </ul>
+                    </div>
+                    <a href="https://www.mccwa.org.au" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- COMMUNITY & CULTURAL ORGANIZATIONS -->
+        <div class="category-section" id="community">
+            <div class="category-header">
+                <h2>🎭 Community & Cultural Organizations</h2>
+            </div>
+            <div class="category-description">
+                Organizations promoting cultural celebration, arts, community engagement, and multicultural advocacy.
+            </div>
+            
+            <div class="org-grid">
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🏛️</div>
+                        <div class="org-title">
+                            <h3>Office of Multicultural Interests (OMI)</h3>
+                            <div class="org-location">📍 Perth, WA</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        State government body promoting multiculturalism, providing policy frameworks, and facilitating school partnerships.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Policy development & frameworks</li>
+                            <li>School partnership programs</li>
+                            <li>Multicultural resources</li>
+                            <li>Community grants</li>
+                        </ul>
+                    </div>
+                    <a href="https://www.wa.gov.au/service/cultural-affairs/multicultural-heritage-promotion/office-of-multicultural-interests-omi" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+                
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🌍</div>
+                        <div class="org-title">
+                            <h3>Ethnic Communities Council of WA (ECCWA)</h3>
+                            <div class="org-location">📍 WA Wide / Perth</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Peak body and umbrella organization for ethnic communities across WA, facilitating cultural engagement and advocacy.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Community advocacy</li>
+                            <li>Cultural engagement programs</li>
+                            <li>School partnerships</li>
+                            <li>Policy consultation</li>
+                        </ul>
+                    </div>
+                    <a href="https://www.eccwa.org.au" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+                
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🎉</div>
+                        <div class="org-title">
+                            <h3>Western Australia Multicultural Association (WAMA Inc)</h3>
+                            <div class="org-location">📍 Perth, WA</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Promotes cultural celebration through festivals and educational programs showcasing diverse traditions and languages.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Cultural festivals</li>
+                            <li>Educational programs</li>
+                            <li>Heritage preservation</li>
+                            <li>Language promotion</li>
+                        </ul>
+                    </div>
+                    <a href="https://wamainc.org.au" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+                
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🎨</div>
+                        <div class="org-title">
+                            <h3>Community Arts Network (CAN)</h3>
+                            <div class="org-location">📍 WA (Perth)</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Uses arts to build inclusion and understanding across diverse communities, particularly for multicultural youth.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Arts-based inclusion programs</li>
+                            <li>Multicultural youth initiatives</li>
+                            <li>School arts programs</li>
+                            <li>Community engagement</li>
+                        </ul>
+                    </div>
+                    <a href="https://www.can.org.au" target="_blank" class="org-link">Visit Website →</a>
+                </div>
+                
+                <div class="org-card">
+                    <div class="org-header">
+                        <div class="org-icon">🇮🇹</div>
+                        <div class="org-title">
+                            <h3>Italo-Australian Welfare & Cultural Centre Inc (IAWCC)</h3>
+                            <div class="org-location">📍 Perth, WA</div>
+                        </div>
+                    </div>
+                    <div class="org-description">
+                        Community-based organization providing cultural safety, heritage preservation, and language support for Italian-Australian community.
+                    </div>
+                    <div class="org-services">
+                        <h4>Services include:</h4>
+                        <ul>
+                            <li>Cultural safety programs</li>
+                            <li>Heritage preservation</li>
+                            <li>Language support</li>
+                            <li>School partnership opportunities</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="org-link">Contact for Information →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2025 CALD School Wellbeing Hub. Building culturally safe schools for all.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">These organizations work collaboratively to support CALD communities across Western Australia.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+            }
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (mainNav && mainNav.classList.contains('active')) {
+                    const isClickInsideNav = mainNav.contains(event.target);
+                    const isClickOnToggle = mobileMenuToggle && mobileMenuToggle.contains(event.target);
+                    
+                    if (!isClickInsideNav && !isClickOnToggle) {
+                        mainNav.classList.remove('active');
+                        if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
+                    }
+                }
+            });
+            
+            // Close mobile menu when nav link is clicked
+            const navLinks = document.querySelectorAll('.main-nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (mainNav && mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

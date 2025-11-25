@@ -10,115 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-
-        /* Site Header - Matching Social Workers Design */
-        .site-header {
-            background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
-            color: white;
-            padding: 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            margin: 0;
-            border-radius: 0;
-        }
-        
-        .site-header .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 65px;
-        }
-        
-        .site-header .logo h1 {
-            font-size: 1.3rem;
-            color: white;
-            font-weight: 700;
-            margin: 0;
-        }
-        
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-        
-        .mobile-menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 3px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .site-header .main-nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .site-header .main-nav a {
-            color: white;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-            opacity: 0.9;
-            text-decoration: none;
-        }
-        
-        .site-header .main-nav a:hover {
-            opacity: 1;
-            border-bottom-color: white;
-        }
-        
-        .site-header .main-nav a.active {
-            opacity: 1;
-            border-bottom-color: #c25b3f;
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: flex;
-            }
-            
-            .site-header .main-nav {
-                position: absolute;
-                top: 65px;
-                left: 0;
-                right: 0;
-                background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
-                display: none;
-                padding: 1rem 0;
-            }
-            
-            .site-header .main-nav.active {
-                display: block;
-            }
-            
-            .site-header .main-nav ul {
-                flex-direction: column;
-                gap: 0;
-            }
-            
-            .site-header .main-nav a {
-                display: block;
-                padding: 1rem 20px;
-            }
-        }
-        
-
         * {
             margin: 0;
             padding: 0;
@@ -126,11 +17,10 @@
         }
 
         body {
-            padding-top: 65px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
 
@@ -140,11 +30,17 @@
             padding: 20px;
         }
 
-        /* Old header style removed - using .site-header instead */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
 
-        .content-section h1,
-        header:not(.site-header) h1 {
-            color: #2c5f4f;
+        h1 {
+            color: #764ba2;
             font-size: 2.5em;
             margin-bottom: 10px;
         }
@@ -155,14 +51,14 @@
             margin-top: 10px;
         }
 
-        nav:not(.main-nav) {
+        nav {
             background: rgba(255, 255, 255, 0.95);
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
             position: sticky;
-            top: 85px;
+            top: 20px;
             z-index: 100;
         }
 
@@ -174,7 +70,7 @@
         }
 
         .nav-btn {
-            background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
             padding: 12px 24px;
@@ -182,12 +78,12 @@
             cursor: pointer;
             font-size: 0.95em;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(44, 95, 79, 0.3);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
 
         .nav-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(44, 95, 79, 0.4);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
         }
 
         .content-section {
@@ -210,21 +106,21 @@
         }
 
         h2 {
-            color: #2c5f4f;
+            color: #764ba2;
             margin-bottom: 20px;
             font-size: 2em;
-            border-bottom: 3px solid #2c5f4f;
+            border-bottom: 3px solid #667eea;
             padding-bottom: 10px;
         }
 
         h3 {
-            color: #3d7a66;
+            color: #667eea;
             margin: 25px 0 15px;
             font-size: 1.5em;
         }
 
         h4 {
-            color: #2c5f4f;
+            color: #764ba2;
             margin: 20px 0 10px;
             font-size: 1.2em;
         }
@@ -248,13 +144,13 @@
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
-            border-left: 5px solid #2c5f4f;
+            border-left: 5px solid #667eea;
             transition: all 0.3s ease;
         }
 
         .card:hover {
             transform: translateX(5px);
-            box-shadow: 0 4px 15px rgba(44, 95, 79, 0.2);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
         }
 
         .service-card {
@@ -268,36 +164,36 @@
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(44, 95, 79, 0.3);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
         }
 
         .service-title {
-            color: #2c5f4f;
+            color: #764ba2;
             font-size: 1.4em;
             margin-bottom: 15px;
             font-weight: bold;
         }
 
         .contact-info {
-            background: #e8f4f1;
+            background: #f0f4ff;
             padding: 15px;
             border-radius: 8px;
             margin: 10px 0;
         }
 
         .contact-info strong {
-            color: #3d7a66;
+            color: #667eea;
         }
 
         a {
-            color: #3d7a66;
+            color: #667eea;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #2c5f4f;
+            color: #764ba2;
             text-decoration: underline;
         }
 
@@ -322,7 +218,7 @@
             padding: 20px;
             margin: 15px 0;
             border-radius: 10px;
-            border-left: 5px solid #2c5f4f;
+            border-left: 5px solid #667eea;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
@@ -341,49 +237,6 @@
             .nav-btn { padding: 10px 16px; font-size: 0.85em; }
             .content-section { padding: 20px; }
         }
-    
-        /* Site Footer - Matching Social Workers Design */
-        .site-footer {
-            background-color: #2c5f4f;
-            color: white;
-            padding: 2rem 0;
-            margin-top: 3rem;
-            border-radius: 0;
-        }
-        
-        .site-footer .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .site-footer .acknowledgement {
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-        }
-        
-        .site-footer .acknowledgement p:first-child {
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .site-footer .acknowledgement p {
-            margin: 0;
-            line-height: 1.6;
-        }
-        
-        .site-footer .footer-links {
-            text-align: center;
-            opacity: 0.9;
-            font-size: 0.9rem;
-        }
-        
-        .site-footer .footer-links p {
-            margin: 0.5rem 0;
-        }
-        
     </style>
 </head>
 <body>
@@ -1354,58 +1207,10 @@
             </div>
         </div>
 
-        <footer class="site-footer">
-            <div class="footer-container">
-                <div class="acknowledgement">
-                    <p><strong>Acknowledgement of Country</strong></p>
-                    <p>We acknowledge the Traditional Custodians of the lands on which our schools stand, and pay our respects to Elders past, present, and emerging. We are committed to honouring Aboriginal and Torres Strait Islander peoples and their unique cultural and spiritual relationships to land, water, and community.</p>
-                </div>
-                <div class="footer-links">
-                    <p>&copy; 2025 Cultural Safety in Schools. All rights reserved.</p>
-                    <p style="margin-top: 10px; opacity: 0.9;">💚 Welcome to your new home in WA. You're not alone on this journey.</p>
-                </div>
-            </div>
+        <footer>
+            <p style="margin-top: 10px; color: #666;">💜 Welcome to your new home in WA. You're not alone on this journey.</p>
         </footer>
     </div>
-
-    <script>
-        // Mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const mainNav = document.querySelector('.main-nav');
-            
-            if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', function() {
-                    mainNav.classList.toggle('active');
-                    this.classList.toggle('active');
-                });
-            }
-            
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (mainNav && mainNav.classList.contains('active')) {
-                    const isClickInsideNav = mainNav.contains(event.target);
-                    const isClickOnToggle = mobileMenuToggle.contains(event.target);
-                    
-                    if (!isClickInsideNav && !isClickOnToggle) {
-                        mainNav.classList.remove('active');
-                        mobileMenuToggle.classList.remove('active');
-                    }
-                }
-            });
-            
-            // Close mobile menu when nav link is clicked
-            const navLinks = document.querySelectorAll('.main-nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (mainNav.classList.contains('active')) {
-                        mainNav.classList.remove('active');
-                        mobileMenuToggle.classList.remove('active');
-                    }
-                });
-            });
-        });
-    </script>
 
     <script>
         function showSection(sectionId) {
