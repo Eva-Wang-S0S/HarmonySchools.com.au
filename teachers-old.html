@@ -5,6 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Resources | Working with CALD Students & Families</title>
     <style>
+        /* Site Header Navigation Styles */
+        .site-header {
+            background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
+            color: white;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        .site-header .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 65px;
+        }
+        
+        .site-header .logo h1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0;
+            color: white;
+        }
+        
+        .site-header .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .site-header .main-nav li {
+            margin: 0;
+        }
+        
+        .site-header .main-nav a {
+            color: white;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+        
+        .site-header .main-nav a:hover {
+            opacity: 1;
+            border-bottom-color: white;
+        }
+        
+        .site-header .main-nav a.active {
+            opacity: 1;
+            border-bottom-color: #c25b3f;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .site-header .main-nav {
+                position: absolute;
+                top: 65px;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
+                display: none;
+                padding: 1rem 0;
+            }
+            
+            .site-header .main-nav.active {
+                display: block;
+            }
+            
+            .site-header .main-nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .site-header .main-nav li {
+                width: 100%;
+            }
+            
+            .site-header .main-nav a {
+                display: block;
+                padding: 1rem;
+                border-radius: 0;
+            }
+        }
+
+        /* Teacher Page Styles */
         * {
             margin: 0;
             padding: 0;
@@ -19,112 +134,7 @@
             padding-top: 65px;
         }
 
-        /* Site Header Navigation */
-        .site-header {
-            background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
-            color: white;
-            padding: 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-
-        .site-header .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 65px;
-        }
-
-        .site-header .logo h1 {
-            font-size: 1.3rem;
-            color: white;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 3px 0;
-            transition: all 0.3s ease;
-        }
-
-        .site-header .main-nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-        }
-
-        .site-header .main-nav a {
-            color: white;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-            opacity: 0.9;
-            text-decoration: none;
-        }
-
-        .site-header .main-nav a:hover {
-            opacity: 1;
-            border-bottom-color: white;
-        }
-
-        .site-header .main-nav a.active {
-            opacity: 1;
-            border-bottom-color: #c25b3f;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: flex;
-            }
-
-            .site-header .main-nav {
-                position: absolute;
-                top: 65px;
-                left: 0;
-                right: 0;
-                background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
-                display: none;
-                padding: 1rem 0;
-            }
-
-            .site-header .main-nav.active {
-                display: block;
-            }
-
-            .site-header .main-nav ul {
-                flex-direction: column;
-                gap: 0;
-            }
-
-            .site-header .main-nav a {
-                display: block;
-                padding: 1rem 20px;
-            }
-        }
-
-        /* Page Title Bar (below site header) */
+        /* Page Title Bar (not site navigation) */
         .page-title-bar {
             background: linear-gradient(135deg, #2c5f4f 0%, #3d7a66 100%);
             color: white;
@@ -143,7 +153,6 @@
 
         .page-title-bar h1 {
             font-size: 1.5rem;
-            margin: 0;
         }
 
         /* Layout with Sidebar */
@@ -313,7 +322,7 @@
         }
 
         .scenario-tile {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #2c5f4f 0%, #c25b3f 100%);
             color: white;
             padding: 1.5rem;
             border-radius: 12px;
@@ -328,7 +337,7 @@
         }
 
         .scenario-tile:nth-child(1) {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #2c5f4f 0%, #c25b3f 100%);
         }
 
         .scenario-tile:nth-child(2) {
@@ -336,15 +345,15 @@
         }
 
         .scenario-tile:nth-child(3) {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            background: linear-gradient(135deg, #3d7a66 0%, #5a9a82 100%);
         }
 
         .scenario-tile:nth-child(4) {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            background: linear-gradient(135deg, #c25b3f 0%, #d97b5f 100%);
         }
 
         .scenario-tile:nth-child(5) {
-            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            background: linear-gradient(135deg, #2c5f4f 0%, #1a4538 100%);
         }
 
         .scenario-tile:hover {
@@ -506,7 +515,7 @@
 
         /* Quiz Card */
         .quiz-card {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #2c5f4f 0%, #c25b3f 100%);
             color: white;
             border-radius: 20px;
             padding: 3rem;
@@ -826,7 +835,7 @@
         }
 
         .quiz-option:hover {
-            background: #e8f4f8;
+            background: #e8f4f1;
             border-color: #2c5f4f;
             transform: translateX(5px);
         }
@@ -931,50 +940,50 @@
             animation: fadeInUp 0.6s ease-out;
         }
 
-        /* Site Footer */
+        /* Site Footer - Matching Social Workers Design */
         .site-footer {
             background-color: #2c5f4f;
             color: white;
             padding: 2rem 0;
             margin-top: 4rem;
         }
-
+        
         .site-footer .footer-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-
+        
         .site-footer .acknowledgement {
             margin-bottom: 1.5rem;
             padding: 1.5rem;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
         }
-
+        
         .site-footer .acknowledgement p:first-child {
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
-
+        
         .site-footer .acknowledgement p {
             margin: 0;
             line-height: 1.6;
         }
-
+        
         .site-footer .footer-links {
             text-align: center;
             opacity: 0.9;
             font-size: 0.9rem;
         }
-
+        
         .site-footer .footer-links p {
             margin: 0.5rem 0;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Site-wide Navigation Header -->
     <header class="site-header">
         <div class="header-container">
             <div class="logo">
@@ -988,17 +997,17 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="teachers.html" class="active" aria-current="page">Teachers</a></li>
+                    <li><a href="teachers.html" class="active">Teachers</a></li>
                     <li><a href="parents.html">Parents</a></li>
                     <li><a href="social-workers.html">Social Workers</a></li>
                     <li><a href="students.html">Students</a></li>
-                    <li><a href="search.html">Search</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- Page Title Bar -->
     <div class="page-title-bar">
         <div class="container">
             <h1>🎓 CALD Teacher Resources</h1>
@@ -1387,7 +1396,7 @@
                     </div>
 
                     <div style="text-align: center; margin-top: 3rem;">
-                        <a href="assets/Cultural_Competence_Workbook.docx" download class="btn" style="background: white; color: #2c5f4f; font-size: 1.2rem; padding: 1rem 2.5rem;">📥 Download Workbook (FREE)</a>
+                        <a href="computer:///mnt/user-data/outputs/Cultural_Competence_Workbook.docx" class="btn" style="background: white; color: #2c5f4f; font-size: 1.2rem; padding: 1rem 2.5rem;">📥 Download Workbook (FREE)</a>
                         <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.9;">Microsoft Word format • Fillable • Print or complete digitally</p>
                     </div>
                 </div>
@@ -2259,67 +2268,67 @@
             <h2>Tool 6: Key Terms Glossary</h2>
             
             <div class="highlight-box">
-                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #2c5f4f;">Acculturation:</strong>
+                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #764ba2;">Acculturation:</strong>
                 <p>The process of cultural and psychological change that results from contact between cultural groups. For immigrant families, this means adapting to the new culture while maintaining aspects of heritage culture.</p>
             </div>
             
             <div class="highlight-box">
-                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #2c5f4f;">Acculturation Gap:</strong>
+                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #764ba2;">Acculturation Gap:</strong>
                 <p>The difference in acculturation rates between parents and children, often leading to family conflict when children adopt new cultural practices faster than parents.</p>
             </div>
             
             <div class="highlight-box">
-                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #2c5f4f;">CALD:</strong>
+                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #764ba2;">CALD:</strong>
                 <p>Culturally and Linguistically Diverse – refers to people from non-English speaking backgrounds or diverse cultural backgrounds.</p>
             </div>
             
             <div class="highlight-box">
-                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #2c5f4f;">Cultural Humility:</strong>
+                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #764ba2;">Cultural Humility:</strong>
                 <p>An ongoing process of self-reflection and critique about cultural biases, combined with willingness to learn from others. Goes beyond cultural competence.</p>
             </div>
             
             <div class="highlight-box">
-                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #2c5f4f;">Cultural Safety:</strong>
+                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #764ba2;">Cultural Safety:</strong>
                 <p>An environment where people feel safe to be themselves culturally, without fear of discrimination or having to hide their cultural identity. Power dynamics and systemic factors are acknowledged.</p>
             </div>
             
             <div class="highlight-box">
-                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #2c5f4f;">Culturally Responsive Practice:</strong>
+                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #764ba2;">Culturally Responsive Practice:</strong>
                 <p>Teaching and practice that recognizes students' cultural backgrounds as strengths and integrates cultural knowledge into learning.</p>
             </div>
             
             <div class="highlight-box">
-                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #2c5f4f;">Heritage Culture:</strong>
+                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #764ba2;">Heritage Culture:</strong>
                 <p>The culture of a person's family origin or ancestry.</p>
             </div>
             
             <div class="highlight-box">
-                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #2c5f4f;">Host Culture:</strong>
+                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #764ba2;">Host Culture:</strong>
                 <p>The dominant culture of the country where someone has migrated to (in this case, Australian culture).</p>
             </div>
             
             <div class="highlight-box">
-                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #2c5f4f;">1.5 Generation:</strong>
+                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #764ba2;">1.5 Generation:</strong>
                 <p>People who immigrated as children – they have memories and connections to their birth country but grew up primarily in the new country. Often experience unique identity challenges.</p>
             </div>
             
             <div class="highlight-box">
-                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #2c5f4f;">Microaggressions:</strong>
+                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #764ba2;">Microaggressions:</strong>
                 <p>Brief, everyday exchanges that send negative messages to people based on their membership in a marginalized group (e.g., "Where are you really from?").</p>
             </div>
             
             <div class="highlight-box">
-                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #2c5f4f;">Third Culture Kids:</strong>
+                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #764ba2;">Third Culture Kids:</strong>
                 <p>Children who grow up in cultures different from their parents' passport country, developing a unique "third culture" that blends multiple influences.</p>
             </div>
             
             <div class="highlight-box">
-                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #2c5f4f;">Translanguaging:</strong>
+                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #764ba2;">Translanguaging:</strong>
                 <p>Using multiple languages together for communication and learning. Research shows this supports learning rather than hindering it.</p>
             </div>
             
             <div class="highlight-box">
-                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #2c5f4f;">Settlement:</strong>
+                <strong style="display: block; font-size: 1.1em; margin-bottom: 8px; color: #764ba2;">Settlement:</strong>
                 <p>The process of adjusting to life in a new country, including practical aspects (housing, employment) and social/cultural adjustment.</p>
             </div>
             
@@ -2762,6 +2771,19 @@
         </div>
     </div>
 
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="acknowledgement">
+                <p><strong>Acknowledgement of Country</strong></p>
+                <p>We acknowledge the Traditional Custodians of the lands on which our schools stand, and pay our respects to Elders past, present, and emerging. We are committed to honouring Aboriginal and Torres Strait Islander peoples and their unique cultural and spiritual relationships to land, water, and community.</p>
+            </div>
+            <div class="footer-links">
+                <p>&copy; 2025 Cultural Safety in Schools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
         let currentQuestion = 1;
         let score = 0;
@@ -2816,21 +2838,17 @@
                 q6: 'c', q7: 'c', q8: 'c', q9: 'b', q10: 'b'
             };
 
-            const incorrectQuestions = [];
-
             for (let i = 1; i <= totalQuestions; i++) {
                 if (answers[`q${i}`] === correctAnswers[`q${i}`]) {
                     score++;
-                } else {
-                    incorrectQuestions.push(i);
                 }
             }
 
             document.getElementById(`q${currentQuestion}`).style.display = "none";
-            displayResults(incorrectQuestions, correctAnswers);
+            displayResults();
         }
 
-        function displayResults(incorrectQuestions, correctAnswers) {
+        function displayResults() {
             const percentage = (score / totalQuestions) * 100;
             let feedback = '';
             let bgColor = '';
@@ -2867,116 +2885,6 @@
             `;
             document.getElementById('scoreDisplay').style.background = bgColor;
 
-            // Create incorrect answers section
-            let incorrectAnswersHTML = '';
-            if (incorrectQuestions.length > 0) {
-                incorrectAnswersHTML = `
-                    <div class="highlight-box" style="margin-top: 20px; background: #fff3cd; border-left: 4px solid #856404;">
-                        <h4 style="color: #856404; margin-bottom: 15px;">Questions You Missed (${incorrectQuestions.length}):</h4>
-                        <div style="text-align: left;">
-                `;
-                
-                const questionTexts = {
-                    1: "A student avoids making eye contact with you during conversations.",
-                    2: "When working with an interpreter in a parent-teacher meeting, you should:",
-                    3: "A CALD student rarely speaks up in class discussions.",
-                    4: "What is an 'acculturation gap'?",
-                    5: "A parent says 'I'll need to discuss this with my husband and family' when you ask for a decision.",
-                    6: "When creating culturally inclusive classrooms, you should:",
-                    7: "Which statement about home language use is most accurate?",
-                    8: "When should you refer a CALD student/family to a school social worker?",
-                    9: "A student who previously shared proudly about their culture now refuses to and seems embarrassed.",
-                    10: "What is the 'Model Minority Myth' and why is it harmful?"
-                };
-
-                const answerTexts = {
-                    q1: {
-                        a: "The student is being disrespectful and should be corrected",
-                        b: "The student is lying or hiding something",
-                        c: "This may be a cultural norm where direct eye contact with authority figures is considered disrespectful",
-                        d: "The student lacks confidence and needs assertiveness training"
-                    },
-                    q2: {
-                        a: "Speak to the interpreter and let them convey your message",
-                        b: "Speak directly to the parent using first person ('I'm concerned...') while the interpreter translates",
-                        c: "Speak quickly to save time since interpretation takes longer",
-                        d: "Ask the student to interpret to save resources"
-                    },
-                    q3: {
-                        a: "Call on them more often to encourage participation",
-                        b: "Assume they don't know the material and provide extra tutoring",
-                        c: "Provide multiple ways to participate (written responses, partner work, think-pair-share) and don't interpret silence as lack of knowledge",
-                        d: "Tell them that in Australia, students are expected to speak up"
-                    },
-                    q4: {
-                        a: "The time it takes for immigrants to fully adapt to a new culture",
-                        b: "The difference in acculturation rates between parents and children, which can lead to family conflict",
-                        c: "The space between two different cultures",
-                        d: "A lack of cultural knowledge in teachers"
-                    },
-                    q5: {
-                        a: "They are avoiding making a decision",
-                        b: "They don't understand the question",
-                        c: "Their decision-making process is collective and involves consulting other family members, which is their cultural practice",
-                        d: "They're not invested in their child's education"
-                    },
-                    q6: {
-                        a: "Have a 'celebration of diversity' week once a year",
-                        b: "Treat all students exactly the same regardless of background",
-                        c: "Integrate diverse cultural perspectives throughout the curriculum year-round and validate students' home languages",
-                        d: "Focus only on the dominant Australian culture to help students integrate"
-                    },
-                    q7: {
-                        a: "Students should only speak English at school to improve their language skills",
-                        b: "Speaking other languages at school confuses students and hinders learning",
-                        c: "Research shows that translanguaging (using multiple languages) supports learning and students' home languages should be valued",
-                        d: "Home languages are acceptable only during lunch breaks"
-                    },
-                    q8: {
-                        a: "Only when there's an immediate crisis",
-                        b: "Never - you should handle all issues yourself",
-                        c: "When you notice family conflict, acculturation stress, settlement challenges, or when you feel out of your depth (which is professional wisdom)",
-                        d: "Only after trying everything else for at least a year"
-                    },
-                    q9: {
-                        a: "A sign they're successfully integrating into Australian culture",
-                        b: "A sign of acculturation stress and they may be experiencing peer pressure to fit in or hide their cultural identity",
-                        c: "Normal adolescent behavior that doesn't require attention",
-                        d: "A sign their parents are too strict"
-                    },
-                    q10: {
-                        a: "It's a positive stereotype that motivates students to succeed",
-                        b: "It's a harmful stereotype (e.g., 'all Asian students are good at math') that erases individual differences and creates unfair pressure",
-                        c: "It's an accurate description of certain cultural groups' academic success",
-                        d: "It only applies to students born overseas"
-                    }
-                };
-
-                incorrectQuestions.forEach((qNum) => {
-                    const userAnswer = answers[`q${qNum}`];
-                    const correctAnswer = correctAnswers[`q${qNum}`];
-                    
-                    incorrectAnswersHTML += `
-                        <div style="margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px;">
-                            <p style="font-weight: bold; color: #721c24; margin-bottom: 10px;">❌ Question ${qNum}: ${questionTexts[qNum]}</p>
-                            <p style="margin-left: 20px; margin-bottom: 8px;"><strong>Your answer:</strong> ${answerTexts[`q${qNum}`][userAnswer]}</p>
-                            <p style="margin-left: 20px; color: #28a745;"><strong>✓ Correct answer:</strong> ${answerTexts[`q${qNum}`][correctAnswer]}</p>
-                        </div>
-                    `;
-                });
-                
-                incorrectAnswersHTML += `
-                        </div>
-                    </div>
-                `;
-            } else {
-                incorrectAnswersHTML = `
-                    <div class="highlight-box" style="margin-top: 20px; background: #d4edda; border-left: 4px solid #28a745;">
-                        <p style="color: #28a745; font-weight: bold;">✓ Perfect score! You answered all questions correctly!</p>
-                    </div>
-                `;
-            }
-
             document.getElementById('feedback').innerHTML = `
                 <div class="highlight-box" style="margin-top: 20px;">
                     ${feedback}
@@ -2989,7 +2897,6 @@
                         <li>Seek feedback from CALD families about your practices</li>
                     </ul>
                 </div>
-                ${incorrectAnswersHTML}
             `;
 
             document.getElementById('quizResults').style.display = "block";
@@ -3117,58 +3024,32 @@
                 }
             });
         });
-    </script>
-
-<footer class="site-footer">
-    <div class="footer-container">
-        <div class="acknowledgement">
-            <p><strong>Acknowledgement of Country</strong></p>
-            <p>We acknowledge the Traditional Custodians of the lands on which our schools stand, and pay our respects to Elders past, present, and emerging. We are committed to honouring Aboriginal and Torres Strait Islander peoples and their unique cultural and spiritual relationships to land, water, and community.</p>
-        </div>
-        <div class="footer-links">
-            <p>&copy; 2025 Cultural Safety in Schools. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-
-<script>
-    // Mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const mainNav = document.querySelector('.main-nav');
-
-        if (mobileMenuToggle) {
-            mobileMenuToggle.addEventListener('click', function() {
-                mainNav.classList.toggle('active');
-                this.classList.toggle('active');
-            });
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (mainNav && mainNav.classList.contains('active')) {
-                const isClickInsideNav = mainNav.contains(event.target);
-                const isClickOnToggle = mobileMenuToggle && mobileMenuToggle.contains(event.target);
-
-                if (!isClickInsideNav && !isClickOnToggle) {
-                    mainNav.classList.remove('active');
-                    if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-                }
+        
+        // Mobile Menu Toggle for Site Header
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mainNav = document.querySelector('.site-header .main-nav');
+            
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    
+                    // Animate hamburger menu
+                    const spans = this.querySelectorAll('span');
+                    this.classList.toggle('active');
+                    
+                    if (this.classList.contains('active')) {
+                        spans[0].style.transform = 'rotate(45deg) translateY(10px)';
+                        spans[1].style.opacity = '0';
+                        spans[2].style.transform = 'rotate(-45deg) translateY(-10px)';
+                    } else {
+                        spans[0].style.transform = '';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = '';
+                    }
+                });
             }
         });
-
-        // Close mobile menu when nav link is clicked
-        const navLinks = document.querySelectorAll('.main-nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (mainNav && mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-                }
-            });
-        });
-    });
-</script>
-
+    </script>
 </body>
 </html>
